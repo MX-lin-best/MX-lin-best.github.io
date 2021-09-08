@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2021/09/06/hello-world/"/>
-    <url>/2021/09/06/hello-world/</url>
+    <title>电脑常用快捷键</title>
+    <link href="/2021/09/08/%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <url>/2021/09/08/%E7%94%B5%E8%84%91%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My First Hello World&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="电脑的常用快捷键"><a href="#电脑的常用快捷键" class="headerlink" title="电脑的常用快捷键"></a>电脑的常用快捷键</h1><hr><h2 id="键盘功能键"><a href="#键盘功能键" class="headerlink" title="键盘功能键"></a>键盘功能键</h2><p><strong>Tab    Shift    Ctrl    Alt    Space(空格)    Enter    Windows        Capslock(改变大小写)        Numlock(锁定右下角数字)    ↑    ↓    ←    →</strong></p><hr><h2 id="键盘快捷键"><a href="#键盘快捷键" class="headerlink" title="键盘快捷键"></a>键盘快捷键</h2><p><em><strong>Ctrl + C</strong></em><strong>(复制)</strong></p><p><em><strong>Ctrl + V</strong></em><strong>(粘贴)</strong></p><p><em><strong>Ctrl + A</strong></em><strong>(全选)</strong></p><p><em><strong>Ctrl + Z</strong></em><strong>(撤销)</strong></p><p><em><strong>Ctrl + X</strong></em><strong>(剪切)</strong></p><p><em><strong>Ctrl + S</strong></em><strong>(保存)</strong></p><p><em><strong>ALT + F4</strong></em><strong>(关闭窗口)</strong></p><p><em><strong>Shift + Delete</strong></em><strong>(永久删除)</strong></p><p><em><strong>Windows + R</strong></em><strong>(打开某程序)</strong>        <em><strong>Windows + R +输入cmd</strong></em><strong>(打开命令窗口)</strong></p><p><em><strong>Windows + E</strong></em><strong>(打开“我的电脑”)</strong></p><p><strong>Ctrl + Alt + .</strong>   或    <strong>任务栏鼠标右键任务管理器</strong>   或    <strong>Ctrl + Shift + Esc(打开任务管理器)</strong>         <strong>程序死机解决方法</strong></p><p><strong>Shift + 数字(含特殊字符)       (输入特殊字符)</strong></p><hr><p><em><strong>学习摘自</strong></em></p><blockquote><p>b站【狂神说java】p10:预科06：Windows常用快捷键</p></blockquote><p><a href="https://www.bilibili.com/video/BV12J41137hu?p=10">点击进入【狂神说java】p10:预科06：Windows常用快捷键</a></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>实用</tag>
+      
+    </tags>
     
   </entry>
   
