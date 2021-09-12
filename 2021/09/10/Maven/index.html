@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      713 字
+      905 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      10
        分钟
     </span>
   
@@ -259,7 +259,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月10日 下午
+                  本文最后更新于：2021年9月12日 下午
                 
               </p>
             
@@ -324,6 +324,33 @@
 </li>
 </ol>
 <h2 id="Maven约定的目录结构"><a href="#Maven约定的目录结构" class="headerlink" title="Maven约定的目录结构"></a>Maven约定的目录结构</h2><p><img src="/img/blogimgs/Maven/4.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Maven仓库概念"><a href="#Maven仓库概念" class="headerlink" title="Maven仓库概念"></a>Maven仓库概念</h2><p><img src="/img/blogimgs/Maven/5.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Maven中Pom的主要信息"><a href="#Maven中Pom的主要信息" class="headerlink" title="Maven中Pom的主要信息"></a>Maven中Pom的主要信息</h2><p><img src="/img/blogimgs/Maven/6.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li><p>pom坐标</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>公司域名倒写+项目名<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span> <br><span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>自定义项目名称<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>自定义版本号<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>packaging</p>
+<p>项目打包类型，默认<code>jar</code></p>
+</li>
+<li><p>依赖</p>
+<p><code>dependencies</code>和<code>dependency</code></p>
+<p><img src="/img/blogimgs/Maven/7.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>properties :    设置属性</p>
+</li>
+<li><p>build：maven构建项目时的配置信息</p>
+</li>
+</ol>
+<h2 id="IDEA配置Maven"><a href="#IDEA配置Maven" class="headerlink" title="IDEA配置Maven"></a>IDEA配置Maven</h2><ol>
+<li><p>2020版：①配置当前工程的设置<code>File</code>—&gt;<code>Settings</code>—&gt;<code>Build,Execution,Deployment</code>—&gt;<code>Build Tools</code>—&gt;<code>Maven</code></p>
+<p>​    <img src="/img/blogimgs/Maven/8.png" srcset="/img/loading.gif" lazyload></p>
+<p>—&gt;<code>Runner</code>—&gt;设置<code>VM options: -DarchetypeCatalog=internal</code></p>
+<p> <code>JRE</code>:选择项目的JDK</p>
+<p class="note note-info">VM options 设置为"<code>-DarchetypeCatalog=internal</code>",MavenMaven创建项目时，会联网下载模板文件，文件较大，使用该参数不用下载，创建项目速度快。</p>
+
+<p>②配置以后新建工程的设置<code>File</code>—&gt;<code>New Projcts Settings</code>。和①操作一样。</p>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -341,7 +368,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Maven/">Maven</a>
+                      <a class="hover-with-bg" href="/tags/Project-Build/">Project Build</a>
                     
                   </div>
                 
