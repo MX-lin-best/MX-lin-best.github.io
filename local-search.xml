@@ -4,11 +4,36 @@
   
   
   <entry>
+    <title>MongoDB(Windows下)</title>
+    <link href="/2021/09/15/MongoDB(%E5%9F%BA%E4%BA%8EWindows)/"/>
+    <url>/2021/09/15/MongoDB(%E5%9F%BA%E4%BA%8EWindows)/</url>
+    
+    <content type="html"><![CDATA[<h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><blockquote><p>MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。在高负载的情况下，添加更多的节点，可以保证服务器性能。MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。MongoDB 文档类似于 JSON 对象。字段值可以包含其他文档，数组及文档数组。</p></blockquote><h2 id="下载安装-Windows下"><a href="#下载安装-Windows下" class="headerlink" title="下载安装(Windows下)"></a>下载安装(Windows下)</h2><p><a href="https://www.mongodb.com/try/download/community">MongoDB官网下载(社区版)</a>，建议选稳定版。</p><p><img src="/img/blogimgs/MongoDB/1.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>SQL</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>NoSQL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Spring之IOC</title>
     <link href="/2021/09/14/Spring%E4%B9%8BIOC/"/>
     <url>/2021/09/14/Spring%E4%B9%8BIOC/</url>
     
-    <content type="html"><![CDATA[<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><blockquote><p>百度：</p><p>IOC:    (Inversion  Of   Control) 控制反转,是<a href="https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/254878">面向对象编程</a>中的一种设计原则，可以用来减低计算机<a href="https://baike.baidu.com/item/%E4%BB%A3%E7%A0%81/86048">代码</a>之间的<a href="https://baike.baidu.com/item/%E8%80%A6%E5%90%88%E5%BA%A6/2603938">耦合度</a>。其中最常见的方式叫做**<a href="https://baike.baidu.com/item/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/5177233">依赖注入</a><strong>（Dependency Injection，简称</strong>DI**），还有一种方式叫“依赖查找”（Dependency Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体将其所依赖的对象的引用传递给它。也可以说，依赖被注入到对象中。 </p></blockquote>]]></content>
     
     
     <categories>
