@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.8k 字
+      2k 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      24
+      27
        分钟
     </span>
   
@@ -288,7 +288,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月19日 晚上
+                  本文最后更新于：2021年9月20日 上午
                 
               </p>
             
@@ -361,17 +361,43 @@
    &nbsp&nbsp 3).request:在web环境下，同一次请求创建一个Bean实例(没用)<br>
    &nbsp&nbsp 4).session:在web环境下，同一次会话创建一个Bean实例(没用)<br></p>
 
-<h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><blockquote>
+<h3 id="工厂模式（-）"><a href="#工厂模式（-）" class="headerlink" title="工厂模式（*）"></a>工厂模式（*）</h3><blockquote>
 <p>工厂帮我们创建对象，有一个专门帮我们创建对象的类，这个类就是工厂</p>
 </blockquote>
 <ol>
-<li><h4 id="静态工厂"><a href="#静态工厂" class="headerlink" title="静态工厂"></a>静态工厂</h4></li>
+<li><h4 id="静态工厂"><a href="#静态工厂" class="headerlink" title="静态工厂"></a>静态工厂</h4><p>工厂本身不用创建对象；通过静态方法调用，对象 = 工厂类.工厂方法名()</p>
+<blockquote>
+<p>factory-method：指定哪个方法是工厂方法</p>
+<p>class：指定静态工厂全类名</p>
+<p>constructor-arg：为方法传参</p>
+</blockquote>
+</li>
+<li><h4 id="实例工厂"><a href="#实例工厂" class="headerlink" title="实例工厂"></a>实例工厂</h4><p>工厂本身需要创建对象；工厂类  工厂对象  = new  工厂类(),；工厂对象.工厂方法名()</p>
+<blockquote>
+<p>1.先配置出实例工厂对象</p>
+<p>2.配置我们要创建的对象使用哪个工厂创建</p>
+<ul>
+<li>factory-bean：指定使用哪个工厂实例</li>
+<li>factory-method：使用哪个工厂方法</li>
+</ul>
+</blockquote>
+</li>
+<li><h4 id="FactoryBean"><a href="#FactoryBean" class="headerlink" title="FactoryBean"></a>FactoryBean</h4><p>是Spring规定的一个接口，实现了该接口的实现类，Spring都认为是一个工厂</p>
+</li>
 </ol>
-<p>工厂本身不用创建对象；通过静态方法调用，对象 = 工厂类.工厂方法名()</p>
+<blockquote>
 <ol>
-<li><h4 id="实例工厂"><a href="#实例工厂" class="headerlink" title="实例工厂"></a>实例工厂</h4></li>
+<li>ioc容器启动的时候不会创建实例</li>
+<li>FactoryBean获取的时候才创建对象,区别于前两种工厂</li>
 </ol>
-<p>工厂本身需要创建对象；工厂类  工厂对象  = new  工厂类(),；工厂对象.工厂方法名()</p>
+</blockquote>
+<h3 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h3><ol>
+<li>单例：（容器启动）构造器—-&gt;初始化方法—-&gt;（容器关闭）销毁方法</li>
+<li>多实例：获取bean（构造器—-&gt;初始化方法）—-&gt;容器关闭不会调用bean的销毁方法</li>
+</ol>
+<h3 id="Bean的后置处理器"><a href="#Bean的后置处理器" class="headerlink" title="Bean的后置处理器"></a>Bean的后置处理器</h3><ol>
+<li></li>
+</ol>
 
             </div>
             <hr>
