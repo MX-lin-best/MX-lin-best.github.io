@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2k 字
+      2.9k 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      27
+      38
        分钟
     </span>
   
@@ -288,7 +288,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月20日 上午
+                  本文最后更新于：2021年9月21日 晚上
                 
               </p>
             
@@ -396,8 +396,60 @@
 <li>多实例：获取bean（构造器—-&gt;初始化方法）—-&gt;容器关闭不会调用bean的销毁方法</li>
 </ol>
 <h3 id="Bean的后置处理器"><a href="#Bean的后置处理器" class="headerlink" title="Bean的后置处理器"></a>Bean的后置处理器</h3><ol>
-<li></li>
+<li><p>(容器启动)构造器——后置处理器before..——初始化方法——后置处理器afer——bean初始化完成</p>
+<p><b>无论bean是否有初始化方法，后置处理器都会默认有，还会继续工作</b></p>
+</li>
 </ol>
+<h3 id="引用外部文件"><a href="#引用外部文件" class="headerlink" title="引用外部文件"></a>引用外部文件</h3><p>Spring管理数据库连接池(alibaba的德鲁伊连接池)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dataSource01&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.alibaba.druid.pool.DruidDataSource&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123456&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;jdbc:mysql://localhost:3306/test?useSSL=false<span class="hljs-symbol">&amp;amp;</span>serverTimezone=CTT&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driverClassName&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;com.mysql.jdbc.cj.jdbc.Driver&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="基于Xml的自动装配"><a href="#基于Xml的自动装配" class="headerlink" title="基于Xml的自动装配"></a>基于Xml的自动装配</h3><p>利用bean中的属性autowire来设置（<b>仅限于对自定义类型的属性有效</b>）</p>
+<blockquote>
+<p>autowire=“defalut/no”：默认不自动装配</p>
+<p>autowire=“byName”：按照名字（以属性名作为id去容器中找到这个组件，给他赋值，反之则为null）</p>
+<p>autowire=“byType”：按照种类（以属性类型作为查找依据去容器中这个组件，如果容器中有多个这种类型的组件，会报错，没找到装配null），如果类型是list，可以把容器中的所有对象都封装list赋值。</p>
+<p>autowire=“constructor”：按照构造器进行赋值</p>
+<p>​                                        1.先按照有参构造器的参数类型进行装配(成功就赋值)，没有就直接为组件装配null即可</p>
+<p>​                                        2.如果按照类型找到多个，则参数的名作为id继续匹配；找到就装配，找不到就装配null</p>
+<p>​                                        3.不会报错</p>
+</blockquote>
+<h2 id="SPEL"><a href="#SPEL" class="headerlink" title="SPEL"></a>SPEL</h2><p>用法：1.指定value=“#{ bean/bean.属性/数学表达式}”</p>
+<p>​           2.使用静态方法value=“#{T(全类名).静态方法名(参数)}”</p>
+<p>​          3.使用非静态方法value=“#{对象ID.方法名}”</p>
+<h2 id="使用注解方式将组件加入到IOC中"><a href="#使用注解方式将组件加入到IOC中" class="headerlink" title="使用注解方式将组件加入到IOC中"></a>使用注解方式将组件加入到IOC中</h2><p>通过给bean上添加某些注解，可以快速将bean加入到ioc容器中</p>
+<p>某个类上添加某些注解都能快速的将这个组件加入到ioc容器的管理中</p>
+<p class="note note-info">Spring中有四个注解：<br>
+1. @controller:控制器，一般是servlet包下的组件加这个注解<br>
+2. @Service：业务逻辑层<br>
+3. @Repository：数据库层<br>
+4. @Component：除以上三个，一般是Utils工具类
+</p>
+
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>各组件标上注解</p>
+</li>
+<li><p>告诉Spring，自动扫描加了注解的组件，依赖于Context名称空间</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--扫描base-package下加了注解的类，扫描进IOC容器中--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.study&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">context:component-scan</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>导入aop包，aop支持注解模式</p>
+</li>
+</ol>
+<p class="ntoe note-info">1.加了注解的组件默认id是类名首字母小写<br>
+    @Repository("bookDao01")<br>
+    public class BookDao{<br>
+    }<br>
+    2.组件的作用域默认是单例<br>
+    @Scope("value=prototype")
+</p>
+
+<h3 id="DI（依赖注入）"><a href="#DI（依赖注入）" class="headerlink" title="DI（依赖注入）"></a>DI（依赖注入）</h3><h4 id="测试样例（注解自动装配）"><a href="#测试样例（注解自动装配）" class="headerlink" title="测试样例（注解自动装配）"></a>测试样例（注解自动装配）</h4><p class="note note-info">@Autowired：Spring会自动的为这个属性赋值；一定是去容器中找到这个属性对应的组件，类上的注解是必不可少的。</p>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Servlet层</span><br><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookServlet</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> BookService bookService;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Get方法&quot;</span>);<br>        bookService.save();<br><br>    &#125;<br>&#125;<br><br><br><br><span class="hljs-comment">//Service层</span><br><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookService</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> BookDao bookDao;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Service层调用bookDao保存图书......&quot;</span>);<br>        bookDao.saveBook();<br>    &#125;<br><br>&#125;<br><br><br><br><br><span class="hljs-comment">//Dao层</span><br><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookDao</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saveBook</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;图书保存了......&quot;</span>);<br>    &#125;<br><br>&#125;<br><br><br><br><span class="hljs-comment">//测试</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestBook</span> </span>&#123;<br><br>    ApplicationContext ioc = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;applicationXmlConfig.xml&quot;</span>);<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>&#123;<br>        BookServlet bookServlet = (BookServlet)ioc.getBean(<span class="hljs-string">&quot;bookServlet&quot;</span>);<br><br>        bookServlet.doGet();<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/imgs/blogimgs/Spring/10.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>可以看出Spring注解模式的强大！！！</p>
+</blockquote>
+<p>​    </p>
 
             </div>
             <hr>
