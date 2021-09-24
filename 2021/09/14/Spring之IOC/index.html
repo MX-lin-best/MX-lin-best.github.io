@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.9k 字
+      3.1k 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      38
+      41
        分钟
     </span>
   
@@ -288,7 +288,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月21日 晚上
+                  本文最后更新于：2021年9月24日 晚上
                 
               </p>
             
@@ -433,7 +433,7 @@
 <li><p>导入aop包，aop支持注解模式</p>
 </li>
 </ol>
-<p class="ntoe note-info">1.加了注解的组件默认id是类名首字母小写<br>
+<p class="note note-info">1.加了注解的组件默认id是类名首字母小写<br>
     @Repository("bookDao01")<br>
     public class BookDao{<br>
     }<br>
@@ -441,15 +441,24 @@
     @Scope("value=prototype")
 </p>
 
+
 <h3 id="DI（依赖注入）"><a href="#DI（依赖注入）" class="headerlink" title="DI（依赖注入）"></a>DI（依赖注入）</h3><h4 id="测试样例（注解自动装配）"><a href="#测试样例（注解自动装配）" class="headerlink" title="测试样例（注解自动装配）"></a>测试样例（注解自动装配）</h4><p class="note note-info">@Autowired：Spring会自动的为这个属性赋值；一定是去容器中找到这个属性对应的组件，类上的注解是必不可少的。</p>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//Servlet层</span><br><span class="hljs-meta">@Controller</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookServlet</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> BookService bookService;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doGet</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Get方法&quot;</span>);<br>        bookService.save();<br><br>    &#125;<br>&#125;<br><br><br><br><span class="hljs-comment">//Service层</span><br><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookService</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> BookDao bookDao;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;Service层调用bookDao保存图书......&quot;</span>);<br>        bookDao.saveBook();<br>    &#125;<br><br>&#125;<br><br><br><br><br><span class="hljs-comment">//Dao层</span><br><span class="hljs-meta">@Repository</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookDao</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">saveBook</span><span class="hljs-params">()</span></span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;图书保存了......&quot;</span>);<br>    &#125;<br><br>&#125;<br><br><br><br><span class="hljs-comment">//测试</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestBook</span> </span>&#123;<br><br>    ApplicationContext ioc = <span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;applicationXmlConfig.xml&quot;</span>);<br>    <span class="hljs-meta">@Test</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>&#123;<br>        BookServlet bookServlet = (BookServlet)ioc.getBean(<span class="hljs-string">&quot;bookServlet&quot;</span>);<br><br>        bookServlet.doGet();<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><img src="/imgs/blogimgs/Spring/10.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/blogimgs/Spring/10.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>可以看出Spring注解模式的强大！！！</p>
 </blockquote>
-<p>​    </p>
+<h3 id="Autowired自动装配原理"><a href="#Autowired自动装配原理" class="headerlink" title="@Autowired自动装配原理"></a>@Autowired自动装配原理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">1.先按照类型去容器中找到对应的组件：<br>    	1).找到一个，找到就赋值<br>    	2).没找到：抛异常<br>    	3).找到多个（继承）？装配上？<br>    		①会按照变量名作为id进行查找装配<br>    			1.匹配上，装配<br>    			2.没匹配上，报错（变量名作为id进行查找装配）<br>					(@Qualifier(<span class="hljs-string">&quot;&quot;</span>)：指定一个名作为id，让Spring别使用变量名进行查找)<br>                    		1.匹配上，装配<br>    					   2.没匹配上，报错<br>    	发现Autowired标注的自动装配的属性默认是一定装配上的，可以设置属性require来不一定装配上				   <br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">
+    <b>@Autowired和@Resource区别</b><br>
+    @Autowired：最强大，Spring自己的注解<br>
+    @Resource：j2ee，java的标准<br>
+    @Resource：扩展性更强;如果使用另一个容器框架，@Resource还是可以使用的，@Autowired就不行了</p>
+
+<h2 id="IOC总结"><a href="#IOC总结" class="headerlink" title="IOC总结"></a>IOC总结</h2><p><img src="/img/blogimgs/Spring/11.png" srcset="/img/loading.gif" lazyload></p>
 
             </div>
             <hr>
