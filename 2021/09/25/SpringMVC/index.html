@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      48 字
+      293 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      3
        分钟
     </span>
   
@@ -288,17 +288,47 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月28日 晚上
+                  本文最后更新于：2021年9月29日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p class="note note-info">M：Model（模型）封装和映射的数据（JavaBean）<br>
+              <h2 id="SpringMVC（Spring框架的一个模块-Web-）"><a href="#SpringMVC（Spring框架的一个模块-Web-）" class="headerlink" title="SpringMVC（Spring框架的一个模块[Web]）"></a>SpringMVC（Spring框架的一个模块[Web]）</h2><p class="note note-info">M：Model（模型）封装和映射的数据（JavaBean）<br>
 V：View（视图）页面显示工作（Jsp）<br>
 C：Controller（控制器）控制整个网站跳转逻辑（Servlet）</p>
 
 <p><img src="/img/blogimgs/Spring/MVC/1.png" srcset="/img/loading.gif" lazyload></p>
 <p><b>多了个前端控制器</b></p>
+<h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><ol>
+<li><p>新建<code>Maven</code>工程</p>
+</li>
+<li><p>加入依赖</p>
+<p><code>spring-webmvc</code>依赖，间接把spring的依赖都加入到项目，<code>jsp，servlet</code>依赖</p>
+</li>
+<li><p>重点：在<code>web.xml</code>中注册<code>springmvc</code>框架的核心对象<code>DispatcherServlet</code></p>
+<ol>
+<li><code>DispatcherServlet</code>叫做中央调度器,是一个<code>servlet</code>,它的父类是继承<code>HttpServlet</code></li>
+<li><code>DispatcherServlet</code>页叫做前端控制器（<code>front controller</code>）</li>
+<li><code>DispatcherServlet</code>负责接收用户提交的请求，调用其他控制器对象，并把请求的处理结果显示给用户</li>
+</ol>
+</li>
+<li><p>创建一个发起请求的页面<code>index.jsp</code></p>
+</li>
+<li><p>创建控制器类</p>
+<ol>
+<li>在类的上面加入<code>@Controller</code>注解，创建对象，并放入到<code>springmvc</code>容器中</li>
+<li>在类中的方法上面加入<code>@RequestMapping</code>注解</li>
+</ol>
+</li>
+<li><p>创建一个作为结果的<code>jsp</code>，显示请求的处理结果</p>
+</li>
+<li><p>创建<code>springmvc</code>的配置文件（<code>spring</code>的配置文件一样）</p>
+<ol>
+<li>声明组件扫描器，指定<code>@controller</code>注解所在包名</li>
+<li>声明视图解析器。帮助处理掉视图的。</li>
+</ol>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -332,6 +362,12 @@ C：Controller（控制器）控制整个网站跳转逻辑（Servlet）</p>
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/10/01/Leetcode-1436-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Leetcode(1436)-旅行终点站</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

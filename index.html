@@ -268,6 +268,67 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/10/01/Leetcode-1436-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/" target="_self">
+          <img src="/img/leetcode.png" srcset="/img/loading.gif" lazyload alt="Leetcode(1436)-旅行终点站">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2021/10/01/Leetcode-1436-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/" target="_self">
+          Leetcode(1436)-旅行终点站
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2021/10/01/Leetcode-1436-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/" target="_self">
+          
+          
+            
+          
+          题目链接：LeetCode1436.旅行终点站
+
+给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。
+
+示例1：
+123456输
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-10-01 22:39" pubdate>
+              2021-10-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Algorithm-easy/">Algorithm(easy)</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/09/25/SpringMVC/" target="_self">
           <img src="/img/lifeisstruggle.png" srcset="/img/loading.gif" lazyload alt="SpringMVC">
         </a>
@@ -287,12 +348,18 @@
           
             
           
-          SpringMVCM：Model（模型）封装和映射的数据（JavaBean）
+          SpringMVC（Spring框架的一个模块[Web]）M：Model（模型）封装和映射的数据（JavaBean）
 V：View（视图）页面显示工作（Jsp）
 C：Controller（控制器）控制整个网站跳转逻辑（Servlet）
 
 
 多了个前端控制器
+实现步骤
+新建Maven工程
+
+加入依赖
+spring-webmvc依赖，间接把spring的依赖都加入到项目，jsp，servlet依赖
+
 
         </a>
       </p>
@@ -349,9 +416,10 @@ C：Controller（控制器）控制整个网站跳转逻辑（Servlet）
           
             
           
-          AOP
+          [TOC]
+AOP
 百度：
-在软件业，AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期间动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的可重用性，同
+在软件业，AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期间动态代理实现程序功能的统一维护的一种技术。AOP是OOP的延续，是软件开发中的一个热点，也是Spring框架中的一个重要内容，是函数式编程的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的耦合度降低，提高程序的
         </a>
       </p>
 
@@ -466,7 +534,8 @@ MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源
           
             
           
-          IDEA导入Spring依赖
+          [TOC]
+IDEA导入Spring依赖
 根据之前的学的Maven来构建
 
 进入maven仓库(需要翻墙),输入Spring Context找到对应仓库(使用最多的那个)，进去后选择对应版本号(可根据使用量来选)的RELEASE版，点进去后复制对应的依赖,
@@ -478,7 +547,7 @@ MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源
 
 
 
-此时可以看到下载下来的依赖包和Spring5模
+此时可以看到下载下来的依赖包和Sp
         </a>
       </p>
 
@@ -534,14 +603,15 @@ MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源
           
             
           
-          Maven简介
+          [TOC]
+Maven简介
 一个项目管理工具，它包含了一个对象模型。一组标准集合，一个依赖管理系统。和用来运行定义在生命周期阶段中插件目标和逻辑。
 
 没有用Maven管理开发项目时的问题
 项目有很多模块，手工管理关系时，比较繁琐
 需要第三方功能，也就是要手动下载网络上的jar文件
 在2的基础上，又要管理每个jar文件的版本
-管理jar文件的依赖，一个jar文件需要另一个jar文件中的类，就必须获取另一个jar
+管理jar文件的依赖，一个jar文件需要另一个jar文件中的类，就必须获取
         </a>
       </p>
 
@@ -597,14 +667,14 @@ MongoDB 是由C++语言编写的，是一个基于分布式文件存储的开源
           
             
           
-          电脑的常用快捷键
+          [TOC]
+电脑的常用快捷键
 键盘功能键Tab    Shift    Ctrl    Alt    Space(空格)    Enter    Windows        Capslock(改变大小写)        Numlock(锁定右下角数字)    ↑    ↓    ←    →
 
 键盘快捷键Ctrl + C(复制)
 Ctrl + V(粘贴)
 Ctrl + A(全选)
-Ctrl + Z(撤销)
-
+Ctrl + 
         </a>
       </p>
 

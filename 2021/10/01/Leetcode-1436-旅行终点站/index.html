@@ -19,7 +19,7 @@
   <meta name="author" content="Lexr">
   <meta name="keywords" content="">
   
-  <title>Spring之AOP - The Memory Of Snow</title>
+  <title>Leetcode(1436)-旅行终点站 - The Memory Of Snow</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -205,7 +205,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spring之AOP">
+            <span class="h2" id="subtitle" title="Leetcode(1436)-旅行终点站">
               
             </span>
 
@@ -220,8 +220,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-09-22 18:25" pubdate>
-        2021年9月22日 晚上
+      <time datetime="2021-10-01 22:39" pubdate>
+        2021年10月1日 晚上
       </time>
     </span>
   
@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1k 字
+      660 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      9
        分钟
     </span>
   
@@ -284,55 +284,52 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spring之AOP</h1>
+            <h1 style="display: none">Leetcode(1436)-旅行终点站</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月29日 晚上
+                  本文最后更新于：2021年10月1日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <p>[TOC]</p>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><blockquote>
-<p>百度：</p>
-<p>在软件业，AOP为Aspect Oriented Programming的缩写，意为：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B/6016335">面向切面编程</a>，通过<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%A2%84%E7%BC%96%E8%AF%91/3191547">预编译</a>方式和运行期间动态代理实现程序功能的统一维护的一种技术。AOP是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/OOP">OOP</a>的延续，是软件开发中的一个热点，也是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Spring">Spring</a>框架中的一个重要内容，是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/4035031">函数式编程</a>的一种衍生范型。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之间的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%80%A6%E5%90%88%E5%BA%A6/2603938">耦合度</a>降低，提高程序的可重用性，同时提高了开发的效率。</p>
+              <p><strong>题目链接：LeetCode</strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/destination-city">1436.旅行终点站</a></p>
+<blockquote>
+<p>给你一份旅游线路图，该线路图中的旅行线路用数组 paths 表示，其中 paths[i] = [cityAi, cityBi] 表示该线路将会从 cityAi 直接前往 cityBi 。请你找出这次旅行的终点站，即没有任何可以通往其他城市的线路的城市。题目数据保证线路图会形成一条不存在循环的线路，因此恰有一个旅行终点站。</p>
 </blockquote>
-<p>将某段代码(<b>日志</b>)动态的切入(<b>不把日志代码写死在业务逻辑方法中</b>)到指定方法(<b>加减乘除</b>)的指定位置(<b>方法的开始，结束，异常</b>)进行运行的这种编程方式（<b>Spring简化了面向切面编程</b>）</p>
-<h3 id="几个专业术语"><a href="#几个专业术语" class="headerlink" title="几个专业术语"></a>几个专业术语</h3><p><img src="/img/blogimgs/Spring/AOP/1.png" srcset="/img/loading.gif" lazyload></p>
-<h3 id="基于注解的AOP使用步骤"><a href="#基于注解的AOP使用步骤" class="headerlink" title="基于注解的AOP使用步骤"></a>基于注解的AOP使用步骤</h3><p class="note note-info">1.导包<br>
-    2.写配置<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp1).将目标类和切面类(封装了通知方法(在目标方法前后执行的方法))加入到IOC容器中<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp2).告诉Spring到底是哪个切面类@Aspect。@Order指定多个切面执行顺序，数字越小优先级越高<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp3).告诉Spring切面类里面的每一个方法，都是何时何地运行。5个通知注解<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@Before:目标方法之前运行&nbsp&nbsp&nbsp&nbsp&nbsp前置通知<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@After:目标方法结束后运行&nbsp&nbsp&nbsp&nbsp&nbsp后置通知<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@AfterReturning:目标方法正常返回后&nbsp&nbsp&nbsp&nbsp&nbsp返回通知<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@AfterThrowing:目标方法抛出异常后运行&nbsp&nbsp&nbsp&nbsp&nbsp异常通知<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@Around:环绕(动态代理)&nbsp&nbsp&nbsp&nbsp&nbsp环绕通知(Spring最强大的通知)，参数ProceedingJoinPoint<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp切入点表达式：用法:注解里写execution(public+返回类型+方法全类名+方法参数)。<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp抽取可重用的切入点表达式<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp1).随便声明一个没有实现的返回void的空方法<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2).给方法上标注@Pointcut注解<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp通配符：*：1.匹配一个或多个字符<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2.匹配任意一个参数<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3.只能匹配一层路径<br>
-     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp4.权限位置*不能<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp..：1.匹配任意多个参数和任意类型参数<br>
-     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2.匹配多层路径，在全类名中加<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp4).开启基于注解的AOP模式，在配置文件中写入<code>aop:aspectj-autoproxy</code><br>
-    3.测试<br>
-    &nbsp&nbsp&nbsp&nbsp&nbsp1).从IOC容器中拿到目标对象；注意：如果想要用类型，一定要用他的接口类型，不要用本类
+<p><strong>示例1：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：paths = [[<span class="hljs-string">&quot;London&quot;</span>,<span class="hljs-string">&quot;New York&quot;</span>],[<span class="hljs-string">&quot;New York&quot;</span>,<span class="hljs-string">&quot;Lima&quot;</span>],[<span class="hljs-string">&quot;Lima&quot;</span>,<span class="hljs-string">&quot;Sao Paulo&quot;</span>]]<br>输出：<span class="hljs-string">&quot;Sao Paulo&quot;</span> <br>解释：从 <span class="hljs-string">&quot;London&quot;</span> 出发，最后抵达终点站 <span class="hljs-string">&quot;Sao Paulo&quot;</span> 。本次旅行的路线是 <span class="hljs-string">&quot;London&quot;</span> -&gt; <span class="hljs-string">&quot;New York&quot;</span> -&gt; <span class="hljs-string">&quot;Lima&quot;</span> -&gt; <span class="hljs-string">&quot;Sao Paulo&quot;</span> 。<br>输入：paths = [[<span class="hljs-string">&quot;London&quot;</span>,<span class="hljs-string">&quot;New York&quot;</span>],[<span class="hljs-string">&quot;New York&quot;</span>,<span class="hljs-string">&quot;Lima&quot;</span>],[<span class="hljs-string">&quot;Lima&quot;</span>,<span class="hljs-string">&quot;Sao Paulo&quot;</span>]]<br>输出：<span class="hljs-string">&quot;Sao Paulo&quot;</span> <br>解释：从 <span class="hljs-string">&quot;London&quot;</span> 出发，最后抵达终点站 <span class="hljs-string">&quot;Sao Paulo&quot;</span> 。本次旅行的路线是 <span class="hljs-string">&quot;London&quot;</span> -&gt; <span class="hljs-string">&quot;New York&quot;</span> -&gt; <span class="hljs-string">&quot;Lima&quot;</span> -&gt; <span class="hljs-string">&quot;Sao Paulo&quot;</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例2：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：paths = [[<span class="hljs-string">&quot;B&quot;</span>,<span class="hljs-string">&quot;C&quot;</span>],[<span class="hljs-string">&quot;D&quot;</span>,<span class="hljs-string">&quot;B&quot;</span>],[<span class="hljs-string">&quot;C&quot;</span>,<span class="hljs-string">&quot;A&quot;</span>]]<br>输出：<span class="hljs-string">&quot;A&quot;</span><br>解释：所有可能的线路是：<br><span class="hljs-string">&quot;D&quot;</span> -&gt; <span class="hljs-string">&quot;B&quot;</span> -&gt; <span class="hljs-string">&quot;C&quot;</span> -&gt; <span class="hljs-string">&quot;A&quot;</span>. <br><span class="hljs-string">&quot;B&quot;</span> -&gt; <span class="hljs-string">&quot;C&quot;</span> -&gt; <span class="hljs-string">&quot;A&quot;</span>. <br><span class="hljs-string">&quot;C&quot;</span> -&gt; <span class="hljs-string">&quot;A&quot;</span>. <br><span class="hljs-string">&quot;A&quot;</span>. <br>显然，旅行终点站是 <span class="hljs-string">&quot;A&quot;</span> 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例3：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：paths = [[<span class="hljs-string">&quot;A&quot;</span>,<span class="hljs-string">&quot;Z&quot;</span>]]<br>输出：<span class="hljs-string">&quot;Z&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li>1 &lt;= paths.length &lt;= 100</li>
+<li>paths[i].length == 2</li>
+<li>1 &lt;= cityAi.length, cityBi.length &lt;= 10</li>
+<li>cityAi != cityBi</li>
+<li>所有字符串均由大小写英文字母和空格字符组成。</li>
+</ul>
+<p class="note note-info">
+    <b>Java解题思路：利用map，两次遍历，第一次记录每次起点出现的个数，第二次判断终点出现的个数，如果是终点则记录值为空，返回</b>    
 </p>
 
-<h3 id="基于配置的AOP使用"><a href="#基于配置的AOP使用" class="headerlink" title="基于配置的AOP使用"></a>基于配置的AOP使用</h3><p><img src="/img/blogimgs/Spring/AOP/2.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="/img/blogimgs/Spring/AOP/2.png" srcset="/img/loading.gif" lazyload></p>
-<blockquote>
-<p>注解：快速方便</p>
-<p>配置：功能完善；重要的用配置，不重要的用注解</p>
-</blockquote>
-<h2 id="声明式事务"><a href="#声明式事务" class="headerlink" title="声明式事务"></a>声明式事务</h2><p>事务管理代码的<b>固定模式</b>作为一种<b>横切关注点</b>,可以通过AOP方法模块化，进而借助<b>Spring AOP框架</b>实现声明式事务管理</p>
-<p class="note note-info">事务切面====事务管理器</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">destCity</span><span class="hljs-params">(List&lt;List&lt;String&gt;&gt; paths)</span> </span>&#123;<br>        Map&lt;String,Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;String,Integer&gt;();<br><br>        <span class="hljs-keyword">for</span>(List&lt;String&gt; list : paths)<br>            map.put(list.get(<span class="hljs-number">0</span>),<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span>(List&lt;String&gt; list : paths)<br>            <span class="hljs-keyword">if</span>(map.get(list.get(<span class="hljs-number">1</span>)) == <span class="hljs-keyword">null</span>)<br>                <span class="hljs-keyword">return</span> list.get(<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>	<span class="hljs-comment">//平均时间复杂度：O(n) </span><br>   &#125;<br></code></pre></td></tr></table></figure>
 
-<p>注解：@Transactional</p>
-<p><img src="/img/blogimgs/Spring/AOP/4.png" srcset="/img/loading.gif" lazyload></p>
+
+
+<p class="note note-info">
+    <b>Java解题思路(2)：利用set的无序性，两次遍历，第一次记录每次添加的起点，第二次添加终点，判断记录值则记录值为空，返回</b>    
+</p>
+
+<p><strong>代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">destCity</span><span class="hljs-params">(List&lt;List&lt;String&gt;&gt; paths)</span> </span>&#123;<br>       Set&lt;String&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>       <span class="hljs-keyword">for</span> (List&lt;String&gt; list : paths) &#123;<br>           set.add(list.get(<span class="hljs-number">0</span>));<br>       &#125;<br>       <span class="hljs-keyword">for</span> (List&lt;String&gt; list : paths) &#123;<br>           String s = list.get(<span class="hljs-number">1</span>);<br>           <span class="hljs-keyword">if</span> (set.add(s)) &#123;<br>               <span class="hljs-keyword">return</span> s;<br>           &#125;<br>       &#125;<br>       <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-comment">//平均时间复杂度：O(n) </span><br>   &#125;<br></code></pre></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -342,7 +339,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                      <a class="hover-with-bg" href="/categories/LeetCode/">LeetCode</a>
                     
                   </div>
                 
@@ -350,7 +347,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Spring-Framework/">Spring Framework</a>
+                      <a class="hover-with-bg" href="/tags/Algorithm-easy/">Algorithm(easy)</a>
                     
                   </div>
                 
@@ -367,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/09/25/SpringMVC/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SpringMVC</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/09/15/MongoDB(%E5%9F%BA%E4%BA%8EWindows)/">
-                        <span class="hidden-mobile">MongoDB(Windows下)</span>
+                      <a href="/2021/09/25/SpringMVC/">
+                        <span class="hidden-mobile">SpringMVC</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
