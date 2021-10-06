@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      660 字
+      379 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      5
        分钟
     </span>
   
@@ -288,7 +288,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年10月1日 晚上
+                  本文最后更新于：2021年10月6日 晚上
                 
               </p>
             
@@ -308,11 +308,11 @@
 
 <p><strong>提示：</strong></p>
 <ul>
-<li>1 &lt;= paths.length &lt;= 100</li>
-<li>paths[i].length == 2</li>
-<li>1 &lt;= cityAi.length, cityBi.length &lt;= 10</li>
-<li>cityAi != cityBi</li>
-<li>所有字符串均由大小写英文字母和空格字符组成。</li>
+<li><code>1 <= paths.length <= 100</code></li>
+<li><code>paths[i].length == 2</code></li>
+<li><code>1 &lt;= cityAi.length, cityBi.length &lt;= 10</code></li>
+<li><code>cityAi != cityBi</code></li>
+<li><code>所有字符串均由大小写英文字母和空格字符组成。</code></li>
 </ul>
 <p class="note note-info">
     <b>Java解题思路：利用map，两次遍历，第一次记录每次起点出现的个数，第二次判断终点出现的个数，如果是终点则记录值为空，返回</b>    
@@ -326,8 +326,8 @@
 <p class="note note-info">
     <b>Java解题思路(2)：利用set的无序性，两次遍历，第一次记录每次添加的起点，第二次添加终点，判断记录值则记录值为空，返回</b>    
 </p>
+**代码：**
 
-<p><strong>代码：</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">destCity</span><span class="hljs-params">(List&lt;List&lt;String&gt;&gt; paths)</span> </span>&#123;<br>       Set&lt;String&gt; set = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>       <span class="hljs-keyword">for</span> (List&lt;String&gt; list : paths) &#123;<br>           set.add(list.get(<span class="hljs-number">0</span>));<br>       &#125;<br>       <span class="hljs-keyword">for</span> (List&lt;String&gt; list : paths) &#123;<br>           String s = list.get(<span class="hljs-number">1</span>);<br>           <span class="hljs-keyword">if</span> (set.add(s)) &#123;<br>               <span class="hljs-keyword">return</span> s;<br>           &#125;<br>       &#125;<br>       <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-comment">//平均时间复杂度：O(n) </span><br>   &#125;<br></code></pre></td></tr></table></figure>
 
 
@@ -363,6 +363,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/10/06/Leetcode-414-%E7%AC%AC%E4%B8%89%E5%A4%A7%E7%9A%84%E6%95%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Leetcode-414-第三大的数</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

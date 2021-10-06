@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/Sail.jpg">
+  <link rel="icon" href="/img/Sail.jpg">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Lexr">
+  <meta name="keywords" content="">
+  
+  <title>Leetcode-414-第三大的数 - The Memory Of Snow</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"GA_MEASUREMENT_ID","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="/js/firework.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>The Memory Of Snow</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/diary/">
+                <i class="iconfont icon-notebook"></i>
+                日记
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/message/">
+                <i class="iconfont icon-comment"></i>
+                留言
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/lookingfor.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Leetcode-414-第三大的数">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Lexr
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-10-06 22:51" pubdate>
+        2021年10月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      174 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Leetcode-414-第三大的数</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年10月6日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p><strong>题目链接：LeetCode</strong><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/third-maximum-number/">414. 第三大的数</a></p>
+<blockquote>
+<p>给你一个非空数组，返回此数组中 <strong>第三大的数</strong> 。如果不存在，则返回数组中最大的数。</p>
+</blockquote>
+<p><strong>示例1：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：[3, 2, 1]<br>输出：1<br>解释：第三大的数是 1 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例2：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：[1, 2]<br>输出：2<br>解释：第三大的数不存在, 所以返回最大的数 2 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>示例3：</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">输入：[2, 2, 3, 1]<br>输出：1<br>解释：注意，要求返回第三大的数，是指在所有不同数字中排第三大的数。<br>此例中存在两个值为 2 的数，它们都排第二。在所有不同数字中排第三大的数为 1 。<br></code></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 <= nums.length <= 10<sup>2</sup></code></li>
+<li><code>-2<sup>31</sup> <=nums[i] <= 2<sup>31</sup>-1</code></li>
+</ul>
+<p><strong>进阶：你能设计一个时间复杂度<code>O(n)</code>的解决方案吗？</strong></p>
+<p class="note note-info">
+    <b>我写的感觉没什么问题，自己在IDEA上跑的起来，结果也是对的，但好像这个思路的执行效率很低，但在LeetCode上跑不了要报错，看来还是菜鸡qwq</b>
+</p>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TTest</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        TTest tTest = <span class="hljs-keyword">new</span> TTest();<br>        <span class="hljs-keyword">int</span> test = tTest.test();<br>        System.out.println(test);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">test</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;<span class="hljs-number">1</span>,<span class="hljs-number">6</span>,<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">3</span>&#125;;<br>        <span class="hljs-comment">//首先，有两种情况，一个是小于3个数的情况，一个是大于3的情况</span><br><br>        <span class="hljs-comment">//1,1）判断数组的长度，若为0，则返回0;</span><br>        <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-comment">//1,2）判断数组的长度，若为1，则返回这个数;</span><br>        <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>        &#125;<br><br>        <span class="hljs-comment">//1,3）判断数组的长度，若为2，则返回大的数;</span><br>        <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>] &gt; nums[<span class="hljs-number">1</span>] ? nums[<span class="hljs-number">0</span>] : nums[<span class="hljs-number">1</span>];<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">//2.大于3的情况，我的思路是利用set去重排序</span><br>           Set&lt;Integer&gt; set = <span class="hljs-keyword">new</span> TreeSet&lt;&gt;(<span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() &#123;<br>               <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>&#123;<br>                   <span class="hljs-keyword">return</span> o2.compareTo(o1);<br>               &#125;<br>           &#125;);<br>           <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++ )&#123;<br>              set.add(nums[i]);<br>           &#125;<br><br>            Object[] objects = set.toArray();<br>            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) objects[<span class="hljs-number">2</span>];<br><br>        &#125;<br>    &#125;<br>    <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li><p>时间复杂度：使用 <code>Set</code> 去重的复杂度为 <code>O(n)</code>；排序复杂度为 <code>O(nlogn)</code>。整体复杂度为 <code>O(nlogn)</code></p>
+</li>
+<li><p>空间复杂度：<code>O(n)</code></p>
+</li>
+</ul>
+<p class="note note-info">
+    <b>官方题解一(排序)：将数组从大到小排序后，从头开始遍历数组，通过判断相邻元素是否不同，来统计不同元素的个数。如果能找到三个不同的元素，就返回第三大的元素，否则返回最大的元素。</b>
+</p>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        reverse(nums);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, diff = <span class="hljs-number">1</span>; i &lt; nums.length; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] != nums[i - <span class="hljs-number">1</span>] &amp;&amp; ++diff == <span class="hljs-number">3</span>) &#123; <span class="hljs-comment">// 此时 nums[i] 就是第三大的数</span><br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reverse</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-keyword">int</span> temp = nums[left];<br>            nums[left] = nums[right];<br>            nums[right] = temp;<br>            left++;<br>            right--;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<code>O(nlogn)</code>，其中 <code>n</code> 是数组 <code>nums</code> 的长度。排序需要 <code>O(nlogn)</code> 的时间</li>
+</ul>
+<ul>
+<li>空间复杂度：<code>O(logn)</code>。排序需要的栈空间为 <code>O(logn)</code>。</li>
+</ul>
+<p class="note note-info">
+    <b>官方题解二(有序集合)：我们可以遍历数组，同时用一个有序集合来维护数组中前三大的数。具体做法是每遍历一个数，就将其插入有序集合，若有序集合的大小超过3，就删除集合中的最小元素。这样可以保证有序集合的大小至多为3，且遍历结束后，若有序集合的大小为3，其最小值就是数组中第三大的数；若有序集合的大小不足3，那么就返回有序集合中的最大值。
+</b>
+</p>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        TreeSet&lt;Integer&gt; s = <span class="hljs-keyword">new</span> TreeSet&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            s.add(num);<br>            <span class="hljs-keyword">if</span> (s.size() &gt; <span class="hljs-number">3</span>) &#123;<br>                s.remove(s.first());<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> s.size() == <span class="hljs-number">3</span> ? s.first() : s.last();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<code>O(n)</code>，其中 <code>n </code>是数组<code> nums</code> 的长度。由于有序集合的大小至多为 <code>3</code>，插入和删除的时间复杂度可以视作是 <code>O(1) </code>的，因此时间复杂度为 <code>O(n)</code>。</li>
+<li>空间复杂度：<code>O(1)</code>。</li>
+</ul>
+<p class="note note-info">
+    <b>官方题解三(一次遍历)：我们可以遍历数组，并用三个变量 a、b 和 c 来维护数组中的最大值、次大值和第三大值，以模拟方法二中的插入和删除操作。为方便编程实现，我们将其均初始化为小于数组最小值的元素，视作「无穷小」，比如 -2<sup>63</sup>等。</b><br>
+</p>
+
+<p>遍历数组，对于数组中的元素 <code>num</code>：</p>
+<ul>
+<li>若 <code>num &gt; a</code>，我们将 <code>c </code>替换为 <code>b</code>，<code>b</code> 替换为 <code>a</code>，<code>a</code> 替换为 <code>num</code>，这模拟了将 <code>num</code> 插入有序集合，并删除有序集合中的最小值的过程；</li>
+<li>若 <code>a &gt; num &gt; b</code>，类似地，我们将 <code>c </code>替换为 <code>b</code>，<code>b</code> 替换为 <code>num</code>，<code>a </code>保持不变；</li>
+<li>若<code> b &gt; num &gt; c</code>，类似地，我们将 <code>c </code>替换为 <code>num</code>，<code>a </code>和<code>b </code>保持不变；</li>
+<li>其余情况不做处理。</li>
+</ul>
+<p>遍历结束后，若 <code>c </code>仍然为 2^63^，则说明数组中不存在三个或三个以上的不同元素，即第三大的数不存在，返回 <code>a</code>，否则返回 <code>c</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">long</span> a = Long.MIN_VALUE, b = Long.MIN_VALUE, c = Long.MIN_VALUE;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">long</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (num &gt; a) &#123;<br>                c = b;<br>                b = a;<br>                a = num;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a &gt; num &amp;&amp; num &gt; b) &#123;<br>                c = b;<br>                b = num;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b &gt; num &amp;&amp; num &gt; c) &#123;<br>                c = num;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> c == Long.MIN_VALUE ? (<span class="hljs-keyword">int</span>) a : (<span class="hljs-keyword">int</span>) c;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>另一种不依赖元素范围的做法是，将 <code>a</code>、<code>b</code> 和 <code>c</code> 初始化为空指针或空对象，视作「无穷小」，并在比较大小前先判断是否为空指针或空对象。遍历结束后，若 <code>c</code> 为空，则说明第三大的数不存在，返回 <code>a</code>，否则返回 <code>c</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">thirdMax</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Integer a = <span class="hljs-keyword">null</span>, b = <span class="hljs-keyword">null</span>, c = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (a == <span class="hljs-keyword">null</span> || num &gt; a) &#123;<br>                c = b;<br>                b = a;<br>                a = num;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a &gt; num &amp;&amp; (b == <span class="hljs-keyword">null</span> || num &gt; b)) &#123;<br>                c = b;<br>                b = num;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b != <span class="hljs-keyword">null</span> &amp;&amp; b &gt; num &amp;&amp; (c == <span class="hljs-keyword">null</span> || num &gt; c)) &#123;<br>                c = num;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> c == <span class="hljs-keyword">null</span> ? a : c;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>复杂度分析</strong></p>
+<ul>
+<li>时间复杂度：<code>O(n)</code>，其中 <code>n</code> 是数组 <code>nums</code> 的长度。</li>
+<li>空间复杂度：<code>O(1)</code>。</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/LeetCode/">LeetCode</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Algorithm-easy/">Algorithm(easy)</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，为写者学习使用，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/01/Leetcode-1436-%E6%97%85%E8%A1%8C%E7%BB%88%E7%82%B9%E7%AB%99/">
+                        <span class="hidden-mobile">Leetcode(1436)-旅行终点站</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"fgxnU9BgrVG92Ggo9MWwLccC-gzGzoHsz","appKey":"cXSQdoqqqbkoASCmlbqUga4A","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="/" target="_self" rel="nofollow noopener"><span>The Memory Of Snow</span></a> <i class="iconfont icon-love"></i> <a href="/about/" target="_self" rel="nofollow noopener"><span>Lexr</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'GA_MEASUREMENT_ID', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
