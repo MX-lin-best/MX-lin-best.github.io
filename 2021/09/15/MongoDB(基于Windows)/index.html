@@ -232,7 +232,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      149 字
+      526 字
     </span>
   
 
@@ -242,7 +242,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      5
        分钟
     </span>
   
@@ -288,7 +288,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年9月15日 下午
+                  本文最后更新于：2021年10月11日 下午
                 
               </p>
             
@@ -298,6 +298,14 @@
 </blockquote>
 <h2 id="下载安装-Windows下"><a href="#下载安装-Windows下" class="headerlink" title="下载安装(Windows下)"></a>下载安装(Windows下)</h2><p><a target="_blank" rel="noopener" href="https://www.mongodb.com/try/download/community">MongoDB官网下载(社区版)</a>，建议选稳定版。</p>
 <p><img src="/img/blogimgs/MongoDB/1.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><h4 id="1-第一种-使用命令行参数"><a href="#1-第一种-使用命令行参数" class="headerlink" title="1.第一种(使用命令行参数)"></a>1.第一种(使用命令行参数)</h4><p>启动<code>MongoDB</code>服务前，先在解压文件下创建一个文件夹(<code>data</code>)，用于存放<code>数据库文件</code>和<code>日志文件</code>,并在<code>data</code>文件下创建<code>db</code>和<code>logs</code>子文件夹，<code>db</code>文件夹用于存放<code>数据库文件</code>,<code>logs</code>文件夹用于存放<code>存储日志文件</code><img src="/img/blogimgs/MongoDB/2.png" srcset="/img/loading.gif" lazyload><img src="/img/blogimgs/MongoDB/3.png" srcset="/img/loading.gif" lazyload>在<code>bin</code>目录下的目录栏键入<code>cmd</code>打开命令行，执行以下命令，若出现<code>MongoDB starting</code>，则说明启动成功，关闭命令行就关闭<code>MongoDB</code>服务<img src="/img/blogimgs/MongoDB/4.png" srcset="/img/loading.gif" lazyload><img src="/img/blogimgs/MongoDB/5.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-第二种-使用配置文件"><a href="#2-第二种-使用配置文件" class="headerlink" title="2.第二种(使用配置文件)"></a>2.第二种(使用配置文件)</h4><p>启动<code>MongoDB</code>服务前，先在解压文件下创建一个文件夹(<code>conf</code>)，用于存放<code>MongoDB数据库的配置文件</code>，并在该文件夹下创建一个文件<code>mongod.conf</code>，用于指定数据库文件的存储路径及<code>MongoDB</code>的相关配置信息，其中的配置信息如下<img src="/img/blogimgs/MongoDB/6.png" srcset="/img/loading.gif" lazyload>在<code>bin</code>目录下键入<code>cmd</code>打开命令行，执行以下命令，启动<code>MongoDB</code>服务，在日志文件中查看，若出现<code>MongoDB starting</code>，则说明启动成功，关闭命令行就关闭<code>MongoDB</code>服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mongod -f ..\conf\mongod.conf  或<br>mongod --config ..\conf\mongod.conf<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">报错以及解决方案：<br>
+原因:我报的是"Unrecognized option: systemLog.destinationf try 'bin\mongod.exe --help' for more information"说明打不开自己配置的文件。<br>
+查网上说的是：mongodb 3.0之后配置文件采用YAML格式，这种格式非常简单，使用:表示，开头使用“空格”作为缩进。不能用table键，而且"\"要换为"/"
+</p>
 
             </div>
             <hr>
