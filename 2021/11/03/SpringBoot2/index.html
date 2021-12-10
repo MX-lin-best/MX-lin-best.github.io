@@ -276,7 +276,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月12日 晚上
+                  本文最后更新于：2021年11月26日 上午
                 
               </p>
             
@@ -310,7 +310,7 @@
 <p><img src="/img/blogimgs/Spring/SpringBoot2/6.png" srcset="/img/loading.gif" lazyload></p>
 <p><code>application.properties</code>或者<code>application.yml(yaml)</code>:核心配置文件(唯一)</p>
 <blockquote>
-<p>同时存在，优先选择application.properties文件，在考虑.yml文件</p>
+<p>同时存在，优先选择application.properties文件，再考虑.yml文件</p>
 </blockquote>
 <h3 id="环境-yml文件也类似"><a href="#环境-yml文件也类似" class="headerlink" title="环境(yml文件也类似)"></a>环境(yml文件也类似)</h3><h5 id="开发环境-application-dev-properties"><a href="#开发环境-application-dev-properties" class="headerlink" title="开发环境:application-dev.properties"></a>开发环境:<code>application-dev.properties</code></h5><h5 id="测试环境-application-test-properties"><a href="#测试环境-application-test-properties" class="headerlink" title="测试环境:application-test.properties"></a>测试环境:<code>application-test.properties</code></h5><h5 id="准生产环境-application-ready-properties"><a href="#准生产环境-application-ready-properties" class="headerlink" title="准生产环境:application-ready.properties"></a>准生产环境:<code>application-ready.properties</code></h5><h5 id="生产环境-application-product-properties"><a href="#生产环境-application-product-properties" class="headerlink" title="生产环境:application-product.properties"></a>生产环境:<code>application-product.properties</code></h5><p>在主核心文件<code>application.properties</code>中切换环境</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-comment">#SpringBoot主核心配置文件</span><br><span class="hljs-comment">#激活使用的配置文件</span><br><span class="hljs-meta">spring.profiles.active</span>=<span class="hljs-string">dev</span><br></code></pre></td></tr></table></figure>
@@ -398,6 +398,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/11/08/Redis/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Redis</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

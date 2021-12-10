@@ -220,7 +220,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      1.8k 字
     </span>
   
 
@@ -230,7 +230,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      21
        分钟
     </span>
   
@@ -276,12 +276,202 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月15日 下午
+                  本文最后更新于：2021年11月26日 上午
                 
               </p>
             
             <div class="markdown-body">
-              
+              <h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/linux/27050">Linux_百度百科</a></p>
+<blockquote>
+<p>Linux，全称GNU/Linux，是一种免费使用和自由传播的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%B1%BBUNIX/9032872">类UNIX</a>操作系统，其内核由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429">林纳斯·本纳第克特·托瓦兹</a>于1991年10月5日首次发布，它主要受到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Minix/7106045">Minix</a>和Unix思想的启发，是一个基于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/POSIX">POSIX</a>的多用户、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E4%BB%BB%E5%8A%A1/1011764">多任务</a>、支持<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1190404">多线程</a>和多<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CPU">CPU</a>的操作系统。它能运行主要的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Unix/219943">Unix</a>工具软件、应用程序和网络协议。它支持<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/32%E4%BD%8D/5812218">32位</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/64%E4%BD%8D">64位</a>硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。Linux有上百种不同的发行版，如基于社区开发的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/debian/748667">debian</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/archlinux/10857530">archlinux</a>，和基于商业开发的[Red Hat Enterprise Linux](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Red">https://baike.baidu.com/item/Red</a> Hat Enterprise Linux/10770503)、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SUSE/60409">SUSE</a>、[Oracle Linux](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle">https://baike.baidu.com/item/Oracle</a> Linux/6876458)等。</p>
+<p>2021年6月，根据Linux 5.14刚刚进入合并队列的char-misc-next提交，Linux 5.14正式移除了RAW驱动。</p>
+</blockquote>
+<h3 id="vi和vim"><a href="#vi和vim" class="headerlink" title="vi和vim"></a>vi和vim</h3><blockquote>
+<p>vi是linux内置的文本编辑器，vim是vi的增强版</p>
+</blockquote>
+<p><img src="/img/blogimgs/Linux/1.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h3><p><img src="/img/blogimgs/Linux/2.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="文档命令"><a href="#文档命令" class="headerlink" title="文档命令"></a>文档命令</h3><blockquote>
+<ol>
+<li><p>(一般模式)：复制当前行：<code>yy + (复制行数)</code></p>
+</li>
+<li><p>(一般模式)：粘贴：<code>p</code></p>
+</li>
+<li><p>(一般模式)：删除当前行：<code>dd + (删除行数)</code></p>
+</li>
+<li><p>(命令行模式，<code>/</code>，<code>:</code>)：查找单词：<code>/ + 要查的单词</code>，输入<code>n</code>继续查找下一个</p>
+</li>
+<li><p>(命令行模式，<code>/</code>，<code>:</code>)：设置行号：<code>:set nu</code>，<code>:set nonu</code></p>
+</li>
+<li><p>(一般模式)：定位文档的最末行<code>G</code>，最首行<code>gg</code></p>
+</li>
+<li><p>(一般模式)：撤销：<code>u</code></p>
+</li>
+<li><p>(一般模式)：定位文档的某行：<code>行数 + shift + g</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="关机-amp-重启命令"><a href="#关机-amp-重启命令" class="headerlink" title="关机&amp;重启命令"></a>关机&amp;重启命令</h3><blockquote>
+<ol>
+<li><p>关机：<code>shutdown  -h  now</code>，<code>shutdown  -h  1</code>，<code>halt</code>，<code>init 0</code></p>
+</li>
+<li><p>重启：<code>shutdown  -r  now</code>，<code>reboot</code></p>
+</li>
+<li><p>将内存的数据同步到磁盘中：<code>sync</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="登陆注销命令"><a href="#登陆注销命令" class="headerlink" title="登陆注销命令"></a>登陆注销命令</h3><blockquote>
+<ol>
+<li><p>注销切换用户：<code>logout（root——&gt;user）</code></p>
+</li>
+<li><p>登陆：<code>su - 用户名</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="用户管理命令（Root）"><a href="#用户管理命令（Root）" class="headerlink" title="用户管理命令（Root）"></a>用户管理命令（Root）</h3><blockquote>
+<ol>
+<li><p>显示当前用户在哪个目录下：<code>pwd</code></p>
+</li>
+<li><p>添加新用户：<code>useradd + 用户名 </code>，创建的用户一般在<code>/home/</code>下</p>
+</li>
+<li><p>指定目录添加新用户：<code>useradd  -d 指定目录  新用户名</code></p>
+</li>
+<li><p>设置用户密码：<code>passwd  用户名</code></p>
+</li>
+<li><p>删除用户：<code>userdel 用户名</code>(删除用户保留家目录)；<code>userdel -r 用户名</code>(删除用户及其主目录)</p>
+</li>
+<li><p>查看用户信息：<code>id 用户名</code></p>
+</li>
+<li><p>查看当前用户：<code>whoami 或 who am i</code></p>
+</li>
+<li><p>新增组：<code>groupadd  组名</code></p>
+</li>
+<li><p>删除组：<code>groupdel  组名</code></p>
+</li>
+<li><p>新增用户直接加上组：<code>useradd -g  用户组  用户名</code></p>
+</li>
+<li><p>修改用户的组：<code>usermod -g  用户组  用户名 </code>   </p>
+</li>
+<li><p>用户相关配置文件：<code>/etc/passwd</code></p>
+</li>
+<li><p>口令配置文件：<code>/etc/shadow</code></p>
+</li>
+<li><p>组配置文件：<code>/etc/group</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="指定运行级别命令"><a href="#指定运行级别命令" class="headerlink" title="指定运行级别命令"></a>指定运行级别命令</h3><blockquote>
+<p><code>init</code>:</p>
+<p>0：关机</p>
+<p>1：单用户(找回丢失密码)</p>
+<p>2：多用户状态没有网络服务</p>
+<p><code>3</code>：多用户状态有网络服务(*)</p>
+<p>4.系统未使用保留给用户</p>
+<p><code>5</code>.图形界面(*)</p>
+<p>6.系统重启</p>
+<p>获取运行级别：<code>systemctl get-default</code></p>
+<p>指定运行级别：<code>systemctl set-default xxx.target</code></p>
+</blockquote>
+<h3 id="帮助指令"><a href="#帮助指令" class="headerlink" title="帮助指令"></a>帮助指令</h3><blockquote>
+<ol>
+<li>获取帮助信息：<code>man [命令或配置文件(命令可以组合使用)]</code></li>
+<li>help指令：<code>help [命令]</code></li>
+</ol>
+</blockquote>
+<h3 id="文档目录指令（常用）"><a href="#文档目录指令（常用）" class="headerlink" title="文档目录指令（常用）"></a>文档目录指令（常用）</h3><blockquote>
+<ol>
+<li><p>显示当前路径的绝对路径：<code>pwd</code></p>
+</li>
+<li><p>列出目录清单：<code>ls</code>，<code>ll(ls -l)</code>，<code>ls -al</code>，<code>ls -lh</code></p>
+</li>
+<li><p>切换目录：<code>cd </code>，<code>cd ~</code>，<code>cd ..</code></p>
+</li>
+<li><p>创建目录：<code>mkdir [目录位置]</code>，<code>mkdir -p [目录位置](创建多级目录)</code></p>
+</li>
+<li><p>删除目录：<code>rmdir [目录位置](删除空目录)</code>，<code>rm-rf [目录位置]</code></p>
+</li>
+<li><p>创建空文件：<code>touch [文件名称]</code></p>
+</li>
+<li><p>拷贝：<code>cp [选项(-r:递归复制目录] 文件路径 文件拷贝到的路径</code>;强制覆盖：<code>\cp</code></p>
+</li>
+<li><p>删除：<code>rm [选项(-r，-f:强制删除不提示] 要删除的文件或目录</code></p>
+</li>
+<li><p>移动文件或重命名：<code>mv 旧文件名 新文件名 (在同一个目录下)</code>；<code>mv 旧文件路径 新文件位置(可重命名)</code> </p>
+</li>
+<li><p>查看文件内容(只读)：<code>cat [选项(-n:显示行号)] 要查看的文件</code>后面加上<code>| 命令</code>是两个命令的结合(管道命令)</p>
+</li>
+<li><p>交互指令：</p>
+<p>1.<code>more</code>：<code>enter    :    查看下一行</code>，<code>空格    :    翻页</code>，<code>q    :  退出</code>，<code>Ctrl + F    :    向下滚动一屏</code>，<code>Ctrl + B    :    向上滚动一屏</code>，<code>=    :    输出当前行的行号</code>，<code>:f  :    输出文件名和当前行的行号</code></p>
+<p>2.<code>less</code>：<code>less 要查看的文件</code>(分屏查看文件内容)，<code>空格    :    向下翻动</code>，<code>q    :    退出</code>，<code>[pagedown]    :    向下翻动一页</code>，<code>[pageup]    :    向上翻动一页</code>，<code>/(或?)字符串    :    向下或向上查找[字符串] n : 向下查找，N : 向上查找</code></p>
+</li>
+<li><p>输出环境到控制台：<code>echo [选项] [输出内容($PATH，&quot;内容&quot;...)]</code></p>
+</li>
+<li><p>显示文件开头部分(默认显示10行)：<code>head [选项] 文件</code></p>
+</li>
+<li><p>显示文件尾部(和<code>head</code>相反)：<code>tail [选项(-n 数量(显示行数),-f(实施追踪文档更新))] 文件</code></p>
+</li>
+<li><p>输出重定向&amp;追加：<code>&gt;(输出重定向) 和 &gt;&gt;(追加)</code>:</p>
+<p>例：<code>ls -l &gt; 文件</code>：列表内容写入到文件中(覆盖)，文件不存在则自动创建</p>
+<p><code>ls -al &gt;&gt; 文件</code>：列表内容追加到文件的末尾中</p>
+<p><code>cat 文件1 &gt; 文件2</code>：将文件1的内容覆盖到文件2</p>
+</li>
+<li><p>软 链接(类似于快捷方式)：<code>ln -s [原文件或目录] [软连接名]</code></p>
+</li>
+<li><p>查看以及执行历史指令：<code>history [(数字:最近使用的哪几个指令)]</code>，<code>![数字] : 执行第几个指令</code></p>
+</li>
+<li><p>清屏：<code>clear</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="时间日期命令"><a href="#时间日期命令" class="headerlink" title="时间日期命令"></a>时间日期命令</h3><blockquote>
+<ol>
+<li>显示当前日期：<code>date  + [%Y，%m，%d]</code>，<code>date  + [&quot;%Y-%m-%d %H:%M:%S&quot;]</code></li>
+<li>设置日期：<code>date -s &quot;字符串时间&quot;</code></li>
+<li>日历信息：<code>cal </code>，<code>cal 年份</code></li>
+</ol>
+</blockquote>
+<h3 id="搜索查找命令"><a href="#搜索查找命令" class="headerlink" title="搜索查找命令"></a>搜索查找命令</h3><blockquote>
+<ol>
+<li><p>向下递归查找遍历各个子目录：<code>find [搜索范围] [选项(-name(指定文件名)，-user(指定用户名)，-size(文件大小(+n,-n,n)))]</code></p>
+</li>
+<li><p>快速定为位文件路径(基于数据库进行查询，第一次必须用<code>updatedb</code>创建数据库)：<code>locate [搜索文件]</code></p>
+</li>
+<li><p>查看命令所在目录：<code>which 指令</code></p>
+</li>
+<li><p>过滤查找(一般和管道符号<code>|</code>一起用)：<code>grep [选项(-n(匹配行及行号)，-i(忽略字母大小写)，-v(只选择不匹配的行))] 查找内容 源文件</code></p>
+<p>例：<code>cat a.txt | grep &quot;hello&quot; ...</code></p>
+<p><code>grep -n &quot;hello&quot; /home/hello.txt</code></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="压缩和解压指令"><a href="#压缩和解压指令" class="headerlink" title="压缩和解压指令"></a>压缩和解压指令</h3><blockquote>
+<ol>
+<li><p>压缩文件：</p>
+<p><code>gzip 文件</code>（压缩为<code>*.gz</code>文件）</p>
+<p><code>zip [选项(-r(递归压缩，及压缩目录))] xxx.zip(要存的位置) 要压缩的内容</code> 。包含父目录</p>
+</li>
+<li><p>解压：</p>
+<p><code>gunzip 文件.gz</code>（解压缩文件命令）</p>
+<p><code>unzip [选项(-d(存放的位置))] xxx.zip(zip位置)</code></p>
+</li>
+<li><p>打包指令：<code>tar [选项(-c:产生.tar打包文件，-v:显示详细信息，-f：指定压缩后的文件名，-z:打包同时压缩，-x:解包.tar文件)]  xxx.tar.gz  打包的内容(多个文件要 空格)</code>，打包后的文件是<code>.tar.gz</code>文件。</p>
+<p>压缩：<code>tar -zcvf xxx.tar.gz /xxx/xxx</code> ，解压：<code>tar -zxvf xxx.tar.gz -C(压缩的目录要加这个参数) /xxx/xxx</code></p>
+</li>
+</ol>
+</blockquote>
+<h2 id="面试题：如何找回root密码"><a href="#面试题：如何找回root密码" class="headerlink" title="面试题：如何找回root密码"></a>面试题：如何找回root密码</h2><blockquote>
+<ol>
+<li>重启，输入<code>e</code>进入内核，</li>
+<li>找到 <code>linux16</code>开头内容所在行数，在最后输入：<code>init=/bin/bash</code></li>
+<li><code>Ctrl + x</code>进入单用户模式</li>
+<li>光标闪烁位置输入：<code>mount -o remount,rw /</code></li>
+<li>在新的一行中输入<code>passwd</code>回车，然后输入密码，再确认 </li>
+<li>接着，在鼠标闪烁的位置输入：<code>touch /.autorelabel </code></li>
+<li>继续在光标闪烁的位置，输入<code>exec /sbin/init</code>，等待，完成后系统会自动重启，新密码生效</li>
+</ol>
+</blockquote>
+
             </div>
             <hr>
             <div>
@@ -310,6 +500,29 @@
                   
                 </p>
               
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/12/10/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84hexo%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">重装系统后的hexo恢复部署</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/08/Redis/">
+                        <span class="hidden-mobile">Redis</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 

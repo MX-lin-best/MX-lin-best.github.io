@@ -220,7 +220,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      342 字
+      2.5k 字
     </span>
   
 
@@ -230,7 +230,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      32
        分钟
     </span>
   
@@ -276,12 +276,12 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月15日 下午
+                  本文最后更新于：2021年11月30日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Redis/6549233">Redis_百度百科</a></p>
+              <h1 id="Redis基础（windows）"><a href="#Redis基础（windows）" class="headerlink" title="Redis基础（windows）"></a>Redis基础（windows）</h1><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Redis/6549233">Redis_百度百科</a></p>
 <blockquote>
 <p>官网：Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#strings">字符串（strings）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#hashes">散列（hashes）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#lists">列表（lists）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#sets">集合（sets）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#sorted-sets">有序集合（sorted sets）</a> 与范围查询， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#bitmaps">bitmaps</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#hyperloglogs">hyperloglogs</a> 和 <a target="_blank" rel="noopener" href="http://www.redis.cn/commands/geoadd.html">地理空间（geospatial）</a> 索引半径查询。 Redis 内置了 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/replication.html">复制（replication）</a>，<a target="_blank" rel="noopener" href="http://www.redis.cn/commands/eval.html">LUA脚本（Lua scripting）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/lru-cache.html">LRU驱动事件（LRU eviction）</a>，<a target="_blank" rel="noopener" href="http://www.redis.cn/topics/transactions.html">事务（transactions）</a> 和不同级别的 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/persistence.html">磁盘持久化（persistence）</a>， 并通过 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/sentinel.html">Redis哨兵（Sentinel）</a>和自动 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/cluster-tutorial.html">分区（Cluster）</a>提供高可用性（high availability）。</p>
 </blockquote>
@@ -291,7 +291,14 @@
 
 <h4 id="查redis帮助文档"><a href="#查redis帮助文档" class="headerlink" title="查redis帮助文档"></a>查redis帮助文档</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">help</span> <br></code></pre></td></tr></table></figure>
 
-<h4 id="string类型的操作"><a href="#string类型的操作" class="headerlink" title="string类型的操作"></a>string类型的操作</h4><blockquote>
+<h3 id="Key通用指令"><a href="#Key通用指令" class="headerlink" title="Key通用指令"></a>Key通用指令</h3><blockquote>
+<p>关键字：<code>del</code>，<code>exists</code>，<code>type</code>，<code>keys</code>，<code>rename</code>，<code>renamenx</code>,<code>sort</code>，<code>help @generic</code></p>
+</blockquote>
+<p><img src="/img/blogimgs/Redis/10.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="时效性"><a href="#时效性" class="headerlink" title="时效性"></a>时效性</h5><blockquote>
+<p>关键字：<code>expire</code>，<code>pexpire</code>，<code>expireat(时间戳)</code>，<code>pexpireat</code>，<code>ttl</code>，<code>pttl</code>，<code>persist</code></p>
+</blockquote>
+<h3 id="string类型的操作"><a href="#string类型的操作" class="headerlink" title="string类型的操作"></a>string类型的操作</h3><blockquote>
 <p>关键字：<code>set</code>，<code>get</code>，<code>mset</code>，<code>mget</code>，<code>del</code>，<code>strlen</code>，<code>append</code></p>
 </blockquote>
 <h5 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h5><blockquote>
@@ -303,10 +310,12 @@
 </blockquote>
 <h5 id="存的两种写法"><a href="#存的两种写法" class="headerlink" title="存的两种写法"></a>存的两种写法</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> user:id:001:fans 789<br></code></pre></td></tr></table></figure>
 
+
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> user:id:001 &#123;id:001,fans:789,blogs:23&#125;<br></code></pre></td></tr></table></figure>
 
 <p><img src="/img/blogimgs/Redis/2.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="Hash类型的操作"><a href="#Hash类型的操作" class="headerlink" title="Hash类型的操作"></a>Hash类型的操作</h4><p><img src="/img/blogimgs/Redis/3.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Hash类型的操作"><a href="#Hash类型的操作" class="headerlink" title="Hash类型的操作"></a>Hash类型的操作</h3><p><img src="/img/blogimgs/Redis/3.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>关键字：<code>hset</code>，<code>hget</code>，<code>hgetall</code>，<code>hdel</code>，<code>hmset</code>，<code>hmget</code>，<code>hlen</code>，<code>hexists</code></p>
 </blockquote>
@@ -314,7 +323,7 @@
 <p>关键字：<code>hkeys</code>，<code>hvals</code>，<code>hincrby</code>，<code>hincrbyfloat</code>，<code>hsetnx(去重)</code></p>
 </blockquote>
 <h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p><img src="/img/blogimgs/Redis/4.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="List类型的操作"><a href="#List类型的操作" class="headerlink" title="List类型的操作"></a>List类型的操作</h4><p><img src="/img/blogimgs/Redis/5.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="List类型的操作"><a href="#List类型的操作" class="headerlink" title="List类型的操作"></a>List类型的操作</h3><p><img src="/img/blogimgs/Redis/5.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
 <p>关键字：<code>lpush</code>，<code>rpush</code>，<code>lrange</code>，<code>lindex</code>，<code>llen</code>，<code>lpop</code>，<code>rpop</code></p>
 </blockquote>
@@ -325,8 +334,208 @@
 <p>关键字：<code>lrem</code>(移除指定数据)</p>
 </blockquote>
 <h5 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h5><p><img src="/img/blogimgs/Redis/6.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="Set类型的操作"><a href="#Set类型的操作" class="headerlink" title="Set类型的操作"></a>Set类型的操作</h4><blockquote>
+<h4 id="Set类型的操作"><a href="#Set类型的操作" class="headerlink" title="Set类型的操作"></a>Set类型的操作</h4><p><img src="/img/blogimgs/Redis/7.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>关键字：<code>sadd</code>，<code>smembers</code>，<code>srem</code>，<code>scard</code>，<code>sismember</code></p>
 </blockquote>
+<h5 id="扩展操作-1"><a href="#扩展操作-1" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
+<p>关键字：<code>srandmember</code>，<code>spop</code></p>
+</blockquote>
+<blockquote>
+<p>关键字：<code>sinter</code>(交集)，<code>sunion</code>(并集)，<code>sdiff</code>(差集)，<code>sinterstore</code>，<code>sunionstore</code>，<code>sdiffstore</code>，<code>smove</code></p>
+</blockquote>
+<h3 id="sorted-set类型的操作"><a href="#sorted-set类型的操作" class="headerlink" title="sorted_set类型的操作"></a>sorted_set类型的操作</h3><p><img src="/img/blogimgs/Redis/8.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>关键字：<code>zadd</code>，<code>zrange</code>，<code>zrevrange</code>，<code>zrem</code>，<code>zcard</code>，<code>zcount</code>，<code>zinterstore</code>，<code>zunionstore</code>，<code>zrangebyscore</code>，<code>zrevrangebyscore</code>，<code>zremrangebyrank</code>，<code>zremrangebyscore</code></p>
+</blockquote>
+<h5 id="扩展操作-2"><a href="#扩展操作-2" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
+<p>关键字：<code>zrank</code>，<code>zrevrank</code>，<code>zscore</code>，<code>zincrby</code></p>
+</blockquote>
+<h5 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h5><p><img src="/img/blogimgs/Redis/9.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="DB数据库通用操作"><a href="#DB数据库通用操作" class="headerlink" title="DB数据库通用操作"></a>DB数据库通用操作</h3><blockquote>
+<p>关键字：<code>select</code>，<code>quit</code>，<code>ping</code>，<code>echo(控制台输出)</code></p>
+</blockquote>
+<blockquote>
+<p>关键字：<code>move(键重复会移动失败)</code>，<code>dbsize(查看键数量)</code>；数据清除：<code>flushdb</code>，<code>flushall</code>(慎用)</p>
+</blockquote>
+<h3 id="Jedis（Java操作redis的工具）"><a href="#Jedis（Java操作redis的工具）" class="headerlink" title="Jedis（Java操作redis的工具）"></a>Jedis（Java操作redis的工具）</h3><h4 id="maven构建"><a href="#maven构建" class="headerlink" title="maven构建"></a>maven构建</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>redis.clients<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jedis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"> <span class="hljs-comment">//1.连接redis(前提是开启redis服务)</span><br>        Jedis jedis = <span class="hljs-keyword">new</span> Jedis(<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-number">6379</span>);<br> <span class="hljs-comment">//2.操作redis</span><br>        jedis.set(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;lexr&quot;</span>);<br>	    String name = jedis.get(<span class="hljs-string">&quot;name&quot;</span>);<br>        System.out.println(name);<br><span class="hljs-comment">//3.关闭redis</span><br>        jedis.close();<br></code></pre></td></tr></table></figure>
+
+<h4 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JedisService</span> </span>&#123;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">service</span><span class="hljs-params">(String user,Integer count)</span> </span>&#123;<br><br>        Jedis jedis = <span class="hljs-keyword">new</span> Jedis(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">6379</span>);<br><br>        String value = jedis.get(<span class="hljs-string">&quot;userId:&quot;</span> + user);<br><br><br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">if</span> (value == <span class="hljs-keyword">null</span>) &#123;<br>                <span class="hljs-comment">//不存在则创建该值</span><br>                jedis.setex(<span class="hljs-string">&quot;userId:&quot;</span> + user, <span class="hljs-number">10</span>, Long.MAX_VALUE - count + <span class="hljs-string">&quot;&quot;</span>);<br><br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//存在则自增</span><br>                Long val = jedis.incr(<span class="hljs-string">&quot;userId:&quot;</span> + user);<br>                business(user,count+(val-Long.MAX_VALUE));<br>            &#125;<br><br>        &#125; <span class="hljs-keyword">catch</span> (Exception exception) &#123;<br>            System.out.println(<span class="hljs-string">&quot;提醒用户升级会员！&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            jedis.close();<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">business</span><span class="hljs-params">(String user,Long val)</span> </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;用户ID:&quot;</span> + user + <span class="hljs-string">&quot;,执行业务操作:&quot;</span> + val);<br>    &#125;<br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> Integer count;<br>    <span class="hljs-keyword">private</span> String user;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyThread</span><span class="hljs-params">(String user,Integer count)</span></span>&#123;<br>            <span class="hljs-keyword">this</span>.user=user;<br>            <span class="hljs-keyword">this</span>.count=count;<br>    &#125;<br><br>    JedisService jedisService = <span class="hljs-keyword">new</span> JedisService();<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>            jedisService.service(user,count);<br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">300l</span>);<br>            &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                e.printStackTrace();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">main</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-comment">//不同用户的操作</span><br>        MyThread myThread = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;初级用户&quot;</span>,<span class="hljs-number">10</span>);<br>        MyThread myThread1 = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;高级用户&quot;</span>,<span class="hljs-number">30</span>);<br>        myThread.start();<br>        myThread1.start();<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Jedis简易工具类"><a href="#Jedis简易工具类" class="headerlink" title="Jedis简易工具类"></a>Jedis简易工具类</h4><p><img src="/img/blogimgs/Redis/11.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JedisUtils</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisPoolConfig jpc = <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisPool jp = <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String host;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer port ;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer maxTotal;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer maxIdle;<br><br>    <span class="hljs-keyword">static</span> &#123;<br>        ResourceBundle rb = ResourceBundle.getBundle(<span class="hljs-string">&quot;redis&quot;</span>);<br>        host = rb.getString(<span class="hljs-string">&quot;redis.host&quot;</span>);<br>        port = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.port&quot;</span>));<br>        maxTotal = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.maxTotal&quot;</span>));<br>        maxIdle = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.maxIdle&quot;</span>));<br>        jpc = <span class="hljs-keyword">new</span> JedisPoolConfig();<br>        jpc.setMaxTotal(maxTotal);<br>        jpc.setMaxIdle(maxIdle);<br>        jp = <span class="hljs-keyword">new</span> JedisPool(jpc,host,port);<br><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Jedis <span class="hljs-title">getConnection</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> jp.getResource();<br>    &#125;<br><br><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Redis可视化软件（RedisDesktopManager2019-4）"><a href="#Redis可视化软件（RedisDesktopManager2019-4）" class="headerlink" title="Redis可视化软件（RedisDesktopManager2019.4）"></a>Redis可视化软件（RedisDesktopManager2019.4）</h4><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1042770-1-1.html">破解版</a></p>
+<h1 id="Redis高级（Linux）"><a href="#Redis高级（Linux）" class="headerlink" title="Redis高级（Linux）"></a>Redis高级（Linux）</h1><h2 id="Linux下载安装"><a href="#Linux下载安装" class="headerlink" title="Linux下载安装"></a>Linux下载安装</h2><p>环境搭建</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://redis.io/download">Redis官网</a>下载安装包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://download.redis.io/releases/redis-6.2.6.tar.gz<br></code></pre></td></tr></table></figure></li>
+<li><p>解压</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -xvf redis-6.2.6.tar.gz<br></code></pre></td></tr></table></figure></li>
+<li><p>编译安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> redis-6.2.6<br>make install<br></code></pre></td></tr></table></figure></li>
+<li><p>开启<code>Redis</code>服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-server<br></code></pre></td></tr></table></figure></li>
+<li><p>新建会话开启<code>Redis</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-c<br></code></pre></td></tr></table></figure></li>
+<li><p>修改<code>Redis</code>端口，登陆</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server --port 端口号<br><br><br>redis-cli -p 端口号<br></code></pre></td></tr></table></figure></li>
+<li><p>配置文件启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server  配置文件<br></code></pre></td></tr></table></figure></li>
+<li><p>配置文件<code>conf/redis-6379.conf</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">port 6379 <br>daemonize yes<br>logfile <span class="hljs-string">&quot;6379.log&quot;</span><br>dir /redis-6.2.6/data<br></code></pre></td></tr></table></figure></li>
+<li><p>要想启动多个服务，只需要新建配置文件修改<code>port和logfile。</code>将配置文件放在<code>conf目录下</code>即可</p>
+</li>
+</ol>
+<h3 id="redis持久化"><a href="#redis持久化" class="headerlink" title="redis持久化"></a>redis持久化</h3><h5 id="什么是持久化"><a href="#什么是持久化" class="headerlink" title="什么是持久化"></a>什么是持久化</h5><blockquote>
+<p>利用永久性存储介质将数据进行保存，在特定的时间将保存的数据进行恢复的工作机制</p>
+</blockquote>
+<h5 id="持久化过程保存什么"><a href="#持久化过程保存什么" class="headerlink" title="持久化过程保存什么"></a>持久化过程保存什么</h5><p><img src="/img/blogimgs/Redis/12.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="RDB（redis-database）"><a href="#RDB（redis-database）" class="headerlink" title="RDB（redis database）"></a>RDB（redis database）</h4><h5 id="启动方式-谁，时间，干什么事情-——save指令"><a href="#启动方式-谁，时间，干什么事情-——save指令" class="headerlink" title="启动方式(谁，时间，干什么事情)——save指令"></a>启动方式(谁，时间，干什么事情)——save指令</h5><blockquote>
+<p>指令：<code>save</code></p>
+<p>手动执行一次保存操作</p>
+</blockquote>
+<h6 id="save指令相关配置"><a href="#save指令相关配置" class="headerlink" title="save指令相关配置"></a><code>save指令</code>相关配置</h6><p><img src="/img/blogimgs/Redis/13.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="重新配置redis-6379-conf文件"><a href="#重新配置redis-6379-conf文件" class="headerlink" title="重新配置redis-6379.conf文件"></a>重新配置<code>redis-6379.conf</code>文件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs bash">port 6379 <br>daemonize yes<br>logfile <span class="hljs-string">&quot;6379.log&quot;</span><br>dir /redis-6.2.6/data<br>dbfilename dump-6379.rdb<br>rdbcompression yes<br>rdbchecksum yes<br></code></pre></td></tr></table></figure>
+
+<h6 id="save指令工作原理"><a href="#save指令工作原理" class="headerlink" title="save指令工作原理"></a><code>save</code>指令工作原理</h6><blockquote>
+<p>依次执行客户端命令，是单线程任务执行序列</p>
+<p>注意：<code>save</code>指令的执行会阻塞当前<code>Redis</code>服务器，直到当前RDB过程完成为止，有可能会造成长时间阻塞，<code>线上环境不建议使用</code></p>
+</blockquote>
+<h5 id="启动方式——bgsave指令"><a href="#启动方式——bgsave指令" class="headerlink" title="启动方式——bgsave指令"></a>启动方式——<code>bgsave</code>指令</h5><blockquote>
+<p>后台执行</p>
+</blockquote>
+<h6 id="bgsave指令相关配置"><a href="#bgsave指令相关配置" class="headerlink" title="bgsave指令相关配置"></a><code>bgsave</code>指令相关配置</h6><p><img src="/img/blogimgs/Redis/15.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="bgsave指令工作原理"><a href="#bgsave指令工作原理" class="headerlink" title="bgsave指令工作原理"></a><code>bgsave</code>指令工作原理</h6><p><img src="/img/blogimgs/Redis/14.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>注意：<code>bgsave</code>命令是针对<code>save</code>阻塞问题做的优化。<code>Redis</code>内部所有涉及到的RDB操作都采用<code>bgsave</code>的方式，<code>save</code>指令可以放弃使用，所用的<code>rdb</code>文件都是同一个。</p>
+</blockquote>
+<h5 id="启动方式——save配置"><a href="#启动方式——save配置" class="headerlink" title="启动方式——save配置"></a>启动方式——<code>save</code>配置</h5><h6 id="save配置"><a href="#save配置" class="headerlink" title="save配置"></a><code>save</code>配置</h6><blockquote>
+<p><code>save second changes</code></p>
+<p>作用：满足限定时间范围内key的变化数量达到指定数量及进行持久化</p>
+<p>位置：在<code>conf</code>文件中进行配置</p>
+</blockquote>
+<h6 id="save配置原理"><a href="#save配置原理" class="headerlink" title="save配置原理"></a><code>save</code>配置原理</h6><p><img src="/img/blogimgs/Redis/16.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>注意</p>
+<ol>
+<li><code>save</code>配置要更具业务进行设置，频度过高过低都会出现性能问题</li>
+<li><code>save</code>配置中的对于<code>second</code>与<code>changes</code>设置通常具有互补对应关系，尽量不要设置成包含性关系</li>
+<li><code>save</code>配置启动后执行的是<code>bgsave</code>操作</li>
+</ol>
+</blockquote>
+<h5 id="三种方式对比"><a href="#三种方式对比" class="headerlink" title="三种方式对比"></a>三种方式对比</h5><p><code>save</code>配置方式后台走的是<code>bgsave</code>。</p>
+<p><img src="/img/blogimgs/Redis/17.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="rdb特殊启动方式"><a href="#rdb特殊启动方式" class="headerlink" title="rdb特殊启动方式"></a><code>rdb</code>特殊启动方式</h5><ol>
+<li><p>全量复制</p>
+</li>
+<li><p>服务器运行过程重启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">debug reload<br></code></pre></td></tr></table></figure></li>
+<li><p>关闭服务器时指定保存数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">shutdown save<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="RDB优缺点"><a href="#RDB优缺点" class="headerlink" title="RDB优缺点"></a>RDB优缺点</h5><p><img src="/img/blogimgs/Redis/18.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="AOF（Append-only-File）"><a href="#AOF（Append-only-File）" class="headerlink" title="AOF（Append-only File）"></a>AOF（Append-only File）</h4><blockquote>
+<p>AOF持久化：以独立日志的方式记录每次写命令，重启时在执行AOF文件中命令达到恢复数据的目的，与RDB相比可以简单描述为<code>改记录数据为记录数据产生过程</code></p>
+<p>AOF的主要作用是解决数据持久化的实时性，目前是Redis持久化的主流方式</p>
+</blockquote>
+<h5 id="AOF写数据三种策略"><a href="#AOF写数据三种策略" class="headerlink" title="AOF写数据三种策略"></a>AOF写数据三种策略</h5><ul>
+<li><p><code>always</code>(每次)</p>
+<p>每次写入操作均同步到AOF文件中，<code>数据零误差，性能较低</code></p>
+</li>
+<li><p><code>everysec</code>(每秒)</p>
+<p>每秒将缓冲区中的指令同步到AOF文件中，数据<code>准确性较高</code>，<code>性能较高</code>，系统突然宕机的情况下丢失1秒内的数据</p>
+</li>
+<li><p><code>no</code>(系统控制)</p>
+<p>由操作系统控制每次同步到AOF文件的周期，整体过程<code>不可控</code></p>
+</li>
+</ul>
+<h5 id="AOF功能开启-在redis-6379-conf文件中配置"><a href="#AOF功能开启-在redis-6379-conf文件中配置" class="headerlink" title="AOF功能开启(在redis-6379.conf文件中配置)"></a>AOF功能开启(在<code>redis-6379.conf</code>文件中配置)</h5><ul>
+<li><p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">appendonly yes|no<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>是否开启AOF持久化功能，默认为不开启状态</p>
+</li>
+<li><p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">appendfsync always|everysec|no<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>AOF写数据策略</p>
+</li>
+</ul>
+<h5 id="AOF相关配置"><a href="#AOF相关配置" class="headerlink" title="AOF相关配置"></a>AOF相关配置</h5><ul>
+<li><p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">appendfilename filename<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>AOF持久化文件名，默认文件名末<code>apendonly.aof</code>建议配置为<code>apendonly-端口号.aof</code></p>
+</li>
+<li><p>配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dir<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>AOF持久化文件保存路径，与RDB持久化文件保持一致即可</p>
+</li>
+</ul>
+<h5 id="AOF重写"><a href="#AOF重写" class="headerlink" title="AOF重写"></a>AOF重写</h5><blockquote>
+<p>AOF重写机制是压缩文件体积，解决文件越来越大的问题。</p>
+<p>AOF重写：将对同一个数据的若干指令执行结果转化成最终结果数据对应的指令进行记录</p>
+</blockquote>
+<ul>
+<li>作用<ul>
+<li>降低磁盘占用量，提高磁盘利用率</li>
+<li>提高持久化效率，降低持久化写时间，提高IO性能</li>
+<li>降低数据恢复用时，提高数据恢复效率</li>
+</ul>
+</li>
+</ul>
+<h6 id="AOF重写规则"><a href="#AOF重写规则" class="headerlink" title="AOF重写规则"></a>AOF重写规则</h6><p><img src="/img/blogimgs/Redis/19.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>手动重写(Redis指令，类似于<code>bgsave</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bgrewriteaof<br></code></pre></td></tr></table></figure></li>
+<li><p>自动重写触发条件设置(配置文件)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">auto-aof-rewrite-min-size size<br>auto-aof-rewrite-percentage percentage<br></code></pre></td></tr></table></figure></li>
+<li><p>自动重写触发对比参数(运行指令info Persistence获取具体信息)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">aof_current_size<br>aof_base_size<br></code></pre></td></tr></table></figure></li>
+<li><p>自动重写触发条件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">aof_current_size&gt;auto-aof-rewrite-min-size<br>aof_current_size-aof_base_size<br>——————————————————————————————&gt;=auto-aof-rewrite-percenrage<br>		aof_base_size<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h6 id="AOF手动重写——bgrewriteaof指令工作原理"><a href="#AOF手动重写——bgrewriteaof指令工作原理" class="headerlink" title="AOF手动重写——bgrewriteaof指令工作原理"></a>AOF手动重写——<code>bgrewriteaof</code>指令工作原理</h6><p><img src="/img/blogimgs/Redis/20.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="AOF重写流程"><a href="#AOF重写流程" class="headerlink" title="AOF重写流程"></a>AOF重写流程</h6><p><img src="/img/blogimgs/Redis/21.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/blogimgs/Redis/22.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="RDB和AOF区别"><a href="#RDB和AOF区别" class="headerlink" title="RDB和AOF区别"></a>RDB和AOF区别</h4><p><img src="/img/blogimgs/Redis/23.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/blogimgs/Redis/24.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><ol>
+<li>Redis 默认开启RDB持久化方式，在指定的时间间隔内，执行指定次数的写操作，则将内存中的数据写入到磁盘中。</li>
+<li>RDB 持久化适合大规模的数据恢复但它的数据一致性和完整性较差。</li>
+<li>Redis 需要手动开启AOF持久化方式，默认是每秒将写操作日志追加到AOF文件中。</li>
+<li>AOF 的数据完整性比RDB高，但记录内容多了，会影响数据恢复的效率。</li>
+<li>Redis 针对 AOF文件大的问题，提供重写的瘦身机制。</li>
+<li>若只打算用Redis 做缓存，可以关闭持久化。</li>
+<li>若打算使用Redis 的持久化。建议RDB和AOF都开启。其实RDB更适合做数据的备份，留一后手。AOF出问题了，还有RDB。</li>
+</ol>
+<h4 id="持久化应用场景"><a href="#持久化应用场景" class="headerlink" title="持久化应用场景"></a>持久化应用场景</h4><p><img src="/img/blogimgs/Redis/25.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><blockquote>
+<p>一个命令执行的队列，将一系列预定义命令包装成一个整体(一个队列)。当执行时，一次性按照添加顺序依次执行，中间不会被打断或者干扰。</p>
+<p>一个队列中，一次性，顺序性，排他性的执行一系列命令</p>
+</blockquote>
+<p>事务的基本操作</p>
+<ul>
+<li><p>开启事务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">multi<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>设定事务的开启位置，此指令执行后，后续的所有指令均加入到事务中</p>
+</li>
+<li><p>执行事务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exec</span><br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>设定事务的结束位置，同时执行事务。与<code>multi</code>成对出现，成对使用</p>
+</li>
+<li><p>取消事务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">discard<br></code></pre></td></tr></table></figure></li>
+<li><p>作用</p>
+<p>终止当前事务的定义，发生在<code>multi</code>之后，<code>exec</code>之前</p>
+</li>
+</ul>
 
             </div>
             <hr>
@@ -356,6 +565,29 @@
                   
                 </p>
               
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/12/Linux/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linux</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/03/SpringBoot2/">
+                        <span class="hidden-mobile">SpringBoot2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
