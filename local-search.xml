@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Git报错:fatal: remote origin already exists.</title>
+    <link href="/2021/12/16/Git%E6%8A%A5%E9%94%99-fatal-remote-origin-already-exists/"/>
+    <url>/2021/12/16/Git%E6%8A%A5%E9%94%99-fatal-remote-origin-already-exists/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><code>git</code>添加远程仓库出错：<code>fatal: remote origin already exists.</code></p></blockquote><p><img src="/img/blogimgs/Git/1.png"></p><p>解决方案</p><blockquote><p>1.先删除远程的<code>git</code>仓库</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote rm origin<br></code></pre></td></tr></table></figure><blockquote><p>2.重新进行关联</p></blockquote><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git remote add origin git@github.comMX-lin-best/aliyunindexhtml.git<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>issues</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>重装系统后的hexo恢复部署</title>
     <link href="/2021/12/10/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84hexo%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2/"/>
     <url>/2021/12/10/%E9%87%8D%E8%A3%85%E7%B3%BB%E7%BB%9F%E5%90%8E%E7%9A%84hexo%E6%81%A2%E5%A4%8D%E9%83%A8%E7%BD%B2/</url>
