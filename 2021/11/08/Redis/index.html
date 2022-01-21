@@ -220,7 +220,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.5k 字
+      10.2k 字
     </span>
   
 
@@ -230,7 +230,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      32
+      116
        分钟
     </span>
   
@@ -276,7 +276,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月30日 下午
+                  本文最后更新于：2022年1月13日 晚上
                 
               </p>
             
@@ -301,7 +301,7 @@
 <h3 id="string类型的操作"><a href="#string类型的操作" class="headerlink" title="string类型的操作"></a>string类型的操作</h3><blockquote>
 <p>关键字：<code>set</code>，<code>get</code>，<code>mset</code>，<code>mget</code>，<code>del</code>，<code>strlen</code>，<code>append</code></p>
 </blockquote>
-<h5 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h5><blockquote>
+<h5 id="扩展操作"><a href="#扩展操作" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
 <p>关键字：<code>incr</code>，<code>incrby</code>，<code>incrbyfloat</code>，<code>decr</code>，<code>decrby</code>(增or减,其要求为integer类型</p>
 </blockquote>
 <p><img src="/img/blogimgs/Redis/1.png" srcset="/img/loading.gif" lazyload></p>
@@ -319,7 +319,7 @@
 <blockquote>
 <p>关键字：<code>hset</code>，<code>hget</code>，<code>hgetall</code>，<code>hdel</code>，<code>hmset</code>，<code>hmget</code>，<code>hlen</code>，<code>hexists</code></p>
 </blockquote>
-<h5 id="扩展-1"><a href="#扩展-1" class="headerlink" title="扩展"></a>扩展</h5><blockquote>
+<h5 id="扩展操作-1"><a href="#扩展操作-1" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
 <p>关键字：<code>hkeys</code>，<code>hvals</code>，<code>hincrby</code>，<code>hincrbyfloat</code>，<code>hsetnx(去重)</code></p>
 </blockquote>
 <h5 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h5><p><img src="/img/blogimgs/Redis/4.png" srcset="/img/loading.gif" lazyload></p>
@@ -327,7 +327,7 @@
 <blockquote>
 <p>关键字：<code>lpush</code>，<code>rpush</code>，<code>lrange</code>，<code>lindex</code>，<code>llen</code>，<code>lpop</code>，<code>rpop</code></p>
 </blockquote>
-<h5 id="扩展操作"><a href="#扩展操作" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
+<h5 id="扩展操作-2"><a href="#扩展操作-2" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
 <p>关键字：<code>blpop</code>，<code>brpop</code>，(阻塞等待pop)</p>
 </blockquote>
 <blockquote>
@@ -338,7 +338,7 @@
 <blockquote>
 <p>关键字：<code>sadd</code>，<code>smembers</code>，<code>srem</code>，<code>scard</code>，<code>sismember</code></p>
 </blockquote>
-<h5 id="扩展操作-1"><a href="#扩展操作-1" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
+<h5 id="扩展操作-3"><a href="#扩展操作-3" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
 <p>关键字：<code>srandmember</code>，<code>spop</code></p>
 </blockquote>
 <blockquote>
@@ -348,7 +348,7 @@
 <blockquote>
 <p>关键字：<code>zadd</code>，<code>zrange</code>，<code>zrevrange</code>，<code>zrem</code>，<code>zcard</code>，<code>zcount</code>，<code>zinterstore</code>，<code>zunionstore</code>，<code>zrangebyscore</code>，<code>zrevrangebyscore</code>，<code>zremrangebyrank</code>，<code>zremrangebyscore</code></p>
 </blockquote>
-<h5 id="扩展操作-2"><a href="#扩展操作-2" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
+<h5 id="扩展操作-4"><a href="#扩展操作-4" class="headerlink" title="扩展操作"></a>扩展操作</h5><blockquote>
 <p>关键字：<code>zrank</code>，<code>zrevrank</code>，<code>zscore</code>，<code>zincrby</code></p>
 </blockquote>
 <h5 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h5><p><img src="/img/blogimgs/Redis/9.png" srcset="/img/loading.gif" lazyload></p>
@@ -379,7 +379,7 @@
 <li><p>开启<code>Redis</code>服务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-server<br></code></pre></td></tr></table></figure></li>
 <li><p>新建会话开启<code>Redis</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-c<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-cli<br></code></pre></td></tr></table></figure></li>
 <li><p>修改<code>Redis</code>端口，登陆</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server --port 端口号<br><br><br>redis-cli -p 端口号<br></code></pre></td></tr></table></figure></li>
 <li><p>配置文件启动</p>
@@ -518,8 +518,7 @@
 <p>一个命令执行的队列，将一系列预定义命令包装成一个整体(一个队列)。当执行时，一次性按照添加顺序依次执行，中间不会被打断或者干扰。</p>
 <p>一个队列中，一次性，顺序性，排他性的执行一系列命令</p>
 </blockquote>
-<p>事务的基本操作</p>
-<ul>
+<h4 id="事务的基本操作"><a href="#事务的基本操作" class="headerlink" title="事务的基本操作"></a>事务的基本操作</h4><ul>
 <li><p>开启事务</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">multi<br></code></pre></td></tr></table></figure></li>
 <li><p>作用</p>
@@ -534,6 +533,969 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">discard<br></code></pre></td></tr></table></figure></li>
 <li><p>作用</p>
 <p>终止当前事务的定义，发生在<code>multi</code>之后，<code>exec</code>之前</p>
+</li>
+</ul>
+<h4 id="事务基本操作流程"><a href="#事务基本操作流程" class="headerlink" title="事务基本操作流程"></a>事务基本操作流程</h4><p><img src="/img/blogimgs/Redis/26.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>注意事项！</p>
+</blockquote>
+<p>定义事务的过程中，发生错误怎么办？</p>
+<blockquote>
+<p>1.语法错误：整个事务总的所有命令都不会执行</p>
+</blockquote>
+<blockquote>
+<p>2.运行错误：正常的命令会执行，运行错误的命令不会执行</p>
+</blockquote>
+<h4 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h4><blockquote>
+<p>业务分析</p>
+<ul>
+<li>多个客户端有可能同时操作同一组数据，并且该数据一但被操作修改后，将不适用于继续操作</li>
+<li>在操作之前锁定要操作的数据，一旦发生变化，终止当前操作</li>
+</ul>
+</blockquote>
+<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li><p>对<code>key</code>添加监视锁，在执行<code>exec</code>前如果<code>key</code>发生了变化，终止事务执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">watch key1 [key2]<br></code></pre></td></tr></table></figure></li>
+<li><p>取消对所有<code>key</code>的监视</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unwatch<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h4><blockquote>
+<p>业务分析</p>
+<ul>
+<li>使用<code>watch</code>监控一个<code>key</code>有没有改变已经不能解决问题，要监控具体的数据</li>
+<li>虽然<code>redis</code>是单线程的，但是多个客户端对同一数据同时进行操作时，如何避免不被同时修改？</li>
+</ul>
+</blockquote>
+<h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li><p>使用<code>setnx</code>设置一个公共的锁</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">setnx lock-key value<br></code></pre></td></tr></table></figure>
+
+<p>利用<code>setnx</code>命令的返回值特征，有值则返回设置失败，无值则返回设置成功</p>
+<ul>
+<li>成功的，进行下一步操作</li>
+<li>失败的，排队或等待</li>
+</ul>
+<p>操作完毕通过<code>del</code>操作释放锁</p>
+</li>
+</ul>
+<blockquote>
+<p>注意：解决方案是一个设计概念，依赖规范保障，具有风险性</p>
+</blockquote>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><blockquote>
+<p>业务分析：</p>
+<ul>
+<li>由于锁操作有用户控制加锁解锁，必定会存在加锁后未解锁的风险</li>
+<li>需要解锁操作不能仅依赖用户控制，系统级别要给出对应的处理方案</li>
+</ul>
+</blockquote>
+<h5 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
+<li><p>使用<code>expire</code>为锁<code>key</code>添加时间限定，到时不释放，放弃锁</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">expire lock-key second<br><br>pexpire lock-key milliseconds<br></code></pre></td></tr></table></figure>
+
+<p><img src="/img/blogimgs/Redis/27.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+<h3 id="数据删除策略"><a href="#数据删除策略" class="headerlink" title="数据删除策略"></a>数据删除策略</h3><blockquote>
+<p>目标：在内存占用与CPU占用之间寻找一种平衡，顾此失彼都会造成整体redis性能的下降，甚至引发宕机或内存泄漏</p>
+</blockquote>
+<h6 id="时效性数据的存储结构"><a href="#时效性数据的存储结构" class="headerlink" title="时效性数据的存储结构"></a>时效性数据的存储结构</h6><p><img src="/img/blogimgs/Redis/28.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li><p>定时删除</p>
+<ul>
+<li>创建一个定时器，当<code>key</code>设置有过期时间，且过期时间到达时，由定时器任务立即执行对键的删除操作</li>
+<li>优点：节约内存，到时就删除，快速释放掉不必要的内存占用</li>
+<li>缺点：CPU压力很大，无论CPU此时负载量多高，均占用CPU，会影响redis服务器响应时间和指令吞吐量</li>
+<li>总结：用处理器性能换取存储空间（拿时间换空间）</li>
+</ul>
+</li>
+<li><p>惰性删除</p>
+<ul>
+<li>数据到达过期时间，不做处理。等下次访问该数据时<ul>
+<li>如果未过期，返回数据</li>
+<li>发现已过期，删除，返回不存在</li>
+</ul>
+</li>
+<li>优点：节约CPU性能，发现必须删除的时候才删除</li>
+<li>缺点：内存压力很大，出现长期占用内存的数据</li>
+<li>总结：用存储空间换取处理器性能（拿空间换时间）</li>
+</ul>
+</li>
+<li><p>定期删除</p>
+<p><img src="/img/blogimgs/Redis/29.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>周期性轮询redis库中的时效性数据，采用随机抽取的策略，利用过期数据占比的方式控制删除频度</p>
+</li>
+<li><p>特点1：CPU性能占用设置有峰值，检测频度可自定义设置</p>
+</li>
+<li><p>特点2：内存压力不是很大，长期占用内存的冷数据会被持续清理</p>
+</li>
+<li><p>总结：内存压力不是很大，长期占用内存的冷数据会被持续清理</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h5><ol>
+<li>定时删除：①节约内存，无占用。②不分时段占用CPU资源，频度高。③拿时间换空间</li>
+<li>惰性删除：①内存占用严重。②延时执行，CPU利用率高。③拿空间换时间</li>
+<li>定期删除：①内存定期随机清理。②每秒花费固定的CPU资源维护内存。③随机抽查，重点抽查</li>
+</ol>
+<h3 id="数据逐出策略（逐出算法-）"><a href="#数据逐出策略（逐出算法-）" class="headerlink" title="数据逐出策略（逐出算法(*)）"></a>数据逐出策略（逐出算法(*)）</h3><p><img src="/img/blogimgs/Redis/30.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="影响数据逐出的相关配置"><a href="#影响数据逐出的相关配置" class="headerlink" title="影响数据逐出的相关配置"></a>影响数据逐出的相关配置</h4><ul>
+<li><p>最大可用内存</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">maxmemory<br></code></pre></td></tr></table></figure>
+
+<p>占用物理内存的比例，默认值为0，表示不受限制。生产环境中根据需求设定，通常在50%以上</p>
+</li>
+<li><p>每次选取待删除数据的个数</p>
+<p>选取数据时并不会全库扫描，导致严重的性能消耗，降低读写性能。因此采用随机获取数据的方式作为待检测删除数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">maxmemory-samples<br></code></pre></td></tr></table></figure></li>
+<li><p>删除策略</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">maxmemory-policy<br></code></pre></td></tr></table></figure>
+
+<p>达到最大内存后的，对被挑选出来的数据进行删除的策略</p>
+</li>
+<li><p>检测易失数据（可能会过期的数据集<code>server.db[i].expires</code> ）</p>
+<p>① <code>volatile-lru</code>：挑选最近最少使用的数据淘汰 </p>
+<p>② <code>volatile-lfu</code>：挑选最近使用次数最少的数据淘汰 </p>
+<p>③ <code>volatile-ttl</code>：挑选将要过期的数据淘汰 </p>
+<p>④ <code>volatile-random</code>：任意选择数据淘汰</p>
+</li>
+<li><p>检测全库数据（所有数据集<code>server.db[i].dict </code>）</p>
+<p>⑤ <code>allkeys-lru</code>：挑选最近最少使用的数据淘汰</p>
+<p>⑥ <code>allkeys-lfu</code>：挑选最近使用次数最少的数据淘汰 </p>
+<p>⑦ <code>allkeys-random</code>：任意选择数据淘汰</p>
+</li>
+<li><p>放弃数据驱逐</p>
+<p>⑧ <code>no-enviction</code>（驱逐）：禁止驱逐数据（redis4.0中默认策略），会引发错误<code>OOM（Out Of Memory）</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">maxmemory-policy volatile-lru<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="数据逐出策略配置依据"><a href="#数据逐出策略配置依据" class="headerlink" title="数据逐出策略配置依据"></a>数据逐出策略配置依据</h4><ul>
+<li>使用<code>info</code>命令输出监控信息，查询<code>hit</code>和<code>miss</code>的次数；根据业务需求调优<code>Redis</code>配置</li>
+</ul>
+<h3 id="redis-conf配置"><a href="#redis-conf配置" class="headerlink" title="redis.conf配置"></a><code>redis.conf</code>配置</h3><h5 id="服务器基础设置"><a href="#服务器基础设置" class="headerlink" title="服务器基础设置"></a>服务器基础设置</h5><ul>
+<li><p>设置服务器以守护进程的方式运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">daemonize yes|no<br></code></pre></td></tr></table></figure></li>
+<li><p>绑定主机地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">bind</span> 127.0.0.1<br></code></pre></td></tr></table></figure></li>
+<li><p>设置服务器端口号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">port 6379<br></code></pre></td></tr></table></figure></li>
+<li><p>设置数据库数量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">databases 16<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="日志设置"><a href="#日志设置" class="headerlink" title="日志设置"></a>日志设置</h5><ul>
+<li><p>设置服务器以指定日志记录级别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">loglevel debug|verbose|notice|warning<br></code></pre></td></tr></table></figure></li>
+<li><p>日志记录文件名</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">logfile 端口号.<span class="hljs-built_in">log</span><br></code></pre></td></tr></table></figure>
+
+<p>注意：日志级别开发期设置为verbose即可，生产环境中配置为notice，简化日志输出量，降低写日志IO的频度</p>
+</li>
+</ul>
+<h5 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h5><ul>
+<li><p>设置同一时间最大客户端连接数，默认无限制。当客户端连接到达上限，Redis会关闭新的连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">maxclients 0<br></code></pre></td></tr></table></figure></li>
+<li><p>客户端闲置等待最大时长，达到最大值后关闭连接。如需关闭该功能，设置为 0</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">timeout 300<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="多服务器快捷配置"><a href="#多服务器快捷配置" class="headerlink" title="多服务器快捷配置"></a>多服务器快捷配置</h5><ul>
+<li><p>导入并加载指定配置文件信息，用于快速创建redis公共配置较多的redis实例配置文件，便于维护</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">include /path/server-端口号.conf<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="高级数据类型（一般是解决单一问题的存在）"><a href="#高级数据类型（一般是解决单一问题的存在）" class="headerlink" title="高级数据类型（一般是解决单一问题的存在）"></a>高级数据类型（一般是解决单一问题的存在）</h3><h4 id="Bitmaps"><a href="#Bitmaps" class="headerlink" title="Bitmaps"></a>Bitmaps</h4><h5 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
+<li><p>获取指定<code>key</code>对应偏移量上的<code>bit</code>值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">getbit key offset<br></code></pre></td></tr></table></figure></li>
+<li><p>设置指定<code>key</code>对应偏移量上的<code>bit</code>值，<code>value</code>只能是1或0</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">setbit key offset value<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="扩展操作-5"><a href="#扩展操作-5" class="headerlink" title="扩展操作"></a>扩展操作</h5><ul>
+<li><p>对指定<code>key</code>按位进行交、并、非、异或操作，并将结果保存到<code>destKey</code>中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bitop op destKey key1 [key2...]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>and</code>：交</li>
+<li><code>or</code>：并</li>
+<li><code>not</code>：非</li>
+<li><code>xor</code>：异或</li>
+</ul>
+</li>
+<li><p>统计指定<code>key</code>中1的数量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">bitcount key [start end]<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h4><ul>
+<li>原始方案：<code>set</code><ul>
+<li>存储每个用户的<code>id</code>（字符串）</li>
+</ul>
+</li>
+<li>改进方案：<code>Bitmaps</code><ul>
+<li>存储每个用户状态（<code>bit</code>）</li>
+</ul>
+</li>
+<li>全新方案：<code>HyperLogLog</code></li>
+</ul>
+<h5 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
+<li><p>添加数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pfadd key element [element ...]<br></code></pre></td></tr></table></figure></li>
+<li><p>统计数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pfcount key [key ...]<br></code></pre></td></tr></table></figure></li>
+<li><p>合并数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pfmerge destkey sourcekey [sourcekey...]<br></code></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>相关说明 </p>
+<ul>
+<li>用于进行基数统计，不是集合，不保存数据，只记录数量而不是具体数据</li>
+<li> 核心是基数估算算法，最终数值存在一定误差  误差范围：基数估计的结果是一个带有 0.81% 标准错误的近似值 </li>
+<li>耗空间极小，每个hyperloglog key占用了12K的内存用于标记基数 </li>
+<li>pfadd命令不是一次性分配12K内存使用，会随着基数的增加内存逐渐增大  Pfmerge命令合并后占用的存储空间为12K，无论合并之前数据量多少</li>
+</ul>
+</blockquote>
+<h4 id="GEO"><a href="#GEO" class="headerlink" title="GEO"></a>GEO</h4><h5 id="基本操作-2"><a href="#基本操作-2" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
+<li><p>添加坐标点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">geoadd key longitude latitude member [longitude latitude member ...。]<br></code></pre></td></tr></table></figure></li>
+<li><p>获取坐标点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">geopos key member [member ...]<br></code></pre></td></tr></table></figure></li>
+<li><p>计算坐标点距离</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">geodist key member1 member2 [unit]<br></code></pre></td></tr></table></figure></li>
+<li><p>计算坐标求范围内的数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">georadius key longitude latitude radius m|km|ft|mi [withcoord] [withdist] [withhash] [count count]<br></code></pre></td></tr></table></figure></li>
+<li><p>根据点求范围内数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">georadiusbymember key member radius m|km|ft|mi [withcoord] [withdist] [withhash] [count count]<br></code></pre></td></tr></table></figure></li>
+<li><p>获取指定点对应的坐标<code>hash</code>值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">geohash key member [member ...]<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><blockquote>
+<p>互联网”三高”架构</p>
+<ul>
+<li>高并发</li>
+<li>高性能</li>
+<li>高可用</li>
+</ul>
+</blockquote>
+<h4 id="单机redis的风险与问题"><a href="#单机redis的风险与问题" class="headerlink" title="单机redis的风险与问题"></a>单机redis的风险与问题</h4><ul>
+<li>问题1：机器故障<ul>
+<li>现象：硬盘故障，系统崩溃</li>
+<li>本质：数据丢失，很可能对业务造成灾难性打击</li>
+<li>结论：基本上会放弃使用<code>redis</code>.</li>
+</ul>
+</li>
+<li>问题2.容量瓶颈<ul>
+<li>现象：内存不足，从<code>16</code>G升级到<code>64</code>G，从<code>64</code>G升级到<code>128</code>G，无限升级内存</li>
+<li>本质：穷，硬件条件跟不上</li>
+<li>结论：放弃使用<code>redis</code></li>
+</ul>
+</li>
+<li>结论：<ul>
+<li>为了避免单点<code>Redis</code>服务器故障，准备多台服务器，互相连通。将数据复制多个副本保存在不同的服 务器上，连接在一起，并保证数据是同步的。即使有其中一台服务器宕机，其他服务器依然可以继续 提供服务，实现<code>Redis</code>的高可用，同时实现数据冗余备份。</li>
+</ul>
+</li>
+</ul>
+<h4 id="多台服务器链接方案"><a href="#多台服务器链接方案" class="headerlink" title="多台服务器链接方案"></a>多台服务器链接方案</h4><ul>
+<li><p>提供数据方：<code>master</code></p>
+<p>主服务器，主节点，主库，主客户端</p>
+</li>
+<li><p>接受数据方：<code>salve</code></p>
+<p>从服务器，从节点，从库，从客户端</p>
+</li>
+<li><p>需要解决的问题：</p>
+<p>数据同步</p>
+</li>
+<li><p>核心工作：</p>
+<p><code>master</code>的数据复制到<code>slave</code>中</p>
+</li>
+</ul>
+<p><img src="/img/blogimgs/Redis/31.png" srcset="/img/loading.gif" lazyload></p>
+<blockquote>
+<p>主从复制即：将<code>master</code>中的数据即使有效的复制到<code>slave</code>中</p>
+<p>特征：一个<code>master</code>可以拥有多个<code>slave</code>，一个<code>slave</code>只对应一个<code>master</code></p>
+<p>职责：</p>
+<ul>
+<li><code>master</code>：<ul>
+<li>写数据</li>
+<li>执行写数据时，将出现变化的数据自动同步到<code>salve</code></li>
+<li>读数据（可忽略）</li>
+</ul>
+</li>
+<li><code>slave</code><ul>
+<li>读数据</li>
+<li>写数据（禁止）</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="高可用集群"><a href="#高可用集群" class="headerlink" title="高可用集群"></a>高可用集群</h4><p><img src="/img/blogimgs/Redis/32.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="主从复制的作用"><a href="#主从复制的作用" class="headerlink" title="主从复制的作用"></a>主从复制的作用</h4><ul>
+<li>读写分离：<code>master</code>写、<code>slave</code>读，提高服务器的读写负载能力</li>
+<li>负载均衡：基于主从结构，配合读写分离，由<code>slave</code>分担<code>master</code>负载，并根据需求的变化，改变<code>slave</code>的数 量，通过多个从节点分担数据读取负载，大大提高<code>Redis</code>服务器并发量与数据吞吐量</li>
+<li>故障恢复：当<code>master</code>出现问题时，由<code>slave</code>提供服务，实现快速的故障恢复</li>
+<li>数据冗余：实现数据热备份，是持久化之外的一种数据冗余方式</li>
+<li>高可用基石：基于主从复制，构建哨兵模式与集群，实现<code>Redis</code>的高可用方案</li>
+</ul>
+<h4 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h4><h5 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h5><blockquote>
+<ul>
+<li>主从复制过程大体可以分为3个阶段<ul>
+<li>建立连接阶段（即准备阶段）</li>
+<li>数据同步阶段</li>
+<li>命令传播阶段</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><img src="/img/blogimgs/Redis/33.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="阶段一：建立连接阶段"><a href="#阶段一：建立连接阶段" class="headerlink" title="阶段一：建立连接阶段"></a>阶段一：建立连接阶段</h5><ul>
+<li><p>建立<code>slave</code>到<code>master</code>的连接，使<code>master</code>能够识别<code>slave</code>，并保存<code>slave</code>端口号</p>
+<p>步骤1：设置<code>master</code>的地址和端口，保存<code>master</code>信息 </p>
+<p>步骤2：建立<code>socket</code>连接 </p>
+<p>步骤3：发送<code>ping</code>命令（定时器任务） </p>
+<p>步骤4：身份验证 </p>
+<p>步骤5：发送<code>slave</code>端口信息 至此，主从连接成功！</p>
+<blockquote>
+<p>状态： </p>
+<p>​    <code>slave</code>： 保存<code>master</code>的地址与端口 </p>
+<p>​    <code>master</code>： 保存<code>slave</code>的端口 </p>
+<p>​     总体： 之间创建了连接的<code>socket</code></p>
+</blockquote>
+</li>
+<li><p><img src="/img/blogimgs/Redis/34.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+<h6 id="主从连接（slave连接master）"><a href="#主从连接（slave连接master）" class="headerlink" title="主从连接（slave连接master）"></a>主从连接（<code>slave</code>连接<code>master</code>）</h6><ul>
+<li><p>方式一：客户端发送命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>方式二：启动服务器参数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server --slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>方式三：服务器配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p><code>slave</code>系统信息</p>
+<ul>
+<li><code>master_link_down_since_seconds</code></li>
+<li><code>masterhost</code></li>
+<li><code>masterport</code></li>
+</ul>
+</li>
+<li><p><code>master</code>系统信息</p>
+<ul>
+<li><code>slave_listening_port</code>(多个)</li>
+</ul>
+</li>
+</ul>
+<h6 id="主从断开连接"><a href="#主从断开连接" class="headerlink" title="主从断开连接"></a>主从断开连接</h6><ul>
+<li><p>客户端发送指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slaveof no one<br></code></pre></td></tr></table></figure></li>
+<li><p>说明：</p>
+<p><code>slave</code>断开连接后，不会删除已有的数据，只是不再接受<code>master</code>发送的数据</p>
+</li>
+</ul>
+<h6 id="授权访问"><a href="#授权访问" class="headerlink" title="授权访问"></a>授权访问</h6><ul>
+<li><p><code>master</code>客户端发送命令设置密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">requirepass &lt;password&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p><code>master</code>配置文件设置密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">config <span class="hljs-built_in">set</span> requirepass &lt;password&gt;<br>config get requirepass <br></code></pre></td></tr></table></figure></li>
+<li><p> <code>slave</code>客户端发送命令设置密码</p>
+</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">auth &lt;password&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li> <code>slave</code>配置文件设置密码</li>
+</ul>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">masterauth &lt;password&gt;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>slave</code>启动服务器设置密码</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server –a &lt;password&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="阶段二：数据同步阶段工作流程"><a href="#阶段二：数据同步阶段工作流程" class="headerlink" title="阶段二：数据同步阶段工作流程"></a>阶段二：数据同步阶段工作流程</h5><ul>
+<li>在<code>slave</code>初次连接<code>master</code>后，复制<code>master</code>中的所有数据到<code>slave</code></li>
+<li>将<code>slave</code>的数据库状态更新成<code>master</code>当前的数据库状态</li>
+</ul>
+<p>步骤1：请求同步数据 </p>
+<p>步骤2：创建RDB同步数据 </p>
+<p>步骤3：恢复RDB同步数据 </p>
+<p>步骤4：请求部分同步数据 </p>
+<p>步骤5：恢复部分同步数据 至此，数据同步工作完成！</p>
+<blockquote>
+<p>状态： </p>
+<p><code>slave</code>： </p>
+<p>​    具有<code>master</code>端全部数据，包含RDB过程接收的数据</p>
+<p><code>master</code>： </p>
+<p>​    保存<code>slave</code>当前数据同步的位置</p>
+<p>总体： </p>
+<p>​    之间完成了数据克隆</p>
+</blockquote>
+<p><img src="/img/blogimgs/Redis/35.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="数据同步阶段master说明"><a href="#数据同步阶段master说明" class="headerlink" title="数据同步阶段master说明"></a>数据同步阶段<code>master</code>说明</h6><ol>
+<li><p>如果<code>master</code>数据量巨大，数据同步阶段应改避免流量高峰期，避免造成<code>master</code>阻塞，影响业务正常执行</p>
+</li>
+<li><p>复制缓冲区大小设定不合理，会导致数据溢出。如进行全量复制周期太长，进行部分复制时发现数据已 经存在丢失的情况，必须进行第二次全量复制，致使slave陷入死循环状态。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">repl-backlog-size 1mb<br></code></pre></td></tr></table></figure></li>
+<li><p><code>master</code>单机内存占用主机内存的比例不应过大，建议使用<code>50%-70%</code>的内存，留下<code>30%-50%</code>的内存用于执 行<code>bgsave</code>命令和创建复制缓冲区</p>
+</li>
+</ol>
+<p><img src="/img/blogimgs/Redis/36.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="数据同步阶段salve说明"><a href="#数据同步阶段salve说明" class="headerlink" title="数据同步阶段salve说明"></a>数据同步阶段<code>salve</code>说明</h6><ol>
+<li><p>为避免<code>slave</code>进行全量复制、部分复制时服务器响应阻塞或数据不同步，建议关闭此期间的对外服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">slave-serve-stale-data yes|no<br></code></pre></td></tr></table></figure></li>
+<li><p>数据同步阶段，<code>master</code>发送给<code>slave</code>信息可以理解<code>master</code>是<code>slave</code>的一个客户端，主动向<code>slave</code>发送 命令</p>
+</li>
+<li><p>多个<code>slave</code>同时对<code>master</code>请求数据同步，<code>master</code>发送的RDB文件增多，会对带宽造成巨大冲击，如果<code>master</code>带宽不足，因此数据同步需要根据业务需求，适量错峰</p>
+</li>
+<li><p><code>slave</code>过多时，建议调整拓扑结构，由一主多从结构变为树状结构，中间的节点既是<code>master</code>，也是 <code>slave</code>。注意使用树状结构时，由于层级深度，导致深度越高的<code>slave</code>与最顶层<code>master</code>间数据同步延迟较大，数据一致性变差，应谨慎选择</p>
+</li>
+</ol>
+<h5 id="阶段三：命令传播阶段"><a href="#阶段三：命令传播阶段" class="headerlink" title="阶段三：命令传播阶段"></a>阶段三：命令传播阶段</h5><ul>
+<li>  当<code>master</code>数据库状态被修改后，导致主从服务器数据库状态不一致，此时需要让主从数据同步到一致的 状态，同步的动作称为命令传播</li>
+<li><code>master</code>将接收到的数据变更命令发送给<code>slave</code>，<code>slave</code>接收命令后执行命令</li>
+</ul>
+<h6 id="部分复制"><a href="#部分复制" class="headerlink" title="部分复制"></a>部分复制</h6><ul>
+<li>命令传播阶段出现了断网现象<ul>
+<li>网络闪断闪连                忽略</li>
+<li>短时间网络中断             部分复制</li>
+<li>长时间网络中断             全量复制</li>
+</ul>
+</li>
+<li>部分复制的三个核心要素<ul>
+<li>服务器的运行<code>id</code>（run id）</li>
+<li>主服务器的复制积压缓冲区</li>
+<li>主从服务器的复制偏移量</li>
+</ul>
+</li>
+</ul>
+<p>服务器运行ID（runid）</p>
+<ul>
+<li><p>概念：服务器运行<code>ID</code>是每一台服务器每次运行的身份识别码，一台服务器多次运行可以生成多个<code>id</code></p>
+</li>
+<li><p>组成：运行<code>id</code>由40位字符组成，是一个随机的十六进制字符</p>
+<p>例如：<code>fdc9ff13b9bbaab28db42b3d50f852bb5e3fcdce</code></p>
+</li>
+<li><p>作用：运行<code>id</code>被用于在服务器间进行传输，识别身份</p>
+<p>如果想两次操作均对同一台服务器进行，必须每次操作携带对应的运行id，用于对方识别</p>
+</li>
+<li><p>实现方式：运行<code>id</code>在每台服务器启动时自动生成的，<code>master</code>在首次连接<code>slave</code>时，会将自己的运行<code>ID</code>发送给<code>slave</code>，<code>slave</code>保存此<code>ID</code>，通过<code>info Server</code>命令，可以查看节点的<code>runid</code></p>
+</li>
+</ul>
+<p>复制缓冲区</p>
+<ul>
+<li>概念：复制缓冲区，又名复制积压缓冲区，是一个先进先出（<code>FIFO</code>）的队列，用于存储服务器执行过的命 令，每次传播命令，<code>master</code>都会将传播的命令记录下来，并存储在复制缓冲区 <ul>
+<li>复制缓冲区默认数据存储空间大小是1M，由于存储空间大小是固定的，当入队元素的数量大于队列长度时，最先入队的元素会被弹出，而新元素会被放入队列</li>
+</ul>
+</li>
+<li>由来：每台服务器启动时，如果开启有<code>AOF</code>或被连接成为<code>master</code>节点，即创建复制缓冲区</li>
+<li>作用：用于保存<code>master</code>收到的所有指令（仅影响数据变更的指令，例如<code>set</code>，<code>select</code>）</li>
+<li>数据来源：当<code>master</code>接收到主客户端的指令时，除了将指令执行，会将该指令存储到缓冲区中</li>
+</ul>
+<p><img src="/img/blogimgs/Redis/37.png" srcset="/img/loading.gif" lazyload></p>
+<p>复制缓冲区原理</p>
+<p><img src="/img/blogimgs/Redis/38.png" srcset="/img/loading.gif" lazyload></p>
+<p>主从服务器复制偏移量（<code>offset</code>）</p>
+<ul>
+<li>概念：一个数字，描述复制缓冲区中的指令字节位置</li>
+<li>分类：<ul>
+<li> <code>master</code>复制偏移量：记录发送给所有slave的指令字节对应的位置（多个）</li>
+<li><code>slave</code>复制偏移量：记录slave接收master发送过来的指令字节对应的位置（一个）</li>
+</ul>
+</li>
+<li>数据来源：<ul>
+<li><code>master</code>端：发送一次记录一次</li>
+<li><code>slave</code>端：接收一次记录一次</li>
+</ul>
+</li>
+<li>作用：同步信息，比对<code>master</code>与<code>slave</code>的差异，当<code>slave</code>断线后，恢复数据使用</li>
+</ul>
+<h6 id="数据同步-命令传播阶段工作流程"><a href="#数据同步-命令传播阶段工作流程" class="headerlink" title="数据同步+命令传播阶段工作流程"></a>数据同步+命令传播阶段工作流程</h6><p><img src="/img/blogimgs/Redis/39.png" srcset="/img/loading.gif" lazyload></p>
+<h6 id="心跳机制"><a href="#心跳机制" class="headerlink" title="心跳机制"></a>心跳机制</h6><p><img src="/img/blogimgs/Redis/40.png" srcset="/img/loading.gif" lazyload></p>
+<p>心跳机制注意事项</p>
+<p><img src="/img/blogimgs/Redis/41.png" srcset="/img/loading.gif" lazyload></p>
+<p>主从复制工作流程（完整）</p>
+<p><img src="/img/blogimgs/Redis/43.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="主从复制常见问题"><a href="#主从复制常见问题" class="headerlink" title="主从复制常见问题"></a>主从复制常见问题</h4><h5 id="频繁的全量复制（1）"><a href="#频繁的全量复制（1）" class="headerlink" title="频繁的全量复制（1）"></a>频繁的全量复制（1）</h5><p><img src="/img/blogimgs/Redis/42.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="频繁的全量复制（2）"><a href="#频繁的全量复制（2）" class="headerlink" title="频繁的全量复制（2）"></a>频繁的全量复制（2）</h5><p><img src="/img/blogimgs/Redis/44.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="频繁的网络中断（1）"><a href="#频繁的网络中断（1）" class="headerlink" title="频繁的网络中断（1）"></a>频繁的网络中断（1）</h5><p><img src="/img/blogimgs/Redis/45.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="频繁的网络中断（2）"><a href="#频繁的网络中断（2）" class="headerlink" title="频繁的网络中断（2）"></a>频繁的网络中断（2）</h5><p><img src="/img/blogimgs/Redis/46.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="数据不一致"><a href="#数据不一致" class="headerlink" title="数据不一致"></a>数据不一致</h5><p><img src="/img/blogimgs/Redis/47.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="哨兵"><a href="#哨兵" class="headerlink" title="哨兵"></a>哨兵</h3><blockquote>
+<p>哨兵(<code>sentinel</code>) 是一个分布式系统，用于对主从结构中的每台服务器进行<code>监控</code>，当出现故障时通过投票机制<code>选择</code>新的 <code>master</code>并将所有<code>slave</code>连接到新的<code>master</code>。</p>
+</blockquote>
+<h4 id="主机”宕机”"><a href="#主机”宕机”" class="headerlink" title="主机”宕机”"></a>主机”宕机”</h4><p><img src="/img/blogimgs/Redis/48.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="哨兵作用"><a href="#哨兵作用" class="headerlink" title="哨兵作用"></a>哨兵作用</h4><ul>
+<li>监控<ul>
+<li>不断的检查<code>master</code>和<code>slave</code>是否正常运行。</li>
+<li><code>master</code>存活检测、<code>master</code>与<code>slave</code>运行情况检测</li>
+</ul>
+</li>
+<li>通知（提醒）<ul>
+<li>当被监控的服务器出现问题时，向其他（哨兵间，客户端）发送通知。</li>
+</ul>
+</li>
+<li>自动故障转移<ul>
+<li>断开<code>master</code>与<code>slave</code>连接，选取一个<code>slave</code>作为<code>master</code>，将其他<code>slave</code>连接到新的<code>master</code>，并告知客户端新的服 务器地址</li>
+</ul>
+</li>
+<li>注意：哨兵也是一台<code>redis</code>服务器，只是不提供数据服务 通常哨兵配置数量为单数</li>
+</ul>
+<h4 id="配置哨兵"><a href="#配置哨兵" class="headerlink" title="配置哨兵"></a>配置哨兵</h4><ul>
+<li><p>配置一拖二的主从结构</p>
+</li>
+<li><p>配置三个哨兵（配置相同，端口不同）</p>
+<ul>
+<li>参看<code>sentinel.conf</code></li>
+</ul>
+</li>
+<li><p>启动哨兵</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-sentinel sentinel-端口号.conf<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p><img src="/img/blogimgs/Redis/50.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="哨兵工作原理（主从切换）"><a href="#哨兵工作原理（主从切换）" class="headerlink" title="哨兵工作原理（主从切换）"></a>哨兵工作原理（主从切换）</h4><ul>
+<li>哨兵在进行主从切换过程中经历三个阶段<ul>
+<li>监控</li>
+<li>通知</li>
+<li>故障转移</li>
+</ul>
+</li>
+</ul>
+<h5 id="阶段一：监控阶段"><a href="#阶段一：监控阶段" class="headerlink" title="阶段一：监控阶段"></a>阶段一：监控阶段</h5><p><img src="/img/blogimgs/Redis/51.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/blogimgs/Redis/52.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="阶段二：通知阶段"><a href="#阶段二：通知阶段" class="headerlink" title="阶段二：通知阶段"></a>阶段二：通知阶段</h5><p><img src="/img/blogimgs/Redis/53.png" srcset="/img/loading.gif" lazyload></p>
+<h5 id="阶段三：故障转移阶段"><a href="#阶段三：故障转移阶段" class="headerlink" title="阶段三：故障转移阶段"></a>阶段三：故障转移阶段</h5><p><img src="/img/blogimgs/Redis/54.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>服务器列表中挑选备选<code>master</code><ul>
+<li>在线的</li>
+<li>响应慢的</li>
+<li>与原<code>master</code>断开时间久的</li>
+<li>优先原则<ul>
+<li>优先级</li>
+<li><code>offset</code></li>
+<li><code>runid</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>发送指令（<code>sentinel</code>）<ul>
+<li>向新的<code>master</code>发送<code>slaveof no on</code></li>
+<li>向其他<code>slave</code>发送<code>slaveof</code> 新<code>masterIP</code>端口</li>
+</ul>
+</li>
+</ul>
+<h5 id="主从切换总结"><a href="#主从切换总结" class="headerlink" title="主从切换总结"></a>主从切换总结</h5><ul>
+<li>监控<ul>
+<li>同步信息</li>
+</ul>
+</li>
+<li>通知<ul>
+<li>保持联通</li>
+</ul>
+</li>
+<li>故障转移<ul>
+<li>发现问题</li>
+<li>竞选负责人</li>
+<li>优选新<code>master</code></li>
+<li> 新<code>master</code>上任，其他<code>slave</code>切换<code>master</code>，原<code>master</code>作为<code>slave</code>故障回复后连接</li>
+</ul>
+</li>
+</ul>
+<h3 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h3><h4 id="现状问题（业务发展过程中遇到的峰值瓶颈）"><a href="#现状问题（业务发展过程中遇到的峰值瓶颈）" class="headerlink" title="现状问题（业务发展过程中遇到的峰值瓶颈）"></a>现状问题（业务发展过程中遇到的峰值瓶颈）</h4><ul>
+<li><code>redis</code>提供的服务<code>OPS</code>可以达到10万/秒，当前业务<code>OPS</code>已经达到10万/秒</li>
+<li>内存单机容量达到256G，当前业务需求内存容量1T</li>
+<li>使用集群的方式可以快速解决上述问题</li>
+</ul>
+<h4 id="集群架构"><a href="#集群架构" class="headerlink" title="集群架构"></a>集群架构</h4><ul>
+<li>集群就是使用网络将若干台计算机联通起来，并提供统一的管理方式，使其对外呈现单机的服务效果</li>
+</ul>
+<p><img src="/img/blogimgs/Redis/55.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="集群作用"><a href="#集群作用" class="headerlink" title="集群作用"></a>集群作用</h4><ul>
+<li>分散单台服务器的访问压力，实现负载均衡</li>
+<li>分散单台服务器的存储压力，实现可扩展性</li>
+<li>降低单台服务器宕机带来的业务灾难</li>
+</ul>
+<p><img src="/img/blogimgs/Redis/56.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="Redis集群结构设计"><a href="#Redis集群结构设计" class="headerlink" title="Redis集群结构设计"></a>Redis集群结构设计</h4><h5 id="数据存储设计"><a href="#数据存储设计" class="headerlink" title="数据存储设计"></a>数据存储设计</h5><ul>
+<li><img src="/img/blogimgs/Redis/57.png" srcset="/img/loading.gif" lazyload></li>
+<li><img src="/img/blogimgs/Redis/58.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+<h5 id="集群内部通讯设计"><a href="#集群内部通讯设计" class="headerlink" title="集群内部通讯设计"></a>集群内部通讯设计</h5><p><img src="/img/blogimgs/Redis/59.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="Cluster集群结构搭建"><a href="#Cluster集群结构搭建" class="headerlink" title="Cluster集群结构搭建"></a>Cluster集群结构搭建</h4><p>搭建方式</p>
+<ul>
+<li>原生安装（单条命令）<ul>
+<li>配置服务器（3主3从）</li>
+<li>建立通信（Meet）</li>
+<li>分槽（Slot）</li>
+<li>搭建主从（master-slave）</li>
+</ul>
+</li>
+<li>工具安装（批处理）</li>
+</ul>
+<h5 id="Cluster配置"><a href="#Cluster配置" class="headerlink" title="Cluster配置"></a>Cluster配置</h5><ul>
+<li><p>添加节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster-enabled yes|no<br></code></pre></td></tr></table></figure></li>
+<li><p><code>cluster</code>配置文件名，该文件属于自动生成，仅用于快速查找文件并查询文件内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster-config-file &lt;filename&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>节点服务响应超时时间，用于判定该节点是否下线或切换为从节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster-node-timeout &lt;milliseconds&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p><code>master</code>连接的<code>slave</code>最小数量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster-migration-barrier &lt;count&gt;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="Cluster节点操作命令"><a href="#Cluster节点操作命令" class="headerlink" title="Cluster节点操作命令"></a>Cluster节点操作命令</h5><ul>
+<li><p>查看集群节点信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster nodes<br></code></pre></td></tr></table></figure></li>
+<li><p>进入一个从节点 <code>redis</code>，切换其主节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster replicate &lt;master-id&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>发现一个新节点，新增主节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster meet ip:port<br></code></pre></td></tr></table></figure></li>
+<li><p>忽略一个没有<code>solt</code>的节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster forget &lt;id&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>手动故障转移</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cluster failover<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="redis-trib命令"><a href="#redis-trib命令" class="headerlink" title="redis-trib命令"></a>redis-trib命令</h5><ul>
+<li><p>添加节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-trib.rb add-node<br></code></pre></td></tr></table></figure></li>
+<li><p>删除节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-trib.rb del-node<br></code></pre></td></tr></table></figure></li>
+<li><p>重新分片</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-trib.rb reshard<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="企业级解决方案"><a href="#企业级解决方案" class="headerlink" title="企业级解决方案"></a>企业级解决方案</h3><h4 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h4><h5 id="宕机"><a href="#宕机" class="headerlink" title="宕机"></a>宕机</h5><p>服务器启动后迅速宕机</p>
+<h6 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h6><ol>
+<li>请求数量较高</li>
+<li>主从之间数据吞吐量较大，数据同步操作频度较高</li>
+</ol>
+<h6 id="解决方案-3"><a href="#解决方案-3" class="headerlink" title="解决方案"></a>解决方案</h6><p>前置准备工作：</p>
+<ol>
+<li><p>日常例行统计数据访问记录，统计访问频度较高的热点数据</p>
+</li>
+<li><p>利用<code>LRU</code>数据删除策略，构建数据留存队列</p>
+<p>例如：storm与kafka配合</p>
+</li>
+</ol>
+<p>准备工作：</p>
+<ol>
+<li>将统计结果中的数据分类，根据级别，redis优先加载级别较高的热点数据</li>
+<li>利用分布式多服务器同时进行数据读取，提速数据加载过程</li>
+<li>热点数据主从同时预热</li>
+</ol>
+<p>实施：</p>
+<ol>
+<li>使用脚本程序固定触发数据预热过程</li>
+<li>如果条件允许，使用了<code>CDN</code>（内容分发网络），效果会更好</li>
+</ol>
+<h5 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h5><p>缓存预热就是系统启动前，提前将相关的缓存数据直接加载到缓存系统。避免在用户请求的时候，先查询数据库，然后再将数据缓 存的问题！用户直接查询事先被预热的缓存数据！</p>
+<h4 id="缓存雪崩"><a href="#缓存雪崩" class="headerlink" title="缓存雪崩"></a>缓存雪崩</h4><h5 id="数据库服务器崩溃（1）"><a href="#数据库服务器崩溃（1）" class="headerlink" title="数据库服务器崩溃（1）"></a>数据库服务器崩溃（1）</h5><ol>
+<li>系统平稳运行过程中，忽然数据库连接量激增</li>
+<li>应用服务器无法及时处理请求 </li>
+<li>大量408，500错误页面出现 </li>
+<li>客户反复刷新页面获取数据 </li>
+<li>数据库崩溃 </li>
+<li>应用服务器崩溃 </li>
+<li>重启应用服务器无效 </li>
+<li><code>Redis</code>服务器崩溃 </li>
+<li><code>Redis</code>集群崩溃 </li>
+<li>重启数据库后再次被瞬间流量放倒</li>
+</ol>
+<h6 id="问题排查-1"><a href="#问题排查-1" class="headerlink" title="问题排查"></a>问题排查</h6><ol>
+<li> 在一个较短的时间内，缓存中较多的<code>key</code>集中过期 </li>
+<li>此周期内请求访问过期的数据，<code>redis</code>未命中，<code>redis</code>向数据库获取数据 </li>
+<li>数据库同时接收到大量的请求无法及时处理 </li>
+<li> Redis大量请求被积压，开始出现超时现象 </li>
+<li>数据库流量激增，数据库崩溃</li>
+<li> 重启后仍然面对缓存中无数据可用 </li>
+<li><code>Redis</code>服务器资源被严重占用，<code>Redis</code>服务器崩溃</li>
+<li> <code>Redis</code>集群呈现崩塌，集群瓦解 </li>
+<li>应用服务器无法及时得到数据响应请求，来自客户端的请求数量越来越多，应用服务器崩溃 </li>
+<li>应用服务器，<code>redis</code>，数据库全部重启，效果不理想</li>
+</ol>
+<h6 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h6><ul>
+<li>短时间范围内 </li>
+<li>大量<code>key</code>集中过期</li>
+</ul>
+<h6 id="解决方案（道）"><a href="#解决方案（道）" class="headerlink" title="解决方案（道）"></a>解决方案（道）</h6><ol>
+<li><p>更多的页面静态化处理</p>
+</li>
+<li><p> 构建多级缓存架构</p>
+</li>
+</ol>
+<p>   <code>Nginx</code>缓存+<code>redis</code>缓存+<code>ehcache</code>缓存</p>
+<ol start="3">
+<li><p>检测<code>Mysql</code>严重耗时业务进行优化</p>
+<p>对数据库的瓶颈排查：例如超时查询、耗时较高事务等</p>
+</li>
+<li><p>灾难预警机制</p>
+<p>监控<code>redis</code>服务器性能指标</p>
+<ul>
+<li><code>CPU</code>占用、<code>CPU</code>使用率</li>
+<li>内存容量</li>
+<li>查询平均响应时间</li>
+<li>线程数</li>
+</ul>
+</li>
+<li><p>限流、降级</p>
+<p>短时间范围内牺牲一些客户体验，限制一部分请求访问，降低应用服务器压力，待业务低速运转后再逐步放开访问</p>
+</li>
+</ol>
+<h6 id="解决方案（术）"><a href="#解决方案（术）" class="headerlink" title="解决方案（术）"></a>解决方案（术）</h6><ol>
+<li><p><code>LRU</code>与<code>LFU</code>切换 </p>
+</li>
+<li><p>数据有效期策略调 </p>
+<ul>
+<li> 根据业务数据有效期进行分类错峰，A类90分钟，B类80分钟，C类70分钟 </li>
+<li>过期时间使用固定时间+随机值的形式，稀释集中到期的<code>key</code>的数量 </li>
+</ul>
+</li>
+<li><p>超热数据使用永久<code>key</code></p>
+</li>
+<li><p>定期维护（自动+人工） 对即将过期数据做访问量分析，确认是否延时，配合访问量统计，做热点数据的延时 </p>
+</li>
+<li><p>加锁 </p>
+<p>慎用!</p>
+</li>
+</ol>
+<h5 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h5><p>缓存雪崩就是瞬间过期数据量太大，导致对数据库服务器造成压力。如能够有效避免过期时间集中，可以有效解决雪崩现象的出现 （约40%），配合其他策略一起使用，并监控服务器的运行数据，根据运行记录做快速调整。</p>
+<p><img src="/img/blogimgs/Redis/59.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="缓存击穿"><a href="#缓存击穿" class="headerlink" title="缓存击穿"></a>缓存击穿</h4><h5 id="数据库服务器崩溃（2）"><a href="#数据库服务器崩溃（2）" class="headerlink" title="数据库服务器崩溃（2）"></a>数据库服务器崩溃（2）</h5><ol>
+<li>系统平稳运行过程中 </li>
+<li>数据库连接量瞬间激增</li>
+<li><code>Redis</code>服务器无大量<code>key</code>过期 </li>
+<li><code>Redis</code>内存平稳，无波动 </li>
+<li><code>Redis</code>服务器<code>CPU</code>正常 </li>
+<li>数据库崩溃</li>
+</ol>
+<h6 id="问题排查-2"><a href="#问题排查-2" class="headerlink" title="问题排查"></a>问题排查</h6><ol>
+<li><code>Redis</code>中某个<code>key</code>过期，该<code>key</code>访问量巨大 </li>
+<li>多个数据请求从服务器直接压到<code>Redis</code>后，均未命中 </li>
+<li><code>Redis</code>在短时间内发起了大量对数据库中同一数据的访问</li>
+</ol>
+<h6 id="问题分析-1"><a href="#问题分析-1" class="headerlink" title="问题分析"></a>问题分析</h6><ul>
+<li>单个<code>key</code>高热数据</li>
+<li><code>key</code>过期</li>
+</ul>
+<h6 id="解决方案（术）-1"><a href="#解决方案（术）-1" class="headerlink" title="解决方案（术）"></a>解决方案（术）</h6><ol>
+<li><p>预先设定</p>
+<p>以电商为例，每个商家根据店铺等级，指定若干款主打商品，在购物节期间，加大此类信息key的过期时长</p>
+<p>注意：购物节不仅仅指当天，以及后续若干天，访问峰值呈现逐渐降低的趋势 </p>
+</li>
+<li><p>现场调整 </p>
+<p>监控访问量，对自然流量激增的数据延长过期时间或设置为永久性<code>key</code> </p>
+</li>
+<li><p>后台刷新数据 </p>
+<p>启动定时任务，高峰期来临之前，刷新数据有效期，确保不丢失</p>
+</li>
+<li><p> 二级缓存</p>
+</li>
+</ol>
+<p>   设置不同的失效时间，保障不会被同时淘汰就行 </p>
+<ol start="5">
+<li><p>加锁 </p>
+<p>分布式锁，防止被击穿，但是要注意也是性能瓶颈，慎重！</p>
+</li>
+</ol>
+<h5 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h5><p>缓存击穿就是单个高热数据过期的瞬间，数据访问量较大，未命中<code>redis</code>后，发起了大量对同一数据的数据库访问，导致对数据库服 务器造成压力。应对策略应该在业务数据分析与预防方面进行，配合运行监控测试与即时调整策略，毕竟单个key的过期监控难度 较高，配合雪崩处理策略即可。</p>
+<h4 id="缓存穿透"><a href="#缓存穿透" class="headerlink" title="缓存穿透"></a>缓存穿透</h4><h5 id="数据库服务器崩溃（3）"><a href="#数据库服务器崩溃（3）" class="headerlink" title="数据库服务器崩溃（3）"></a>数据库服务器崩溃（3）</h5><ol>
+<li>系统平稳运行过程中 </li>
+<li>应用服务器流量随时间增量较大 </li>
+<li><code>Redis</code>服务器命中率随时间逐步降低 </li>
+<li><code>Redis</code>内存平稳，内存无压力 </li>
+<li><code>Redis</code>服务器<code>CPU</code>占用激增 </li>
+<li>数据库服务器压力激增</li>
+<li> 数据库崩溃</li>
+</ol>
+<h6 id="问题排查-3"><a href="#问题排查-3" class="headerlink" title="问题排查"></a>问题排查</h6><ol>
+<li><code>Redis</code>中大面积出现未命中 </li>
+<li>出现非正常<code>URL</code>访问</li>
+</ol>
+<h6 id="问题分析-2"><a href="#问题分析-2" class="headerlink" title="问题分析"></a>问题分析</h6><ul>
+<li>获取的数据在数据库中也不存在，数据库查询未得到对应数据 </li>
+<li><code>Redis</code>获取到<code>null</code>数据未进行持久化，直接返回</li>
+<li>下次此类数据到达重复上述过程 </li>
+<li>出现黑客攻击服务器</li>
+</ul>
+<h6 id="解决方案（术）-2"><a href="#解决方案（术）-2" class="headerlink" title="解决方案（术）"></a>解决方案（术）</h6><ol>
+<li><p>缓存<code>null</code> </p>
+<p>对查询结果为<code>null</code>的数据进行缓存（长期使用，定期清理），设定短时限，例如30-60秒，最高5分钟 </p>
+</li>
+<li><p>白名单策略 </p>
+<ul>
+<li>提前预热各种分类数据id对应的<code>bitmaps</code>，<code>id</code>作为<code>bitmaps</code>的<code>offset</code>，相当于设置了数据白名单。当加载正常数据时，放 行，加载异常数据时直接拦截（效率偏低） </li>
+<li>使用布隆过滤器（有关布隆过滤器的命中问题对当前状况可以忽略） </li>
+</ul>
+</li>
+<li><p>实施监控 </p>
+<p>实时监控<code>redis</code>命中率（业务正常范围时，通常会有一个波动值）与<code>null</code>数据的占比 </p>
+<ul>
+<li>非活动时段波动：通常检测3-5倍，超过5倍纳入重点排查对象</li>
+<li> 活动时段波动：通常检测10-50倍，超过50倍纳入重点排查对象 根据倍数不同，启动不同的排查流程。然后使用黑名单进行防控（运营） </li>
+</ul>
+</li>
+<li><p><code>key</code>加密 </p>
+<p>问题出现后，临时启动防灾业务<code>key</code>，对<code>key</code>进行业务层传输加密服务，设定校验程序，过来的<code>key</code>校验 例如每天随机分配60个加密串，挑选2到3个，混淆到页面数据id中，发现访问key不满足规则，驳回数据访问</p>
+</li>
+</ol>
+<h6 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h6><p>缓存击穿访问了不存在的数据，跳过了合法数据的redis数据缓存阶段，每次访问数据库，导致对数据库服务器造成压力。通常此类 数据的出现量是一个较低的值，当出现此类情况以毒攻毒，并及时报警。应对策略应该在临时预案防范方面多做文章。 无论是黑名单还是白名单，都是对整体系统的压力，警报解除后尽快移除。</p>
+<h4 id="性能指标监控"><a href="#性能指标监控" class="headerlink" title="性能指标监控"></a>性能指标监控</h4><h5 id="监控指标"><a href="#监控指标" class="headerlink" title="监控指标"></a>监控指标</h5><ul>
+<li><p>性能指标：<code>Performance </code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>latency</td>
+<td>Redis响应一个请求的时间</td>
+</tr>
+<tr>
+<td>instantaneous_ops_per_sec</td>
+<td>平均每秒处理请求总数</td>
+</tr>
+<tr>
+<td>hit rate（calculated）</td>
+<td>缓存命中率（计算出来的）</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>内存指标：<code>Memory </code> </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>used_memory</td>
+<td>已使用内存</td>
+</tr>
+<tr>
+<td>mem_fragmentation_ratio</td>
+<td>内存碎片率</td>
+</tr>
+<tr>
+<td>evicted_keys</td>
+<td>由于最大内存限制被移除的key的数量</td>
+</tr>
+<tr>
+<td>blocked_clients</td>
+<td>由于BLPOP,BRPOP,or BRPOPLPUSH而备阻塞的客户端</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>基本活动指标：<code>Basic activity</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>connected_clients</td>
+<td>客户端连接数</td>
+</tr>
+<tr>
+<td>connected_slaves</td>
+<td>Slave数量</td>
+</tr>
+<tr>
+<td>master_last_io_seconds_ago</td>
+<td>最近一次主从交互后的秒数</td>
+</tr>
+<tr>
+<td>keyspace</td>
+<td>数据库中的key值总数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>持久性指标：<code>Persistence </code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rdb_last_save_time</td>
+<td>最后一次持久化保存到磁盘的时间戳</td>
+</tr>
+<tr>
+<td>rdb_changes_since_last_save</td>
+<td>自最后一次持久化以来数据库的更改数</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>错误指标：<code>Error</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rejected_connections</td>
+<td>由于达到maxclient限制而被拒绝的连接数</td>
+</tr>
+<tr>
+<td>keyspace_misses</td>
+<td>Key值查找失败（没有命中）次数</td>
+</tr>
+<tr>
+<td>master_link_down_since_seconds</td>
+<td>主从断开的持续时间（以秒为单位）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h5 id="监控方式"><a href="#监控方式" class="headerlink" title="监控方式"></a>监控方式</h5><ul>
+<li><p>工具</p>
+<ul>
+<li><code>Cloud Insight Redis </code></li>
+<li><code>Prometheus </code></li>
+<li><code>Redis-stat </code></li>
+<li><code>Redis-faina </code></li>
+<li><code>RedisLive </code></li>
+<li><code>zabbix</code></li>
+</ul>
+</li>
+<li><p>命令</p>
+<ul>
+<li><p><code>benchmark</code></p>
+<ul>
+<li><p>命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-benchmark [-h ] [-p ] [-c ] [-n &lt;requests]&gt; [-k ]<br></code></pre></td></tr></table></figure></li>
+<li><p>范例1</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-benchmark<br><br><br>说明：50个连接，10000次请求对应的性能<br></code></pre></td></tr></table></figure></li>
+<li><p>范例2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-benchmark -c 100 -n 5000<br><br><br>说明：100个连接，5000次请求对应的性能<br></code></pre></td></tr></table></figure>
+
+<p><img src="/img/blogimgs/Redis/61.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+</li>
+<li><p><code>redis cli</code></p>
+<ul>
+<li><p><code>monitor</code></p>
+<ul>
+<li><p>命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">monitor<br><br><br>打印服务器调试信息<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><code>showlog</code></p>
+<ul>
+<li><p>命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">showlong [operator]<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><code>get</code> ：获取慢查询日志 </li>
+<li><code>len</code> ：获取慢查询日志条目数 </li>
+<li><code>reset</code> ：重置慢查询日志</li>
+</ul>
+</li>
+<li><p>相关配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">lowlog-log-slower-than 1000 	<span class="hljs-comment">#设置慢查询的时间下线，单位：微妙</span><br>slowlog-max-len 100 		<span class="hljs-comment">#设置慢查询命令对应的日志显示长度，单位：命令数</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 

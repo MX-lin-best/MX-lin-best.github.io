@@ -220,7 +220,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      2k 字
     </span>
   
 
@@ -230,7 +230,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      21
+      30
        分钟
     </span>
   
@@ -276,7 +276,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月26日 上午
+                  本文最后更新于：2022年1月19日 晚上
                 
               </p>
             
@@ -365,6 +365,109 @@
 <p>开启事务，在业务中加入<code>@Transactional</code>注解，2.0之前需要在入口类添加<code>@EnableTransactionManagement</code></p>
 </li>
 </ol>
+<h2 id="SpringBoot集成Redis"><a href="#SpringBoot集成Redis" class="headerlink" title="SpringBoot集成Redis"></a>SpringBoot集成Redis</h2><ol>
+<li><p>添加操作<code>redis</code>的数据类型的依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework.boot<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>配置文件开启连接<code>redis</code>服务器</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-meta">spring.redis.host</span>=<span class="hljs-string">192.168.6.132</span><br><span class="hljs-meta">spring.redis.port</span>=<span class="hljs-string">6379</span><br></code></pre></td></tr></table></figure></li>
+<li><p>写业务</p>
+<ol>
+<li><p><code>controller</code>层</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@RequestMapping(&quot;/put&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-meta">@ResponseBody</span><br>    <span class="hljs-function">Object <span class="hljs-title">put</span><span class="hljs-params">(String key,String value)</span></span>&#123;<br>        departmentService.put(key,value);<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;值注入成功&quot;</span>;<br>    &#125;<br></code></pre></td></tr></table></figure></li>
+<li><p><code>service</code>层接口以及实现类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DepartmentService</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(String key, String value)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Service</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DepartmentServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DepartmentService</span> </span>&#123;<br><br>    <span class="hljs-meta">@Autowired</span><br>    <span class="hljs-keyword">private</span> RedisTemplate&lt;Object,Object&gt; redisTemplate;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">put</span><span class="hljs-params">(String key, String value)</span> </span>&#123;<br>        redisTemplate.opsForValue().set(key,value);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h2 id="SpringBoot使用拦截器"><a href="#SpringBoot使用拦截器" class="headerlink" title="SpringBoot使用拦截器"></a>SpringBoot使用拦截器</h2><ol>
+<li>定义一个拦截器，实现<code>HandlerInterceptor</code>接口</li>
+<li>创建一个配置类（），使用<code>@Configuration</code>注解，交给<code>spring</code>进行管理</li>
+</ol>
+<h2 id="SpirngBoot使用Servlet-了解"><a href="#SpirngBoot使用Servlet-了解" class="headerlink" title="SpirngBoot使用Servlet(了解)"></a>SpirngBoot使用Servlet(了解)</h2><ul>
+<li>创建一个<code>Servlet</code>继承<code>HttpServlet</code></li>
+<li>在<code>web.xml</code>配置文件中使用<code>servlet，servlet-mapping</code></li>
+</ul>
+<ol>
+<li><p>第一种方式</p>
+<ul>
+<li>注解<code>@WebServlet，@ServletCompanscan</code></li>
+</ul>
+</li>
+<li><p>第二种方式</p>
+<ul>
+<li>通过配置类注册组件<code>@Bean</code>,<code>ServletRegistrationBean类</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="SpringBoot使用Filter-了解"><a href="#SpringBoot使用Filter-了解" class="headerlink" title="SpringBoot使用Filter(了解)"></a>SpringBoot使用Filter(了解)</h2><ul>
+<li>创建一个过滤器实现<code>Filter</code>接口</li>
+</ul>
+<ol>
+<li>第一种方式<ul>
+<li>使用注解方式<code>@WebServlet，@ServletCompanscan</code></li>
+</ul>
+</li>
+<li>第二种方式<ul>
+<li>通过配置类注册组件<code>@Bean</code>，<code>FilterRegistrationBean类</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="SpringBoot解决浏览器乱码问题"><a href="#SpringBoot解决浏览器乱码问题" class="headerlink" title="SpringBoot解决浏览器乱码问题"></a>SpringBoot解决浏览器乱码问题</h2><ul>
+<li><p>第一种</p>
+<ul>
+<li>使用<code>characterEncodingFilter,resp.setContentType(&quot;text/html;character=utf-8&quot;)</code>，提前关闭<code>springboot</code>默认的字符编码设置</li>
+</ul>
+</li>
+<li><p>第二种</p>
+<ul>
+<li><p><code>springboot</code>的配置文件中修改</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-meta">server.servlet.encoding.enabled</span>=<span class="hljs-string">true</span><br><span class="hljs-meta">server.servlet.encoding.force</span>=<span class="hljs-string">true</span><br><span class="hljs-meta">server.servlet.encoding.charset</span>=<span class="hljs-string">utf-8</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h2 id="SrpingBoot程序部署war"><a href="#SrpingBoot程序部署war" class="headerlink" title="SrpingBoot程序部署war"></a>SrpingBoot程序部署war</h2><ol>
+<li><p><code>SpringBoot Web </code>项目</p>
+<ul>
+<li><p>创建<code>SpringBoot web</code>工程</p>
+</li>
+<li><p>添加<code>SpringBoot </code>解析<code>jsp</code>依赖</p>
+</li>
+<li><p>在<code>pom.xml</code>文件中配置<code>jsp</code>文件解析目录</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.tomcat.embed<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>tomcat-embed-jasper<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>创建<code>webapp</code>并指定为<code>web</code>资源文件夹</p>
+</li>
+<li><p>在<code>application.properties</code>配置文件中添加<code>jsp</code>前后缀</p>
+</li>
+<li><p>提供<code>Controller</code>方法分别返回字符串</p>
+</li>
+<li><p>在<code>webapp</code>目录下编写<code>jsp</code>页面</p>
+</li>
+<li><p>浏览器访问</p>
+</li>
+</ul>
+</li>
+<li><p>打包<code>war</code></p>
+<ul>
+<li><p>设置<code>pom.xml</code>文件的打包方式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">packaging</span>&gt;</span>war<span class="hljs-tag">&lt;/<span class="hljs-name">packaging</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>在构建工程时设置资源目录源文件夹位置（重要）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>src/main/resources<span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">includes</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>**/*.*<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">includes</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>指定打包名称</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">finalName</span>&gt;</span>springboot<span class="hljs-tag">&lt;/<span class="hljs-name">finalName</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>将打包后的工程放入<code>Tomcat</code>文件夹下的<code>webapps</code>下</p>
+</li>
+</ul>
+</li>
+<li><p>打开<code>Tomcat</code>服务器，网页访问网址（加上上下文路径，也就是你的<code>fileName</code>）</p>
+</li>
+</ol>
+<h2 id="SpringBoot程序部署jar"><a href="#SpringBoot程序部署jar" class="headerlink" title="SpringBoot程序部署jar"></a>SpringBoot程序部署jar</h2><blockquote>
+<p>和<code>war</code>差不多，只不过是已经内嵌有<code>Tomcat</code>服务器，直接命令<code>java -jar  xxx.jar</code>就行了，其中项目中的端口号和上下文根就是<code>application.properties</code>的设置的值</p>
+</blockquote>
+<h2 id="SpringBoot集成logback日志"><a href="#SpringBoot集成logback日志" class="headerlink" title="SpringBoot集成logback日志"></a>SpringBoot集成logback日志</h2><p><img src="/img/blogimgs/Spring/SpringBoot2/8.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/blogimgs/Spring/SpringBoot2/9.png" srcset="/img/loading.gif" lazyload></p>
 
             </div>
             <hr>
