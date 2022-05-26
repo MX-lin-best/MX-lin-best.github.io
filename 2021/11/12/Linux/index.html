@@ -244,7 +244,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.7k 字
+      1.9k 字
     </span>
   
 
@@ -254,7 +254,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      20
+      22
        分钟
     </span>
   
@@ -300,7 +300,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月21日 晚上
+                  本文最后更新于：2022年5月26日 上午
                 
               </p>
             
@@ -316,22 +316,15 @@
 <h3 id="模式切换"><a href="#模式切换" class="headerlink" title="模式切换"></a>模式切换</h3><p><img src="/img/blogimgs/Linux/2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="文档命令"><a href="#文档命令" class="headerlink" title="文档命令"></a>文档命令</h3><blockquote>
 <ol>
-<li><p>(一般模式)：复制当前行：<code>yy + (复制行数)</code></p>
-</li>
-<li><p>(一般模式)：粘贴：<code>p</code></p>
-</li>
-<li><p>(一般模式)：删除当前行：<code>dd + (删除行数)</code></p>
-</li>
-<li><p>(命令行模式，<code>/</code>，<code>:</code>)：查找单词：<code>/ + 要查的单词</code>，输入<code>n</code>继续查找下一个</p>
-</li>
-<li><p>(命令行模式，<code>/</code>，<code>:</code>)：设置行号：<code>:set nu</code>，<code>:set nonu</code></p>
-</li>
-<li><p>(一般模式)：定位文档的最末行<code>G</code>，最首行<code>gg</code></p>
-</li>
-<li><p>(一般模式)：撤销：<code>u</code></p>
-</li>
-<li><p>(一般模式)：定位文档的某行：<code>行数 + shift + g</code></p>
-</li>
+<li>(一般模式)：复制当前行：<code>yy + (复制行数)</code></li>
+<li>(一般模式)：粘贴：<code>p</code></li>
+<li>(一般模式)：删除当前行：<code>dd + (删除行数)</code></li>
+<li>(命令行模式，<code>/</code>，<code>:</code>)：查找单词：<code>/ + 要查的单词</code>，输入<code>n</code>继续查找下一个</li>
+<li>(命令行模式，<code>/</code>，<code>:</code>)：设置行号：<code>:set nu</code>，<code>:set nonu</code></li>
+<li>(一般模式)：定位文档的最末行<code>G</code>，最首行<code>gg</code></li>
+<li>(一般模式)：撤销：<code>u</code></li>
+<li>(一般模式)：定位文档的某行：<code>行数 + shift + g</code></li>
+<li><code>vimtutor</code>：<code>vim</code>文档</li>
 </ol>
 </blockquote>
 <h3 id="关机-amp-重启命令"><a href="#关机-amp-重启命令" class="headerlink" title="关机&amp;重启命令"></a>关机&amp;重启命令</h3><blockquote>
@@ -482,6 +475,10 @@
 <p>压缩：<code>tar -zcvf xxx.tar.gz /xxx/xxx</code> ，解压：<code>tar -zxvf xxx.tar.gz -C(压缩的目录要加这个参数) /xxx/xxx</code></p>
 </li>
 </ol>
+</blockquote>
+<h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">|      #管道符，或者（正则）<br><span class="hljs-meta">&gt;</span><span class="bash">      <span class="hljs-comment">#输出重定向</span></span><br><span class="hljs-meta">&gt;</span><span class="bash">&gt;     <span class="hljs-comment">#输出追加重定向</span></span><br>&lt;      #输入重定向<br>&lt;&lt;     #追加输入重定向<br>~      #当前用户家目录<br>`` $() #引用命令被执行后的结果<br><span class="hljs-meta">$</span><span class="bash">      <span class="hljs-comment">#以。。。结尾（正则）</span></span><br>^      #以。。。开头（正则）<br>*      #匹配全部字符，通配符<br>？     #任意一个字符，通配符<br><span class="hljs-meta">#</span><span class="bash">      <span class="hljs-comment">#注释</span></span><br>&amp;      #让程序或脚本切换到后台执行<br>&amp;&amp;     #并且 同时成立<br>[]     #表示一个范围（正则，通配符）<br>&#123;&#125;     #产生一个序列（通配符）<br>.      #当前目录的硬链接<br>..     #上级目录的硬链接<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h3><blockquote>
 </blockquote>
 <h2 id="面试题：如何找回root密码"><a href="#面试题：如何找回root密码" class="headerlink" title="面试题：如何找回root密码"></a>面试题：如何找回root密码</h2><blockquote>
 <ol>
