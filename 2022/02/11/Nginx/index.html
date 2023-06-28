@@ -31,7 +31,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/hybrid.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -66,7 +76,7 @@
 <script type="text/javascript" src="/js/firework.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -326,53 +336,61 @@
 </blockquote>
 <h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><h4 id="1-安装pcre依赖"><a href="#1-安装pcre依赖" class="headerlink" title="(1)安装pcre依赖"></a>(1)安装pcre依赖</h4><ul>
 <li><p>第一步，联网下载<code>pcre</code>压缩文件依赖(在<code>./usr/src</code>下)</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">wget http://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.gz<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">wget</span> http://downloads.sourceforge.net/project/pcre/pcre/8.45/pcre-8.45.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>第二步，解压压缩文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">tar -zxvf pcre-8.45.tar.gz<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">tar</span> -zxvf pcre-8.45.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>第三步，进入解压好的文件夹</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./configure<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./configure<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">make &amp;&amp; make install<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>查看<code>pcre</code>是否安装完成</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">pcre-config --version<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">pcre-config --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
-<h4 id="2-安装openssl-、zlib-、-gcc-依赖"><a href="#2-安装openssl-、zlib-、-gcc-依赖" class="headerlink" title="(2)安装openssl 、zlib 、 gcc 依赖"></a>(2)安装openssl 、zlib 、 gcc 依赖</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel<br></code></pre></div></td></tr></table></figure>
+<h4 id="2-安装openssl-、zlib-、-gcc-依赖"><a href="#2-安装openssl-、zlib-、-gcc-依赖" class="headerlink" title="(2)安装openssl 、zlib 、 gcc 依赖"></a>(2)安装openssl 、zlib 、 gcc 依赖</h4><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum -y <span class="token function">install</span> <span class="token function">make</span> zlib zlib-devel gcc-c++ libtool openssl openssl-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <h4 id="3-安装nginx"><a href="#3-安装nginx" class="headerlink" title="(3)安装nginx"></a>(3)安装nginx</h4><ul>
 <li><p>第一步，使用命令解压（在 <code>./usr/src</code>下）</p>
 </li>
 <li><p>第二步执行命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./configure<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./configure<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">make &amp;&amp; make install<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>第三步，进入目录<code>/usr/local/nginx/sbin/nginx </code>启动服务</p>
 </li>
 </ul>
 <blockquote>
 <p>注意：若不能访问，需要对防火墙进行设置，也可以直接关闭防火墙，并防止自启</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">//关闭防火墙&amp;&amp;防火墙自启<br><br>systemctl stop firewalld &amp;&amp; systemctl disable firewalld<br><br>//安装Iptables管理工具&amp;&amp;启动Iptables&amp;&amp;设为Iptables开机自启&amp;&amp;清空Iptables规则&amp;&amp;保存Iptables默认规则<br><br>yum -y install iptables-services &amp;&amp; systemctl start iptables &amp;&amp; systemctl enable iptables&amp;&amp; iptables -F &amp;&amp; service iptables save<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">//关闭防火墙<span class="token operator">&amp;&amp;</span>防火墙自启
+
+systemctl stop firewalld <span class="token operator">&amp;&amp;</span> systemctl disable firewalld
+
+//安装Iptables管理工具<span class="token operator">&amp;&amp;</span>启动Iptables<span class="token operator">&amp;&amp;</span>设为Iptables开机自启<span class="token operator">&amp;&amp;</span>清空Iptables规则<span class="token operator">&amp;&amp;</span>保存Iptables默认规则
+
+yum -y <span class="token function">install</span> iptables-services <span class="token operator">&amp;&amp;</span> systemctl start iptables <span class="token operator">&amp;&amp;</span> systemctl <span class="token builtin class-name">enable</span> iptables<span class="token operator">&amp;&amp;</span> iptables -F <span class="token operator">&amp;&amp;</span> <span class="token function">service</span> iptables save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <ol>
 <li><p>查看开放端口</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">firewall-cmd --list-all<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --list-all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>设置开放的端口号</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">firewall-cmd --add-service=http --permanent<br><br>firewall-cmd --add-port=80/tcp --permanent<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --add-service<span class="token operator">=</span>http --permanent
+
+firewall-cmd --add-port<span class="token operator">=</span><span class="token number">80</span>/tcp --permanent<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>设置之后需要重启防火墙</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">firewall-cmd --reload<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">firewall-cmd --reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>访问</p>
 </li>
 </ol>
 <h3 id="Nginx操作的常用命令（前提：需进入-usr-local-nginx-sbin）"><a href="#Nginx操作的常用命令（前提：需进入-usr-local-nginx-sbin）" class="headerlink" title="Nginx操作的常用命令（前提：需进入./usr/local/nginx/sbin）"></a>Nginx操作的常用命令（前提：需进入<code>./usr/local/nginx/sbin</code>）</h3><ul>
 <li><p>查看<code>nginx</code>的版本号</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./nginx -v<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./nginx -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>启动<code>nginx</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./nginx<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>关闭<code>nginx</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./nginx -s stop<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./nginx -s stop<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>重新加载<code>nginx</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">./nginx -s reload<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">./nginx -s reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h3 id="Nginx配置文件（三部分）"><a href="#Nginx配置文件（三部分）" class="headerlink" title="Nginx配置文件（三部分）"></a>Nginx配置文件（三部分）</h3><ul>
 <li>位置：<code>/usr/local/nginx/conf/nginx.conf</code></li>
@@ -506,7 +524,7 @@
 <li><p>在两台服务器安装<code>keepalived</code></p>
 <ol>
 <li><p>使用<code>yum</code>命令安装</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">yum install keepalived -y<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">yum <span class="token function">install</span> keepalived -y<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>安装之后，在<code>etc</code>里面生成目录<code>keepalived</code>,有文件<code>keepalived.conf</code></p>
 </li>
 </ol>
@@ -518,7 +536,15 @@
 <li><p> 在<code>/usr/local/src</code>添加检测脚本</p>
 </li>
 </ol>
-   <figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">!/bin/bash</span><br>A=`ps -C nginx --no-header | wc -l`<br>if [ $A -eq 0 ];then<br>     /usr/local/nginx/sbin/nginx<br>    sleep 2<br>    if [`ps -C nginx --no-header |wc -l` -eq 0 ];then<br>	killall keepalived<br>    fi<br>fi<br></code></pre></div></td></tr></table></figure>
+   <div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
+<span class="token assign-left variable">A</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -C nginx --no-header <span class="token operator">|</span> <span class="token function">wc</span> -l<span class="token variable">`</span></span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$A</span> -eq <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+     /usr/local/nginx/sbin/nginx
+    <span class="token function">sleep</span> <span class="token number">2</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -C nginx --no-header <span class="token operator">|</span><span class="token function">wc</span> -l<span class="token variable">`</span></span> -eq <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+	<span class="token function">killall</span> keepalived
+    <span class="token keyword">fi</span>
+<span class="token keyword">fi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <ol start="3">
 <li><p>把两台服务器上<code>nginx</code>和<code>keepalived</code>启动 </p>
@@ -763,6 +789,8 @@
 
 
 
+  
+    
   
 
 

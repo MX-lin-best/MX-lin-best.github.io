@@ -31,7 +31,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/hybrid.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -66,7 +76,7 @@
 <script type="text/javascript" src="/js/firework.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -244,7 +254,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      10.2k 字
+      10.1k 字
     </span>
   
 
@@ -254,7 +264,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      116
+      115
        分钟
     </span>
   
@@ -309,11 +319,11 @@
 <blockquote>
 <p>官网：Redis 是一个开源（BSD许可）的，内存中的数据结构存储系统，它可以用作数据库、缓存和消息中间件。 它支持多种类型的数据结构，如 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#strings">字符串（strings）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#hashes">散列（hashes）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#lists">列表（lists）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#sets">集合（sets）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#sorted-sets">有序集合（sorted sets）</a> 与范围查询， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#bitmaps">bitmaps</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/data-types-intro.html#hyperloglogs">hyperloglogs</a> 和 <a target="_blank" rel="noopener" href="http://www.redis.cn/commands/geoadd.html">地理空间（geospatial）</a> 索引半径查询。 Redis 内置了 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/replication.html">复制（replication）</a>，<a target="_blank" rel="noopener" href="http://www.redis.cn/commands/eval.html">LUA脚本（Lua scripting）</a>， <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/lru-cache.html">LRU驱动事件（LRU eviction）</a>，<a target="_blank" rel="noopener" href="http://www.redis.cn/topics/transactions.html">事务（transactions）</a> 和不同级别的 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/persistence.html">磁盘持久化（persistence）</a>， 并通过 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/sentinel.html">Redis哨兵（Sentinel）</a>和自动 <a target="_blank" rel="noopener" href="http://www.redis.cn/topics/cluster-tutorial.html">分区（Cluster）</a>提供高可用性（high availability）。</p>
 </blockquote>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="命令行开启服务"><a href="#命令行开启服务" class="headerlink" title="命令行开启服务"></a>命令行开启服务</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-server.exe redis.windows.conf<br></code></pre></div></td></tr></table></figure>
+<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h4 id="命令行开启服务"><a href="#命令行开启服务" class="headerlink" title="命令行开启服务"></a>命令行开启服务</h4><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-server.exe redis.windows.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
-<h4 id="命令行开启Redis"><a href="#命令行开启Redis" class="headerlink" title="命令行开启Redis"></a>命令行开启Redis</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-cli.exe -h 127.0.0.1 -p 6379<br></code></pre></div></td></tr></table></figure>
+<h4 id="命令行开启Redis"><a href="#命令行开启Redis" class="headerlink" title="命令行开启Redis"></a>命令行开启Redis</h4><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-cli.exe -h <span class="token number">127.0</span>.0.1 -p <span class="token number">6379</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
-<h4 id="查redis帮助文档"><a href="#查redis帮助文档" class="headerlink" title="查redis帮助文档"></a>查redis帮助文档</h4><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">help</span> <br></code></pre></div></td></tr></table></figure>
+<h4 id="查redis帮助文档"><a href="#查redis帮助文档" class="headerlink" title="查redis帮助文档"></a>查redis帮助文档</h4><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">help</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <h3 id="Key通用指令"><a href="#Key通用指令" class="headerlink" title="Key通用指令"></a>Key通用指令</h3><blockquote>
 <p>关键字：<code>del</code>，<code>exists</code>，<code>type</code>，<code>keys</code>，<code>rename</code>，<code>renamenx</code>,<code>sort</code>，<code>help @generic</code></p>
@@ -332,11 +342,11 @@
 <blockquote>
 <p>关键字：<code>setex</code>，<code>psetex</code>，<code>ttl</code>（控制key的存活时间以及查询）</p>
 </blockquote>
-<h5 id="存的两种写法"><a href="#存的两种写法" class="headerlink" title="存的两种写法"></a>存的两种写法</h5><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> user:id:001:fans 789<br></code></pre></div></td></tr></table></figure>
+<h5 id="存的两种写法"><a href="#存的两种写法" class="headerlink" title="存的两种写法"></a>存的两种写法</h5><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">set</span> user:id:001:fans <span class="token number">789</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 
 
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">set</span> user:id:001 &#123;id:001,fans:789,blogs:23&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">set</span> user:id:001 <span class="token punctuation">&#123;</span>id:001,fans:789,blogs:23<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p><img src="/img/blogimgs/Redis/2.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="Hash类型的操作"><a href="#Hash类型的操作" class="headerlink" title="Hash类型的操作"></a>Hash类型的操作</h3><p><img src="/img/blogimgs/Redis/3.png" srcset="/img/loading.gif" lazyload></p>
@@ -382,34 +392,152 @@
 <blockquote>
 <p>关键字：<code>move(键重复会移动失败)</code>，<code>dbsize(查看键数量)</code>；数据清除：<code>flushdb</code>，<code>flushall</code>(慎用)</p>
 </blockquote>
-<h3 id="Jedis（Java操作redis的工具）"><a href="#Jedis（Java操作redis的工具）" class="headerlink" title="Jedis（Java操作redis的工具）"></a>Jedis（Java操作redis的工具）</h3><h4 id="maven构建"><a href="#maven构建" class="headerlink" title="maven构建"></a>maven构建</h4><figure class="highlight xml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>redis.clients<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>jedis<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>     <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="Jedis（Java操作redis的工具）"><a href="#Jedis（Java操作redis的工具）" class="headerlink" title="Jedis（Java操作redis的工具）"></a>Jedis（Java操作redis的工具）</h3><h4 id="maven构建"><a href="#maven构建" class="headerlink" title="maven构建"></a>maven构建</h4><div class="code-wrapper"><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>redis.clients<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jedis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.3.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
-<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"> <span class="hljs-comment">//1.连接redis(前提是开启redis服务)</span><br>        Jedis jedis = <span class="hljs-keyword">new</span> Jedis(<span class="hljs-string">&quot;127.0.0.1&quot;</span>,<span class="hljs-number">6379</span>);<br> <span class="hljs-comment">//2.操作redis</span><br>        jedis.set(<span class="hljs-string">&quot;name&quot;</span>,<span class="hljs-string">&quot;lexr&quot;</span>);<br>	    String name = jedis.get(<span class="hljs-string">&quot;name&quot;</span>);<br>        System.out.println(name);<br><span class="hljs-comment">//3.关闭redis</span><br>        jedis.close();<br></code></pre></div></td></tr></table></figure>
+<h4 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h4><div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java"> <span class="token comment">//1.连接redis(前提是开启redis服务)</span>
+        <span class="token class-name">Jedis</span> jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span><span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token comment">//2.操作redis</span>
+        jedis<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">,</span><span class="token string">"lexr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	    <span class="token class-name">String</span> name <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//3.关闭redis</span>
+        jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
-<h4 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h4><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JedisService</span> </span>&#123;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">service</span><span class="hljs-params">(String user,Integer count)</span> </span>&#123;<br><br>        Jedis jedis = <span class="hljs-keyword">new</span> Jedis(<span class="hljs-string">&quot;127.0.0.1&quot;</span>, <span class="hljs-number">6379</span>);<br><br>        String value = jedis.get(<span class="hljs-string">&quot;userId:&quot;</span> + user);<br><br><br>        <span class="hljs-keyword">try</span> &#123;<br>            <span class="hljs-keyword">if</span> (value == <span class="hljs-keyword">null</span>) &#123;<br>                <span class="hljs-comment">//不存在则创建该值</span><br>                jedis.setex(<span class="hljs-string">&quot;userId:&quot;</span> + user, <span class="hljs-number">10</span>, Long.MAX_VALUE - count + <span class="hljs-string">&quot;&quot;</span>);<br><br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//存在则自增</span><br>                Long val = jedis.incr(<span class="hljs-string">&quot;userId:&quot;</span> + user);<br>                business(user,count+(val-Long.MAX_VALUE));<br>            &#125;<br><br>        &#125; <span class="hljs-keyword">catch</span> (Exception exception) &#123;<br>            System.out.println(<span class="hljs-string">&quot;提醒用户升级会员！&quot;</span>);<br>            <span class="hljs-keyword">return</span>;<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            jedis.close();<br>        &#125;<br><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">business</span><span class="hljs-params">(String user,Long val)</span> </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;用户ID:&quot;</span> + user + <span class="hljs-string">&quot;,执行业务操作:&quot;</span> + val);<br>    &#125;<br><br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyThread</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Thread</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> Integer count;<br>    <span class="hljs-keyword">private</span> String user;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyThread</span><span class="hljs-params">(String user,Integer count)</span></span>&#123;<br>            <span class="hljs-keyword">this</span>.user=user;<br>            <span class="hljs-keyword">this</span>.count=count;<br>    &#125;<br><br>    JedisService jedisService = <span class="hljs-keyword">new</span> JedisService();<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) &#123;<br>            jedisService.service(user,count);<br>            <span class="hljs-keyword">try</span> &#123;<br>                Thread.sleep(<span class="hljs-number">300l</span>);<br>            &#125; <span class="hljs-keyword">catch</span> (InterruptedException e) &#123;<br>                e.printStackTrace();<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">main</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-comment">//不同用户的操作</span><br>        MyThread myThread = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;初级用户&quot;</span>,<span class="hljs-number">10</span>);<br>        MyThread myThread1 = <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;高级用户&quot;</span>,<span class="hljs-number">30</span>);<br>        myThread.start();<br>        myThread1.start();<br><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
+<h4 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h4><div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JedisService</span> <span class="token punctuation">&#123;</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">service</span><span class="token punctuation">(</span><span class="token class-name">String</span> user<span class="token punctuation">,</span><span class="token class-name">Integer</span> count<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+        <span class="token class-name">Jedis</span> jedis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Jedis</span><span class="token punctuation">(</span><span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span> <span class="token number">6379</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">String</span> value <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"userId:"</span> <span class="token operator">+</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//不存在则创建该值</span>
+                jedis<span class="token punctuation">.</span><span class="token function">setex</span><span class="token punctuation">(</span><span class="token string">"userId:"</span> <span class="token operator">+</span> user<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token class-name">Long</span><span class="token punctuation">.</span>MAX_VALUE <span class="token operator">-</span> count <span class="token operator">+</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//存在则自增</span>
+                <span class="token class-name">Long</span> val <span class="token operator">=</span> jedis<span class="token punctuation">.</span><span class="token function">incr</span><span class="token punctuation">(</span><span class="token string">"userId:"</span> <span class="token operator">+</span> user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token function">business</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span>count<span class="token operator">+</span><span class="token punctuation">(</span>val<span class="token operator">-</span><span class="token class-name">Long</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> exception<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"提醒用户升级会员！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+            jedis<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">business</span><span class="token punctuation">(</span><span class="token class-name">String</span> user<span class="token punctuation">,</span><span class="token class-name">Long</span> val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"用户ID:"</span> <span class="token operator">+</span> user <span class="token operator">+</span> <span class="token string">",执行业务操作:"</span> <span class="token operator">+</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Integer</span> count<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> user<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token class-name">String</span> user<span class="token punctuation">,</span><span class="token class-name">Integer</span> count<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>user<span class="token operator">=</span>user<span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>count<span class="token operator">=</span>count<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token class-name">JedisService</span> jedisService <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            jedisService<span class="token punctuation">.</span><span class="token function">service</span><span class="token punctuation">(</span>user<span class="token punctuation">,</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+                <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">300l</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">class</span> main <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">//不同用户的操作</span>
+        <span class="token class-name">MyThread</span> myThread <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token string">"初级用户"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">MyThread</span> myThread1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token string">"高级用户"</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myThread<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        myThread1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <h4 id="Jedis简易工具类"><a href="#Jedis简易工具类" class="headerlink" title="Jedis简易工具类"></a>Jedis简易工具类</h4><p><img src="/img/blogimgs/Redis/11.png" srcset="/img/loading.gif" lazyload></p>
-<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JedisUtils</span> </span>&#123;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisPoolConfig jpc = <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> JedisPool jp = <span class="hljs-keyword">null</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> String host;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer port ;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer maxTotal;<br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Integer maxIdle;<br><br>    <span class="hljs-keyword">static</span> &#123;<br>        ResourceBundle rb = ResourceBundle.getBundle(<span class="hljs-string">&quot;redis&quot;</span>);<br>        host = rb.getString(<span class="hljs-string">&quot;redis.host&quot;</span>);<br>        port = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.port&quot;</span>));<br>        maxTotal = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.maxTotal&quot;</span>));<br>        maxIdle = Integer.parseInt(rb.getString(<span class="hljs-string">&quot;redis.maxIdle&quot;</span>));<br>        jpc = <span class="hljs-keyword">new</span> JedisPoolConfig();<br>        jpc.setMaxTotal(maxTotal);<br>        jpc.setMaxIdle(maxIdle);<br>        jp = <span class="hljs-keyword">new</span> JedisPool(jpc,host,port);<br><br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Jedis <span class="hljs-title">getConnection</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> jp.getResource();<br>    &#125;<br><br><br>&#125;<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JedisUtils</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">JedisPoolConfig</span> jpc <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">JedisPool</span> jp <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">String</span> host<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> port <span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> maxTotal<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Integer</span> maxIdle<span class="token punctuation">;</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">ResourceBundle</span> rb <span class="token operator">=</span> <span class="token class-name">ResourceBundle</span><span class="token punctuation">.</span><span class="token function">getBundle</span><span class="token punctuation">(</span><span class="token string">"redis"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        host <span class="token operator">=</span> rb<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"redis.host"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        port <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>rb<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"redis.port"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        maxTotal <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>rb<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"redis.maxTotal"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        maxIdle <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>rb<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string">"redis.maxIdle"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jpc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPoolConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jpc<span class="token punctuation">.</span><span class="token function">setMaxTotal</span><span class="token punctuation">(</span>maxTotal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jpc<span class="token punctuation">.</span><span class="token function">setMaxIdle</span><span class="token punctuation">(</span>maxIdle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        jp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JedisPool</span><span class="token punctuation">(</span>jpc<span class="token punctuation">,</span>host<span class="token punctuation">,</span>port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Jedis</span> <span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> jp<span class="token punctuation">.</span><span class="token function">getResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <h4 id="Redis可视化软件（RedisDesktopManager2019-4）"><a href="#Redis可视化软件（RedisDesktopManager2019-4）" class="headerlink" title="Redis可视化软件（RedisDesktopManager2019.4）"></a>Redis可视化软件（RedisDesktopManager2019.4）</h4><p><a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-1042770-1-1.html">破解版</a></p>
 <h1 id="Redis高级（Linux）"><a href="#Redis高级（Linux）" class="headerlink" title="Redis高级（Linux）"></a>Redis高级（Linux）</h1><h2 id="Linux下载安装"><a href="#Linux下载安装" class="headerlink" title="Linux下载安装"></a>Linux下载安装</h2><p>环境搭建</p>
 <ol>
 <li><p><a target="_blank" rel="noopener" href="https://redis.io/download">Redis官网</a>下载安装包</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">wget https://download.redis.io/releases/redis-6.2.6.tar.gz<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> https://download.redis.io/releases/redis-6.2.6.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">tar -xvf redis-6.2.6.tar.gz<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">tar</span> -xvf redis-6.2.6.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>编译安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> redis-6.2.6<br>make install<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> redis-6.2.6
+<span class="token function">make</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>开启<code>Redis</code>服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-server<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /redis-6.2.6/src
+redis-server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>新建会话开启<code>Redis</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /redis-6.2.6/src<br>redis-cli<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /redis-6.2.6/src
+redis-cli<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>修改<code>Redis</code>端口，登陆</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-server --port 端口号<br><br><br>redis-cli -p 端口号<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-server --port 端口号
+
+
+redis-cli -p 端口号<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>配置文件启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-server  配置文件<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-server  配置文件<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>配置文件<code>conf/redis-6379.conf</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">port 6379 <br>daemonize yes<br>logfile <span class="hljs-string">&quot;6379.log&quot;</span><br>dir /redis-6.2.6/data<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">port <span class="token number">6379</span> 
+daemonize <span class="token function">yes</span>
+logfile <span class="token string">"6379.log"</span>
+<span class="token function">dir</span> /redis-6.2.6/data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>要想启动多个服务，只需要新建配置文件修改<code>port和logfile。</code>将配置文件放在<code>conf目录下</code>即可</p>
 </li>
 </ol>
@@ -422,7 +550,13 @@
 <p>手动执行一次保存操作</p>
 </blockquote>
 <h6 id="save指令相关配置"><a href="#save指令相关配置" class="headerlink" title="save指令相关配置"></a><code>save指令</code>相关配置</h6><p><img src="/img/blogimgs/Redis/13.png" srcset="/img/loading.gif" lazyload></p>
-<h6 id="重新配置redis-6379-conf文件"><a href="#重新配置redis-6379-conf文件" class="headerlink" title="重新配置redis-6379.conf文件"></a>重新配置<code>redis-6379.conf</code>文件</h6><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">port 6379 <br>daemonize yes<br>logfile <span class="hljs-string">&quot;6379.log&quot;</span><br>dir /redis-6.2.6/data<br>dbfilename dump-6379.rdb<br>rdbcompression yes<br>rdbchecksum yes<br></code></pre></div></td></tr></table></figure>
+<h6 id="重新配置redis-6379-conf文件"><a href="#重新配置redis-6379-conf文件" class="headerlink" title="重新配置redis-6379.conf文件"></a>重新配置<code>redis-6379.conf</code>文件</h6><div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">port <span class="token number">6379</span> 
+daemonize <span class="token function">yes</span>
+logfile <span class="token string">"6379.log"</span>
+<span class="token function">dir</span> /redis-6.2.6/data
+dbfilename dump-6379.rdb
+rdbcompression <span class="token function">yes</span>
+rdbchecksum <span class="token function">yes</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <h6 id="save指令工作原理"><a href="#save指令工作原理" class="headerlink" title="save指令工作原理"></a><code>save</code>指令工作原理</h6><blockquote>
 <p>依次执行客户端命令，是单线程任务执行序列</p>
@@ -456,9 +590,9 @@
 <li><p>全量复制</p>
 </li>
 <li><p>服务器运行过程重启</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">debug reload<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">debug reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>关闭服务器时指定保存数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">shutdown save<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">shutdown</span> save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ol>
 <h5 id="RDB优缺点"><a href="#RDB优缺点" class="headerlink" title="RDB优缺点"></a>RDB优缺点</h5><p><img src="/img/blogimgs/Redis/18.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="AOF（Append-only-File）"><a href="#AOF（Append-only-File）" class="headerlink" title="AOF（Append-only File）"></a>AOF（Append-only File）</h4><blockquote>
@@ -478,24 +612,24 @@
 </ul>
 <h5 id="AOF功能开启-在redis-6379-conf文件中配置"><a href="#AOF功能开启-在redis-6379-conf文件中配置" class="headerlink" title="AOF功能开启(在redis-6379.conf文件中配置)"></a>AOF功能开启(在<code>redis-6379.conf</code>文件中配置)</h5><ul>
 <li><p>配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">appendonly yes|no<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendonly <span class="token function">yes</span><span class="token operator">|</span>no<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>是否开启AOF持久化功能，默认为不开启状态</p>
 </li>
 <li><p>配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">appendfsync always|everysec|no<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendfsync always<span class="token operator">|</span>everysec<span class="token operator">|</span>no<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>AOF写数据策略</p>
 </li>
 </ul>
 <h5 id="AOF相关配置"><a href="#AOF相关配置" class="headerlink" title="AOF相关配置"></a>AOF相关配置</h5><ul>
 <li><p>配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">appendfilename filename<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">appendfilename filename<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>AOF持久化文件名，默认文件名末<code>apendonly.aof</code>建议配置为<code>apendonly-端口号.aof</code></p>
 </li>
 <li><p>配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">dir<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">dir</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>AOF持久化文件保存路径，与RDB持久化文件保持一致即可</p>
 </li>
@@ -515,13 +649,18 @@
 <h6 id="AOF重写规则"><a href="#AOF重写规则" class="headerlink" title="AOF重写规则"></a>AOF重写规则</h6><p><img src="/img/blogimgs/Redis/19.png" srcset="/img/loading.gif" lazyload></p>
 <ul>
 <li><p>手动重写(Redis指令，类似于<code>bgsave</code>)</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">bgrewriteaof<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bgrewriteaof<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>自动重写触发条件设置(配置文件)</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">auto-aof-rewrite-min-size size<br>auto-aof-rewrite-percentage percentage<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">auto-aof-rewrite-min-size size
+auto-aof-rewrite-percentage percentage<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>自动重写触发对比参数(运行指令info Persistence获取具体信息)</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">aof_current_size<br>aof_base_size<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">aof_current_size
+aof_base_size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>自动重写触发条件</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">aof_current_size&gt;auto-aof-rewrite-min-size<br>aof_current_size-aof_base_size<br>——————————————————————————————&gt;=auto-aof-rewrite-percenrage<br>		aof_base_size<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">aof_current_size<span class="token operator">></span>auto-aof-rewrite-min-size
+aof_current_size-aof_base_size
+——————————————————————————————<span class="token operator">>=</span>auto-aof-rewrite-percenrage
+		aof_base_size<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 </ul>
 <h6 id="AOF手动重写——bgrewriteaof指令工作原理"><a href="#AOF手动重写——bgrewriteaof指令工作原理" class="headerlink" title="AOF手动重写——bgrewriteaof指令工作原理"></a>AOF手动重写——<code>bgrewriteaof</code>指令工作原理</h6><p><img src="/img/blogimgs/Redis/20.png" srcset="/img/loading.gif" lazyload></p>
 <h6 id="AOF重写流程"><a href="#AOF重写流程" class="headerlink" title="AOF重写流程"></a>AOF重写流程</h6><p><img src="/img/blogimgs/Redis/21.png" srcset="/img/loading.gif" lazyload></p>
@@ -544,17 +683,17 @@
 </blockquote>
 <h4 id="事务的基本操作"><a href="#事务的基本操作" class="headerlink" title="事务的基本操作"></a>事务的基本操作</h4><ul>
 <li><p>开启事务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">multi<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">multi<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>设定事务的开启位置，此指令执行后，后续的所有指令均加入到事务中</p>
 </li>
 <li><p>执行事务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">exec</span><br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">exec</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>设定事务的结束位置，同时执行事务。与<code>multi</code>成对出现，成对使用</p>
 </li>
 <li><p>取消事务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">discard<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">discard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>作用</p>
 <p>终止当前事务的定义，发生在<code>multi</code>之后，<code>exec</code>之前</p>
 </li>
@@ -579,9 +718,9 @@
 </blockquote>
 <h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
 <li><p>对<code>key</code>添加监视锁，在执行<code>exec</code>前如果<code>key</code>发生了变化，终止事务执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">watch key1 [key2]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">watch</span> key1 <span class="token punctuation">[</span>key2<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>取消对所有<code>key</code>的监视</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">unwatch<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">unwatch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h4 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h4><blockquote>
 <p>业务分析</p>
@@ -592,7 +731,7 @@
 </blockquote>
 <h5 id="解决方案-1"><a href="#解决方案-1" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
 <li><p>使用<code>setnx</code>设置一个公共的锁</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">setnx lock-key value<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">setnx lock-key value<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>利用<code>setnx</code>命令的返回值特征，有值则返回设置失败，无值则返回设置成功</p>
 <ul>
@@ -614,7 +753,9 @@
 </blockquote>
 <h5 id="解决方案-2"><a href="#解决方案-2" class="headerlink" title="解决方案"></a>解决方案</h5><ul>
 <li><p>使用<code>expire</code>为锁<code>key</code>添加时间限定，到时不释放，放弃锁</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">expire lock-key second<br><br>pexpire lock-key milliseconds<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">expire lock-key second
+
+pexpire lock-key milliseconds<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
 
 <p><img src="/img/blogimgs/Redis/27.png" srcset="/img/loading.gif" lazyload></p>
 </li>
@@ -666,15 +807,15 @@
 <h3 id="数据逐出策略（逐出算法-）"><a href="#数据逐出策略（逐出算法-）" class="headerlink" title="数据逐出策略（逐出算法(*)）"></a>数据逐出策略（逐出算法(*)）</h3><p><img src="/img/blogimgs/Redis/30.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="影响数据逐出的相关配置"><a href="#影响数据逐出的相关配置" class="headerlink" title="影响数据逐出的相关配置"></a>影响数据逐出的相关配置</h4><ul>
 <li><p>最大可用内存</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">maxmemory<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxmemory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>占用物理内存的比例，默认值为0，表示不受限制。生产环境中根据需求设定，通常在50%以上</p>
 </li>
 <li><p>每次选取待删除数据的个数</p>
 <p>选取数据时并不会全库扫描，导致严重的性能消耗，降低读写性能。因此采用随机获取数据的方式作为待检测删除数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">maxmemory-samples<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxmemory-samples<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>删除策略</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">maxmemory-policy<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxmemory-policy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>达到最大内存后的，对被挑选出来的数据进行删除的策略</p>
 </li>
@@ -691,49 +832,49 @@
 </li>
 <li><p>放弃数据驱逐</p>
 <p>⑧ <code>no-enviction</code>（驱逐）：禁止驱逐数据（redis4.0中默认策略），会引发错误<code>OOM（Out Of Memory）</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">maxmemory-policy volatile-lru<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxmemory-policy volatile-lru<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h4 id="数据逐出策略配置依据"><a href="#数据逐出策略配置依据" class="headerlink" title="数据逐出策略配置依据"></a>数据逐出策略配置依据</h4><ul>
 <li>使用<code>info</code>命令输出监控信息，查询<code>hit</code>和<code>miss</code>的次数；根据业务需求调优<code>Redis</code>配置</li>
 </ul>
 <h3 id="redis-conf配置"><a href="#redis-conf配置" class="headerlink" title="redis.conf配置"></a><code>redis.conf</code>配置</h3><h5 id="服务器基础设置"><a href="#服务器基础设置" class="headerlink" title="服务器基础设置"></a>服务器基础设置</h5><ul>
 <li><p>设置服务器以守护进程的方式运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">daemonize yes|no<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">daemonize <span class="token function">yes</span><span class="token operator">|</span>no<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>绑定主机地址</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">bind</span> 127.0.0.1<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">bind</span> <span class="token number">127.0</span>.0.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>设置服务器端口号</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">port 6379<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">port <span class="token number">6379</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>设置数据库数量</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">databases 16<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">databases <span class="token number">16</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="日志设置"><a href="#日志设置" class="headerlink" title="日志设置"></a>日志设置</h5><ul>
 <li><p>设置服务器以指定日志记录级别</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">loglevel debug|verbose|notice|warning<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">loglevel debug<span class="token operator">|</span>verbose<span class="token operator">|</span>notice<span class="token operator">|</span>warning<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>日志记录文件名</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">logfile 端口号.<span class="hljs-built_in">log</span><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">logfile 端口号.log<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p>注意：日志级别开发期设置为verbose即可，生产环境中配置为notice，简化日志输出量，降低写日志IO的频度</p>
 </li>
 </ul>
 <h5 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h5><ul>
 <li><p>设置同一时间最大客户端连接数，默认无限制。当客户端连接到达上限，Redis会关闭新的连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">maxclients 0<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">maxclients <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>客户端闲置等待最大时长，达到最大值后关闭连接。如需关闭该功能，设置为 0</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">timeout 300<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">timeout</span> <span class="token number">300</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="多服务器快捷配置"><a href="#多服务器快捷配置" class="headerlink" title="多服务器快捷配置"></a>多服务器快捷配置</h5><ul>
 <li><p>导入并加载指定配置文件信息，用于快速创建redis公共配置较多的redis实例配置文件，便于维护</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">include /path/server-端口号.conf<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">include /path/server-端口号.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h3 id="高级数据类型（一般是解决单一问题的存在）"><a href="#高级数据类型（一般是解决单一问题的存在）" class="headerlink" title="高级数据类型（一般是解决单一问题的存在）"></a>高级数据类型（一般是解决单一问题的存在）</h3><h4 id="Bitmaps"><a href="#Bitmaps" class="headerlink" title="Bitmaps"></a>Bitmaps</h4><h5 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
 <li><p>获取指定<code>key</code>对应偏移量上的<code>bit</code>值</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">getbit key offset<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">getbit key offset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>设置指定<code>key</code>对应偏移量上的<code>bit</code>值，<code>value</code>只能是1或0</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">setbit key offset value<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">setbit key offset value<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="扩展操作-5"><a href="#扩展操作-5" class="headerlink" title="扩展操作"></a>扩展操作</h5><ul>
 <li><p>对指定<code>key</code>按位进行交、并、非、异或操作，并将结果保存到<code>destKey</code>中</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">bitop op destKey key1 [key2...]<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bitop <span class="token function">op</span> destKey key1 <span class="token punctuation">[</span>key2<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <ul>
 <li><code>and</code>：交</li>
@@ -743,7 +884,7 @@
 </ul>
 </li>
 <li><p>统计指定<code>key</code>中1的数量</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">bitcount key [start end]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bitcount key <span class="token punctuation">[</span>start end<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h4 id="HyperLogLog"><a href="#HyperLogLog" class="headerlink" title="HyperLogLog"></a>HyperLogLog</h4><ul>
 <li>原始方案：<code>set</code><ul>
@@ -758,11 +899,11 @@
 </ul>
 <h5 id="基本操作-1"><a href="#基本操作-1" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
 <li><p>添加数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pfadd key element [element ...]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pfadd key element <span class="token punctuation">[</span>element <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>统计数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pfcount key [key ...]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pfcount key <span class="token punctuation">[</span>key <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>合并数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pfmerge destkey sourcekey [sourcekey...]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pfmerge destkey sourcekey <span class="token punctuation">[</span>sourcekey<span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <blockquote>
 <p>相关说明 </p>
@@ -775,17 +916,17 @@
 </blockquote>
 <h4 id="GEO"><a href="#GEO" class="headerlink" title="GEO"></a>GEO</h4><h5 id="基本操作-2"><a href="#基本操作-2" class="headerlink" title="基本操作"></a>基本操作</h5><ul>
 <li><p>添加坐标点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">geoadd key longitude latitude member [longitude latitude member ...。]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">geoadd key longitude latitude member <span class="token punctuation">[</span>longitude latitude member <span class="token punctuation">..</span>.。<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>获取坐标点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">geopos key member [member ...]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">geopos key member <span class="token punctuation">[</span>member <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>计算坐标点距离</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">geodist key member1 member2 [unit]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">geodist key member1 member2 <span class="token punctuation">[</span>unit<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>计算坐标求范围内的数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">georadius key longitude latitude radius m|km|ft|mi [withcoord] [withdist] [withhash] [count count]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">georadius key longitude latitude radius m<span class="token operator">|</span>km<span class="token operator">|</span>ft<span class="token operator">|</span>mi <span class="token punctuation">[</span>withcoord<span class="token punctuation">]</span> <span class="token punctuation">[</span>withdist<span class="token punctuation">]</span> <span class="token punctuation">[</span>withhash<span class="token punctuation">]</span> <span class="token punctuation">[</span>count count<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>根据点求范围内数据</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">georadiusbymember key member radius m|km|ft|mi [withcoord] [withdist] [withhash] [count count]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">georadiusbymember key member radius m<span class="token operator">|</span>km<span class="token operator">|</span>ft<span class="token operator">|</span>mi <span class="token punctuation">[</span>withcoord<span class="token punctuation">]</span> <span class="token punctuation">[</span>withdist<span class="token punctuation">]</span> <span class="token punctuation">[</span>withhash<span class="token punctuation">]</span> <span class="token punctuation">[</span>count count<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>获取指定点对应的坐标<code>hash</code>值</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">geohash key member [member ...]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">geohash key member <span class="token punctuation">[</span>member <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h3 id="主从复制"><a href="#主从复制" class="headerlink" title="主从复制"></a>主从复制</h3><blockquote>
 <p>互联网”三高”架构</p>
@@ -884,11 +1025,11 @@
 </ul>
 <h6 id="主从连接（slave连接master）"><a href="#主从连接（slave连接master）" class="headerlink" title="主从连接（slave连接master）"></a>主从连接（<code>slave</code>连接<code>master</code>）</h6><ul>
 <li><p>方式一：客户端发送命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slaveof <span class="token operator">&lt;</span>masterip<span class="token operator">></span> <span class="token operator">&lt;</span>masterport<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>方式二：启动服务器参数</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-server --slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-server --slaveof <span class="token operator">&lt;</span>masterip<span class="token operator">></span> <span class="token operator">&lt;</span>masterport<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>方式三：服务器配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">slaveof &lt;masterip&gt; &lt;masterport&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slaveof <span class="token operator">&lt;</span>masterip<span class="token operator">></span> <span class="token operator">&lt;</span>masterport<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p><code>slave</code>系统信息</p>
 <ul>
 <li><code>master_link_down_since_seconds</code></li>
@@ -904,29 +1045,30 @@
 </ul>
 <h6 id="主从断开连接"><a href="#主从断开连接" class="headerlink" title="主从断开连接"></a>主从断开连接</h6><ul>
 <li><p>客户端发送指令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">slaveof no one<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slaveof no one<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>说明：</p>
 <p><code>slave</code>断开连接后，不会删除已有的数据，只是不再接受<code>master</code>发送的数据</p>
 </li>
 </ul>
 <h6 id="授权访问"><a href="#授权访问" class="headerlink" title="授权访问"></a>授权访问</h6><ul>
 <li><p><code>master</code>客户端发送命令设置密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">requirepass &lt;password&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">requirepass <span class="token operator">&lt;</span>password<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p><code>master</code>配置文件设置密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">config <span class="hljs-built_in">set</span> requirepass &lt;password&gt;<br>config get requirepass <br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">config <span class="token builtin class-name">set</span> requirepass <span class="token operator">&lt;</span>password<span class="token operator">></span>
+config get requirepass <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p> <code>slave</code>客户端发送命令设置密码</p>
 </li>
 </ul>
-  <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">auth &lt;password&gt;<br></code></pre></div></td></tr></table></figure>
+  <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">auth <span class="token operator">&lt;</span>password<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <ul>
 <li> <code>slave</code>配置文件设置密码</li>
 </ul>
-  <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">masterauth &lt;password&gt;<br></code></pre></div></td></tr></table></figure>
+  <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">masterauth <span class="token operator">&lt;</span>password<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <ul>
 <li><p><code>slave</code>启动服务器设置密码</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-server –a &lt;password&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-server –a <span class="token operator">&lt;</span>password<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="阶段二：数据同步阶段工作流程"><a href="#阶段二：数据同步阶段工作流程" class="headerlink" title="阶段二：数据同步阶段工作流程"></a>阶段二：数据同步阶段工作流程</h5><ul>
 <li>在<code>slave</code>初次连接<code>master</code>后，复制<code>master</code>中的所有数据到<code>slave</code></li>
@@ -951,14 +1093,14 @@
 <li><p>如果<code>master</code>数据量巨大，数据同步阶段应改避免流量高峰期，避免造成<code>master</code>阻塞，影响业务正常执行</p>
 </li>
 <li><p>复制缓冲区大小设定不合理，会导致数据溢出。如进行全量复制周期太长，进行部分复制时发现数据已 经存在丢失的情况，必须进行第二次全量复制，致使slave陷入死循环状态。</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">repl-backlog-size 1mb<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">repl-backlog-size 1mb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p><code>master</code>单机内存占用主机内存的比例不应过大，建议使用<code>50%-70%</code>的内存，留下<code>30%-50%</code>的内存用于执 行<code>bgsave</code>命令和创建复制缓冲区</p>
 </li>
 </ol>
 <p><img src="/img/blogimgs/Redis/36.png" srcset="/img/loading.gif" lazyload></p>
 <h6 id="数据同步阶段salve说明"><a href="#数据同步阶段salve说明" class="headerlink" title="数据同步阶段salve说明"></a>数据同步阶段<code>salve</code>说明</h6><ol>
 <li><p>为避免<code>slave</code>进行全量复制、部分复制时服务器响应阻塞或数据不同步，建议关闭此期间的对外服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">slave-serve-stale-data yes|no<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">slave-serve-stale-data <span class="token function">yes</span><span class="token operator">|</span>no<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>数据同步阶段，<code>master</code>发送给<code>slave</code>信息可以理解<code>master</code>是<code>slave</code>的一个客户端，主动向<code>slave</code>发送 命令</p>
 </li>
 <li><p>多个<code>slave</code>同时对<code>master</code>请求数据同步，<code>master</code>发送的RDB文件增多，会对带宽造成巨大冲击，如果<code>master</code>带宽不足，因此数据同步需要根据业务需求，适量错峰</p>
@@ -1065,7 +1207,7 @@
 </ul>
 </li>
 <li><p>启动哨兵</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-sentinel sentinel-端口号.conf<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-sentinel sentinel-端口号.conf<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <p><img src="/img/blogimgs/Redis/50.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="哨兵工作原理（主从切换）"><a href="#哨兵工作原理（主从切换）" class="headerlink" title="哨兵工作原理（主从切换）"></a>哨兵工作原理（主从切换）</h4><ul>
@@ -1149,33 +1291,33 @@
 </ul>
 <h5 id="Cluster配置"><a href="#Cluster配置" class="headerlink" title="Cluster配置"></a>Cluster配置</h5><ul>
 <li><p>添加节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster-enabled yes|no<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster-enabled <span class="token function">yes</span><span class="token operator">|</span>no<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p><code>cluster</code>配置文件名，该文件属于自动生成，仅用于快速查找文件并查询文件内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster-config-file &lt;filename&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster-config-file <span class="token operator">&lt;</span>filename<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>节点服务响应超时时间，用于判定该节点是否下线或切换为从节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster-node-timeout &lt;milliseconds&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster-node-timeout <span class="token operator">&lt;</span>milliseconds<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p><code>master</code>连接的<code>slave</code>最小数量</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster-migration-barrier &lt;count&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster-migration-barrier <span class="token operator">&lt;</span>count<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="Cluster节点操作命令"><a href="#Cluster节点操作命令" class="headerlink" title="Cluster节点操作命令"></a>Cluster节点操作命令</h5><ul>
 <li><p>查看集群节点信息</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster nodes<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster nodes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>进入一个从节点 <code>redis</code>，切换其主节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster replicate &lt;master-id&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster replicate <span class="token operator">&lt;</span>master-id<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>发现一个新节点，新增主节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster meet ip:port<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster meet ip:port<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>忽略一个没有<code>solt</code>的节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster forget &lt;id&gt;<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster forget <span class="token operator">&lt;</span>id<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>手动故障转移</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cluster failover<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cluster failover<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="redis-trib命令"><a href="#redis-trib命令" class="headerlink" title="redis-trib命令"></a>redis-trib命令</h5><ul>
 <li><p>添加节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-trib.rb add-node<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-trib.rb add-node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>删除节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-trib.rb del-node<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-trib.rb del-node<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>重新分片</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-trib.rb reshard<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-trib.rb reshard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h3 id="企业级解决方案"><a href="#企业级解决方案" class="headerlink" title="企业级解决方案"></a>企业级解决方案</h3><h4 id="缓存预热"><a href="#缓存预热" class="headerlink" title="缓存预热"></a>缓存预热</h4><h5 id="宕机"><a href="#宕机" class="headerlink" title="宕机"></a>宕机</h5><p>服务器启动后迅速宕机</p>
 <h6 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h6><ol>
@@ -1484,11 +1626,17 @@
 <li><p><code>benchmark</code></p>
 <ul>
 <li><p>命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-benchmark [-h ] [-p ] [-c ] [-n &lt;requests]&gt; [-k ]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-benchmark <span class="token punctuation">[</span>-h <span class="token punctuation">]</span> <span class="token punctuation">[</span>-p <span class="token punctuation">]</span> <span class="token punctuation">[</span>-c <span class="token punctuation">]</span> <span class="token punctuation">[</span>-n <span class="token operator">&lt;</span>requests<span class="token punctuation">]</span><span class="token operator">></span> <span class="token punctuation">[</span>-k <span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>范例1</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-benchmark<br><br><br>说明：50个连接，10000次请求对应的性能<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-benchmark
+
+
+说明：50个连接，10000次请求对应的性能<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>范例2</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">redis-benchmark -c 100 -n 5000<br><br><br>说明：100个连接，5000次请求对应的性能<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-benchmark -c <span class="token number">100</span> -n <span class="token number">5000</span>
+
+
+说明：100个连接，5000次请求对应的性能<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <p><img src="/img/blogimgs/Redis/61.png" srcset="/img/loading.gif" lazyload></p>
 </li>
@@ -1499,13 +1647,16 @@
 <li><p><code>monitor</code></p>
 <ul>
 <li><p>命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">monitor<br><br><br>打印服务器调试信息<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">monitor
+
+
+打印服务器调试信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 </ul>
 </li>
 <li><p><code>showlog</code></p>
 <ul>
 <li><p>命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">showlong [operator]<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">showlong <span class="token punctuation">[</span>operator<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <ul>
 <li><code>get</code> ：获取慢查询日志 </li>
@@ -1514,7 +1665,8 @@
 </ul>
 </li>
 <li><p>相关配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">lowlog-log-slower-than 1000 	<span class="hljs-comment">#设置慢查询的时间下线，单位：微妙</span><br>slowlog-max-len 100 		<span class="hljs-comment">#设置慢查询命令对应的日志显示长度，单位：命令数</span><br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">lowlog-log-slower-than <span class="token number">1000</span> 	<span class="token comment">#设置慢查询的时间下线，单位：微妙</span>
+slowlog-max-len <span class="token number">100</span> 		<span class="token comment">#设置慢查询命令对应的日志显示长度，单位：命令数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -1722,6 +1874,8 @@
 
 
 
+  
+    
   
 
 

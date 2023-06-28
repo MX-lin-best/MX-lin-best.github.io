@@ -31,7 +31,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/hybrid.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -66,7 +76,7 @@
 <script type="text/javascript" src="/js/firework.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -244,7 +254,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      180 字
+      174 字
     </span>
   
 
@@ -310,12 +320,13 @@
 <h3 id="首先要保证我们安装了git和Node-js"><a href="#首先要保证我们安装了git和Node-js" class="headerlink" title="首先要保证我们安装了git和Node.js"></a>首先要保证我们安装了<code>git</code>和<code>Node.js</code></h3><blockquote>
 <p><a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>&amp;<a target="_blank" rel="noopener" href="https://nodejs.org/en/">Node.js </a></p>
 </blockquote>
-<h4 id="生成git信息和生成SSH密匙"><a href="#生成git信息和生成SSH密匙" class="headerlink" title="生成git信息和生成SSH密匙"></a>生成git信息和生成SSH密匙</h4><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">git config --global user.name &quot;xxxxx&quot;<br>git config --global user.email &quot;xxxxxx@xx.com&quot;<br></code></pre></div></td></tr></table></figure>
+<h4 id="生成git信息和生成SSH密匙"><a href="#生成git信息和生成SSH密匙" class="headerlink" title="生成git信息和生成SSH密匙"></a>生成git信息和生成SSH密匙</h4><div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell"><span class="token function">git</span> config --global user.name <span class="token string">"xxxxx"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"xxxxxx@xx.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div>
 
 <blockquote>
 <p>将自己的信息填入xxxx中,然后创建本机的<code>.ssh</code>密匙，一直回车就行了</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">ssh-keygen -t rsa -C &quot;xxxxxx@xx.com&quot;<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">ssh-keygen -t rsa -C <span class="token string">"xxxxxx@xx.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <p><img src="/img/blogimgs/Blog/1.png" srcset="/img/loading.gif" lazyload></p>
 <blockquote>
@@ -526,6 +537,8 @@
 
 
 
+  
+    
   
 
 

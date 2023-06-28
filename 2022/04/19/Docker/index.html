@@ -31,7 +31,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/hybrid.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -66,7 +76,7 @@
 <script type="text/javascript" src="/js/firework.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -300,7 +310,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年4月26日 上午
+                  本文最后更新于：2022年6月20日 上午
                 
               </p>
             
@@ -316,62 +326,126 @@
 <li><p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/docker-ce?spm=a2c6h.13651102.0.0.3e221b11XZkZjV">docker-ce镜像 (阿里云官网)</a></p>
 </li>
 <li><p>安装必要的一些系统工具</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo yum install -y yum-utils device-mapper-persistent-data lvm2<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo yum install -y yum-utils device-mapper-persistent-data lvm2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>添加软件源信息</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo yum-config-manager --add-repo https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>```shell<br>sudo sed -i ‘s+download.docker.com+mirrors.aliyun.com/docker-ce+’ /etc/yum.repos.d/docker-ce.repo</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs autohotkey"><br>- 更新并安装`Docker-CE`<br><br>  ```shell<br>  sudo yum makecache fast<br>  <br>  sudo yum -y install docker-ce<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">
+- 更新并安装&#96;Docker-CE&#96;
+
+  &#96;&#96;&#96;shell
+  sudo yum makecache fast
+  
+  sudo yum -y install docker-ce<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>安装引擎</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo yum install docker-ce docker-ce-cli containerd.io<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo yum install docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>开启<code>Docker</code>服务</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">sudo service docker start<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">sudo service docker start<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>卸载<code>Docker</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">1.卸载依赖</span><br>yum remove docker-ce docker-ce-cli containerd.io<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">2.删除资源</span><br>rm -rf /var/lib/docker<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#1.卸载依赖
+yum remove docker-ce docker-ce-cli containerd.io
+
+#2.删除资源
+rm -rf &#x2F;var&#x2F;lib&#x2F;docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>配置<code>aliyun</code>镜像加速器</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">1</span><br>sudo mkdir -p /etc/docker<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">2</span><br>sudo tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;<br>&#123;<br>  &quot;registry-mirrors&quot;: [&quot;https://8y6xbirb.mirror.aliyuncs.com&quot;]<br>&#125;<br>EOF<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">3</span><br>sudo systemctl daemon-reload<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">4</span><br>sudo systemctl restart docker<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#1
+sudo mkdir -p &#x2F;etc&#x2F;docker
+
+#2
+sudo tee &#x2F;etc&#x2F;docker&#x2F;daemon.json &lt;&lt;-&#39;EOF&#39;
+&#123;
+  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;8y6xbirb.mirror.aliyuncs.com&quot;]
+&#125;
+EOF
+
+#3
+sudo systemctl daemon-reload
+
+#4
+sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 </ul>
 <h3 id="命令及作用"><a href="#命令及作用" class="headerlink" title="命令及作用"></a>命令及作用</h3><ul>
 <li><p>查看版本</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker version<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>运行镜像（若没有就自动下载）</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run hello-world<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run hello-world<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>查看镜像</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker images</span><br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">docker images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>帮助指令</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker --help<br><br>docker 指令 --help<br><br>docker info<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker --help
+
+docker 指令 --help
+
+docker info<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>下载镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker pull mysql<br><br>docker pull mysql:5.7 #指定版本<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker pull mysql
+
+docker pull mysql:5.7 #指定版本<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>搜索镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker search [OPTIONS] TERM<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker search [OPTIONS] TERM<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>删除镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker rmi -f 容器id #删除指定镜像<br><br>docker rmi -f 容器id 容器id 容器id  #删除指定镜像<br><br>docker rmi -f $(docker images -aq) #删除所有镜像<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker rmi -f 容器id #删除指定镜像
+
+docker rmi -f 容器id 容器id 容器id  #删除指定镜像
+
+docker rmi -f $(docker images -aq) #删除所有镜像<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>新建容器并启动</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run [可选参数] image<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">参数</span><br><br>--name=&quot;Name&quot; 容器名字<br>-d  		 后台方式运行<br>-it			 使用交互式方式运行，进入容器<br>-p 随机端口   -p ip:主机端口:容器端口<br>			-p 主机端口:容器端口<br>			-p 容器端口<br><br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run [可选参数] image
+
+#参数
+
+--name&#x3D;&quot;Name&quot; 容器名字
+-d  		 后台方式运行
+-it			 使用交互式方式运行，进入容器
+-p 随机端口   -p ip:主机端口:容器端口
+			-p 主机端口:容器端口
+			-p 容器端口
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>启动，退出进入容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run -it mysql /bin/bash<br><br>exit #直接容器停止并停止<br>Ctrl + P + Q #容器不停止退出<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -it mysql &#x2F;bin&#x2F;bash
+
+exit #直接容器停止并停止
+Ctrl + P + Q #容器不停止退出<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>列出运行的镜像</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker ps [参数]<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker ps [参数]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>删除容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker rm 容器id  #删除指定容器,无法删除正在运行的容器<br>docker rm -f $(docker ps -aq) #删除所有容器<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker rm 容器id  #删除指定容器,无法删除正在运行的容器
+docker rm -f $(docker ps -aq) #删除所有容器<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
 <li><p>启动和停止容器</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker start 容器id<br>docker restart 容器id<br>docker stop 容器id<br>docker kill 容器id<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker start 容器id
+docker restart 容器id
+docker stop 容器id
+docker kill 容器id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>查看日志</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker logs <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">显示指定行数日志</span><br>docker logs -tf -tail 10 容器id <br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker logs 
+
+#显示指定行数日志
+docker logs -tf -tail 10 容器id <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>查看容器中进程信息</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker top 容器id<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker top 容器id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>查看镜像的元数据</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker inspect 容器id<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker inspect 容器id<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 <li><p>进入当前正在运行的容器 </p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">进入容器开启一个新的终端，可以在里面操作（常用）</span><br>docker exec -it 容器id /bin/bash<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">进入容器正在执行的终端，不会启动新的进程</span><br>docker attach 容器id <br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#进入容器开启一个新的终端，可以在里面操作（常用）
+docker exec -it 容器id &#x2F;bin&#x2F;bash
+
+#进入容器正在执行的终端，不会启动新的进程
+docker attach 容器id <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>从容器拷贝文件到主机上</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker cp 容器id:容器中的文件位置 宿主机文件位置<br></code></pre></div></td></tr></table></figure></li>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker cp 容器id:容器中的文件位置 宿主机文件位置<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
 </ul>
 <h5 id="命令小结"><a href="#命令小结" class="headerlink" title="命令小结"></a>命令小结</h5><p><img src="/img/blogimgs/Docker/3.png" srcset="/img/loading.gif" lazyload></p>
 <p><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-command-manual.html">Docker 命令大全 </a></p>
 <h3 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h3><ul>
 <li><p><code>portainer</code></p>
 <p><code>Docker</code>图形化界面管理工具</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker run -d -p 8088:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --privileged=true portainer/portainer<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash"> 测试</span><br><span class="hljs-meta">[root@ip]#</span><span class="bash"> curl localhost:8088</span><br><span class="hljs-meta"> </span><br><span class="hljs-meta">#</span><span class="bash"> 外网访问 http://ip:8088</span><br><br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker run -d -p 8088:9000 --restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock --privileged&#x3D;true portainer&#x2F;portainer
+
+# 测试
+[root@ip]# curl localhost:8088
+ 
+# 外网访问 http:&#x2F;&#x2F;ip:8088
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <p><img src="/img/blogimgs/Docker/4.png" srcset="/img/loading.gif" lazyload></p>
 </li>
@@ -381,7 +455,7 @@
 <h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><blockquote>
 <p>镜像是一种轻量级、可执行的独立软件包，用来打包软件运行环境和基于运行环境开发的软件，它包含运行某个软件所需的所有内容，包括代码、运行时、库、环境变量和配置文件。 </p>
 </blockquote>
-<p>参考 [Docker镜像原理之联合文件系统和分层理解](<a target="_blank" rel="noopener" href="https://www.php.cn/docker/488967.html#:~:text=docker%E7%9A%84%E9%95%9C%E5%83%8F%E5%AE%9E%E9%99%85%E4%B8%8A%E7%94%B1%E4%B8%80%E5%B1%82%E4%B8%80%E5%B1%82%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90%EF%BC%8C%E8%BF%99%E7%A7%8D%E5%B1%82%E7%BA%A7%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%B0%B1%E6%98%AFUnionFS%E3%80%82">https://www.php.cn/docker/488967.html#:~:text=docker的镜像实际上由一层一层的文件系统组成，这种层级的文件系统就是UnionFS。</a> bootfs (boot file system)主要包含,bpotloader 和 kernel，bootloader主要是引导加载 kernel，Linux 刚启动时会加载 bootfs文件系统，在Docker镜像的最底层是bootfs。)</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://www.php.cn/docker/488967.html#:~:text=docker">Docker镜像原理之联合文件系统和分层理解</a></p>
 <h5 id="1、联合文件系统"><a href="#1、联合文件系统" class="headerlink" title="1、联合文件系统"></a>1、联合文件系统</h5><blockquote>
 <p><code>UnionFS</code>（联合文件系统）</p>
 </blockquote>
@@ -435,7 +509,9 @@
 <blockquote>
 <p><code>docker commit</code>：用容器创建一个新的镜像。</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker commit 提交容器成为一个新的副本<br><br>docker commit -m=&quot;提交的描述信息&quot; -a=&quot;作者&quot;  目标镜像名:[TAG]<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker commit 提交容器成为一个新的副本
+
+docker commit -m&#x3D;&quot;提交的描述信息&quot; -a&#x3D;&quot;作者&quot;  目标镜像名:[TAG]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
 
 <h3 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h3><blockquote>
 <p>简单说就是，数据的持久化，完全独立于容器的生存周期,容器间也是可以数据共享的</p>
@@ -445,12 +521,24 @@
 <p>-v 挂载</p>
 <p>未指定卷的位置默认在<code>/var/lib/docker/volume/卷名/_data</code></p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">类似于双向绑定</span><br>docker run -it -v 主机目录:容器内目录 image <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">共享一块地址空间</span><br><span class="hljs-meta">#</span><span class="bash">外部目录删除，容器也会删除</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">后面加:ro，:rw改变读写权限</span><br>-v 容器内路径  		#匿名挂载<br>-v 卷名:容器内路径    #具名挂载<br>-v /宿主机路径:容器内路径  #匿名挂载<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">#类似于双向绑定
+docker run -it -v 主机目录:容器内目录 image 
+
+#共享一块地址空间
+#外部目录删除，容器也会删除
+
+#后面加:ro，:rw改变读写权限
+-v 容器内路径  		#匿名挂载
+-v 卷名:容器内路径    #具名挂载
+-v &#x2F;宿主机路径:容器内路径  #匿名挂载<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <blockquote>
 <p>volume:卷</p>
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker volume <br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">查看卷</span><br>docker volume ls<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker volume 
+
+#查看卷
+docker volume ls<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 <h4 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h4><p>用来构建<code>docker</code>镜像的构建文件</p>
 <blockquote>
@@ -458,11 +546,16 @@
 </blockquote>
 <blockquote>
 <p>方式二：脚本文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">FROM centos<br><br>VOLUME [&quot;volume01&quot;,&quot;volume02&quot;]<br><br>CMD echo &quot;-----end-----&quot;<br>CMD /bin/bash<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">FROM centos
+
+VOLUME [&quot;volume01&quot;,&quot;volume02&quot;]
+
+CMD echo &quot;-----end-----&quot;
+CMD &#x2F;bin&#x2F;bash<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
 
 
 </blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">docker build -f 脚本文件位置 -t 目标镜像位置 .(文件位置)<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">docker build -f 脚本文件位置 -t 目标镜像位置 .(文件位置)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
 
 <h4 id="数据卷容器"><a href="#数据卷容器" class="headerlink" title="数据卷容器"></a>数据卷容器</h4><blockquote>
 <p>–volumes-from</p>
@@ -502,6 +595,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/05/27/Thread%E4%B8%AD%E7%9A%84start()%E6%96%B9%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Thread中的start()方法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -663,6 +762,8 @@
 
 
 
+  
+    
   
 
 

@@ -31,7 +31,17 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/hybrid.min.css" />
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
     
   
 
@@ -66,7 +76,7 @@
 <script type="text/javascript" src="/js/firework.js"></script>
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 
 <body>
@@ -312,7 +322,8 @@
 <p><img src="/img/blogimgs/MongoDB/1.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><h4 id="1-第一种-使用命令行参数"><a href="#1-第一种-使用命令行参数" class="headerlink" title="1.第一种(使用命令行参数)"></a>1.第一种(使用命令行参数)</h4><p>启动<code>MongoDB</code>服务前，先在解压文件下创建一个文件夹(<code>data</code>)，用于存放<code>数据库文件</code>和<code>日志文件</code>,并在<code>data</code>文件下创建<code>db</code>和<code>logs</code>子文件夹，<code>db</code>文件夹用于存放<code>数据库文件</code>,<code>logs</code>文件夹用于存放<code>存储日志文件</code><img src="/img/blogimgs/MongoDB/2.png" srcset="/img/loading.gif" lazyload><img src="/img/blogimgs/MongoDB/3.png" srcset="/img/loading.gif" lazyload>在<code>bin</code>目录下的目录栏键入<code>cmd</code>打开命令行，执行以下命令，若出现<code>MongoDB starting</code>，则说明启动成功，关闭命令行就关闭<code>MongoDB</code>服务<img src="/img/blogimgs/MongoDB/4.png" srcset="/img/loading.gif" lazyload><img src="/img/blogimgs/MongoDB/5.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="2-第二种-使用配置文件"><a href="#2-第二种-使用配置文件" class="headerlink" title="2.第二种(使用配置文件)"></a>2.第二种(使用配置文件)</h4><p>启动<code>MongoDB</code>服务前，先在解压文件下创建一个文件夹(<code>conf</code>)，用于存放<code>MongoDB数据库的配置文件</code>，并在该文件夹下创建一个文件<code>mongod.conf</code>，用于指定数据库文件的存储路径及<code>MongoDB</code>的相关配置信息，其中的配置信息如下<img src="/img/blogimgs/MongoDB/6.png" srcset="/img/loading.gif" lazyload>在<code>bin</code>目录下键入<code>cmd</code>打开命令行，执行以下命令，启动<code>MongoDB</code>服务，在日志文件中查看，若出现<code>MongoDB starting</code>，则说明启动成功，关闭命令行就关闭<code>MongoDB</code>服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">mongod -f ..\conf\mongod.conf  或<br>mongod --config ..\conf\mongod.conf<br></code></pre></div></td></tr></table></figure>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mongod -f <span class="token punctuation">..</span><span class="token punctuation">\</span>conf<span class="token punctuation">\</span>mongod.conf  或
+mongod --config <span class="token punctuation">..</span><span class="token punctuation">\</span>conf<span class="token punctuation">\</span>mongod.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div>
 
 <p class="note note-warning">报错以及解决方案：<br>
 原因:我报的是"Unrecognized option: systemLog.destinationf try 'bin\mongod.exe --help' for more information"说明打不开自己配置的文件。<br>
@@ -495,6 +506,8 @@
 
 
 
+  
+    
   
 
 
