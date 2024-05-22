@@ -1,0 +1,626 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/Sail.jpg">
+  <link rel="icon" href="/img/Sail.jpg">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Lexr">
+  <meta name="keywords" content="">
+  
+  <title>page.title - The Memory Of Snow</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":10},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"GA_MEASUREMENT_ID","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="/js/firework.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>The Memory Of Snow</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/message/">
+                <i class="iconfont icon-comment"></i>
+                留言
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                资料
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/book/">
+                    <i class="iconfont icon-book"></i>
+                    PDF
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="page.title">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<article class="page-content">
+  <h2 id="⭐️Star-History"><a href="#⭐️Star-History" class="headerlink" title="⭐️Star History"></a>⭐️Star History</h2><p><a target="_blank" rel="noopener" href="https://star-history.com/#ddy-ddy/cs-408&Date"><img src="https://api.star-history.com/svg?repos=ddy-ddy/cs-408&type=Date" srcset="/img/loading.gif" lazyload alt="Star History Chart"></a></p>
+<h2 id="💻cs-408"><a href="#💻cs-408" class="headerlink" title="💻cs-408"></a>💻cs-408</h2><ul>
+<li>构建<a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408">本仓库</a>的初衷是记录自己备考计算机专业课408的过程</li>
+<li>本仓库收纳了<strong>2023年四本王道复习指导书</strong>，<strong>2023年王道书上的刷题本</strong>，<strong>2024年王道书上的刷题本</strong></li>
+<li>本仓库分享了一些自己从2022年6月备考以来的<strong>学习408心得</strong></li>
+<li>本仓库分享了自己使用<strong>OntNote制作的电子笔记</strong></li>
+</ul>
+<p>希望本仓库的一些经验和资源能够对大家的备考408有一些些帮助。有任何问题都可以提issue联系我呀！如果你有好的资源或者学习方法建议可以提issue或者PR！</p>
+<p>祝大家考研顺利，一举上岸呀ヾ(◍°∇°◍)ﾉﾞ；如果这些内容对你有帮助的话，别忘了star和fork哦(๑′ᴗ‵๑)</p>
+<h2 id="📒笔记"><a href="#📒笔记" class="headerlink" title="📒笔记"></a>📒笔记</h2><ul>
+<li>最近本人和小伙伴重新整理了一份最新的笔记，该笔记是<strong>可打印的pdf版本</strong>，大家可以加我微信<strong>免费领取计算机组成原理</strong>笔记哦。</li>
+<li>微信名：ddy_coding</li>
+</ul>
+<h2 id="💪🏻更新日志"><a href="#💪🏻更新日志" class="headerlink" title="💪🏻更新日志"></a>💪🏻更新日志</h2><p>【2022/10/15】四门<strong>笔记和资源</strong>已经全部更新完毕，后续主要是查缺补漏</p>
+<p>【2022/11/15】新增<strong>计算机组成原理和操作系统大题</strong>考点和历年真题</p>
+<p>【2022/11/19】新增<strong>计算机网络和数据结构大题</strong>考点和历年真题</p>
+<p>【2022/11/19】新增<strong>王道强化课</strong>相关资源（主要是与大题相关的资料）</p>
+<p>【2022/12/09】更新勘误<strong>数据结构</strong>最新笔记</p>
+<p>【2022/12/13】更新勘误<strong>计算机组成原理</strong>最新笔记</p>
+<p>【2023/01/05】发布b站<strong>经验分享和笔记讲解</strong>视频 | <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1884y1e733/?vd_source=c13e2f4070f77eee1d0116869e475178">b站视频链接</a></p>
+<p>【2023/05/06】新增2024年王道四门<strong>选择题刷题本</strong></p>
+<p>【2023/07/24】回复大家提的issue。如果确认是笔记的错误，我会将issue标注为bug，大家可以自行在自己的笔记中修改。由于修改仓库的笔记再上传过于麻烦，故bug中提到的错误并不会更新到最新的笔记中，而是在issue中进行勘误</p>
+<p>【2023/11/18】更新最新的可打印笔记版本，相关资料添加我微信领取哈。微信名：ddy_coding</p>
+<h2 id="👁目录"><a href="#👁目录" class="headerlink" title="👁目录"></a>👁目录</h2><p>一、复习心得&amp;做笔记软件推荐</p>
+<ol>
+<li>刚开始的复习心得</li>
+<li>为什么不推荐做思维导图和手写笔记？</li>
+<li>为什么推荐用OneNote做笔记？</li>
+<li>Onenote有哪些优点？</li>
+<li>结语</li>
+</ol>
+<p>二、数据结构</p>
+<p>三、计算机组成原理</p>
+<p>四、操作系统</p>
+<p>五、计算机网络</p>
+<p>六、王道书和刷题本</p>
+<p>七、其他资源</p>
+<p>八、OneNote文件</p>
+<h2 id="一、复习心得-amp-做笔记软件推荐"><a href="#一、复习心得-amp-做笔记软件推荐" class="headerlink" title="一、复习心得&amp;做笔记软件推荐"></a>一、复习心得&amp;做笔记软件推荐</h2><h3 id="①刚开始的复习心得"><a href="#①刚开始的复习心得" class="headerlink" title="①刚开始的复习心得"></a>①刚开始的复习心得</h3><p>在第一轮复习前，我看了好多经验贴。知道408题的难度不是特别大，但是难在知识点多，繁琐，零碎。一开始我还不以为然，不就四本书吗，本科也都学过，怕啥？直到我复习了两本书之后，我才慢慢体会到学长学姐们的教诲—-呜呜呜😭，408的知识点不是一般的多！</p>
+<ul>
+<li>【数据结构】排序算法那么多种，原理、代码、时间复杂度和相关题型这些你都要掌握吧。这些都还算是比较简单的，毕竟算法这些东西，有很强的逻辑性，你掌握了就是掌握了。</li>
+<li>【计算机网络】【操作系统】题目简单，但是知识点错综复杂，星罗遍布，并且知识点之间很难靠自己建立对应的逻辑网络。但好在计网考的都是偏记忆性的知识，学长学姐说被背就完事了「实际复习证明确实如此」。</li>
+<li>【计算机组成原理】这门内容既多，且繁琐，还难！毕竟大家很多都是学软件出身的，没多少搞硬件的。光是数据的表示和计算就要了我老命，更别提后面的中央处理器相关的内容了。只能硬着头皮跟着王道视频学下去。</li>
+</ul>
+<h3 id="②为什么不推荐做思维导图和手写笔记？"><a href="#②为什么不推荐做思维导图和手写笔记？" class="headerlink" title="②为什么不推荐做思维导图和手写笔记？"></a>②为什么不推荐做思维导图和手写笔记？</h3><p>在复习的过程中，我逐渐觉得做笔记很关键！408这么多知识点，学了后面忘记前面，不做个笔记，第二轮第三轮怎么复习呢？我看了各种经验贴，大家都是说在书上勾勾画画，然后整理个思维导图或者直接用别人的思维导图。</p>
+<p>我说做就做，先是跟着视频把书上的知识点搞懂了，然后再借鉴着王道每个视频结尾的思维导图，自己用<u><strong>Xmind</strong></u>做思维导图。Xmind开了会员之后可以插入图片和公式。一开始我做的很起劲，做的思维导图也很”精美“。但是过了几天当我回过头来复习自己的思维导图时，一脸懵逼😳。</p>
+<p>就拿下面这个图来说，这是我做的调度这一节的思维导图。光调度算法就有好几种，但是我看这个思维导图还是啥都回忆不起来，还不如去看书或者看自己的手写笔记。其实这些算法用一张图，一个例题就能完美的诠释他们的原理和考点。</p>
+<blockquote>
+<p>xmind虽然可以插入图片，但是插入之后版面会非常的大，而且十分不适合阅读。</p>
+</blockquote>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h616g86y6dj21cw046t9l.jpg" srcset="/img/loading.gif" lazyload></p>
+<p>也有帖子说有ipad可以用<strong>noteability</strong>手写电子笔记，我也试了试。确实可以很方便的贴入各种图片和公式。但是用了几天我发现手写还是太慢了，个人更喜欢打字😁。</p>
+<blockquote>
+<p>noteability不能左右拉伸，如果你表格或者图片很多，知识点一多，排版就会很难看。</p>
+</blockquote>
+<h3 id="③为什么推荐用Onenote做笔记？"><a href="#③为什么推荐用Onenote做笔记？" class="headerlink" title="③为什么推荐用Onenote做笔记？"></a>③为什么推荐用Onenote做笔记？</h3><p>直到我用onenote开始做笔记我才觉得，真香！</p>
+<p>拿下图举例，这是我用onenote做的关于计算机组成原理第二种数据表示和运算里面的关于乘法的知识点。使用onenote我就可以很方便的制作一个表格对比原码乘法和补码乘法，而且我可以随意插入计算过程，例题，电路图等等。</p>
+<p>掌握了技巧之后，做这么一个笔记很快的，把书上的重点打上去，然后图片截个屏就好了。等你复习的时候只需要看这么一个表格，就能理解书上2-3面的文字。</p>
+<blockquote>
+<p>一般我会先看书看视频，然后再用onenote做笔记，等做完题之后再把错题难题贴到对应的知识点附近。<br>复习的时候就直接在ipad端勾勾画画，简直不要太快乐！</p>
+</blockquote>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h606y8qev3j21so0u0thh.jpg" srcset="/img/loading.gif" lazyload></p>
+<h3 id="④OneNote有哪些优点？"><a href="#④OneNote有哪些优点？" class="headerlink" title="④OneNote有哪些优点？"></a>④OneNote有哪些优点？</h3><p>可能大家不怎么熟悉Onenote，这里我主要介绍一下。它是微软推出的一个全平台笔记类软件，电脑手机ipad都有，免费且数据全平台共享。「不过好像数据同步需要🪜」那OneNote相比于其他笔记软件，它的优点有哪些呢？</p>
+<h4 id="可以随意的标注重点"><a href="#可以随意的标注重点" class="headerlink" title="###可以随意的标注重点"></a><strong>###可以随意的标注重点</strong></h4><ul>
+<li>408书上的知识点十分繁重，且都是同一种颜色，不断复习中必然会导致审美疲劳，且供做笔记的地方小。onenote的标注功能十分的强大，可以根据自己的习惯制定一套标注准则。以便自己在将来复习的时候能迅速的抓住重难点。</li>
+<li>下图左边是我的标志习惯✍🏻，右边是一个实例</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h5tb3etvztj21mm0h2jtz.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="可以随意的插入图片"><a href="#可以随意的插入图片" class="headerlink" title="###可以随意的插入图片"></a>###可以随意的插入图片</h4><ul>
+<li>408很多考点是要靠动画和图片来理解的，自己画图太浪费时间，可以直接截取博客/视频里面的流程图，计算图等等。</li>
+<li>下图是我记录的主存储器的组成部分还有存储体的组成元素，左边是插入的王道书的图，右边是插入自己画的图</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h65dswcrk6j21p10u00vy.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="可以随意的绘制表格"><a href="#可以随意的绘制表格" class="headerlink" title="###可以随意的绘制表格"></a>###可以随意的绘制表格</h4><ul>
+<li>408中很多考点是可以通过对比来学习的，比如C/S模型和P2P模型，画一个表格就可以知道他们的区别与联系了。onenote支持绘制任意大小的表格，表格里面可以嵌套表格，插入图片等等。</li>
+<li>下图是C/S模型和P2P模型的表格对比</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h5tb9mtin8j21j50u07a6.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="可以在笔记间自由跳转"><a href="#可以在笔记间自由跳转" class="headerlink" title="###可以在笔记间自由跳转"></a>###可以在笔记间自由跳转</h4><ul>
+<li>在做笔记的时候，如果按照王道书的内容一章一章做笔记，会发现有很多重复的内容。比如在学习计算机组成原理第一章“计算机系统概述”的时候有讲到CPU的组成结构和功能。当等你复习到第五章的时候，针对CPU的组成和功能有更为详细的描写。因此做笔记的时候可以用“<strong>复制指向段落的链接</strong>“这一方式，在一个地方详细的描写，其他地方就直接引用这个链接。</li>
+<li>下图把要执行的内容框起来，然后点击鼠标右键，选择复制指向段落的链接，则生成链接第五章 中央处理器页的对象，在OneNote笔记内点击这个链接就可以实现笔记间的自由调转，再也不用笔记重复的问题了(#^.^#)</li>
+</ul>
+<p><img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6e2ascwd5j21nm0ratb4.jpg" srcset="/img/loading.gif" lazyload></p>
+<h4 id="可以在ipad端手写"><a href="#可以在ipad端手写" class="headerlink" title="###可以在ipad端手写"></a>###可以在ipad端手写</h4><ul>
+<li>如果有ipad的话，可以首先在电脑端做好相关的笔记，然后后续的复习在ipad端写写画画，把自己当做老师，然后模拟算法或者计算的过程，这样可以很大程度的加深自己的理解。「输出远比输入重要」</li>
+</ul>
+<h4 id="全平台支持快速搜索🔍"><a href="#全平台支持快速搜索🔍" class="headerlink" title="###全平台支持快速搜索🔍"></a>###全平台支持快速搜索🔍</h4><ul>
+<li>使用快捷键Control+F（mac是commonad+F）可以快速搜索笔记里面的内容</li>
+<li>不过得吐槽一下这个搜索功能好像不能个性化调整，当没有全匹配的情况下，居然会进行逐字搜索，离谱┭┮﹏┭┮</li>
+</ul>
+<h3 id="⑤结语"><a href="#⑤结语" class="headerlink" title="⑤结语"></a>⑤结语</h3><p>以上就大概是我从2022年6月份到9月份备考408的一些感悟和经验啦。我感觉自己喜欢瞎折腾，所以浪费了很多时间，但是感觉还是值得的。</p>
+<p>⚠️值得注意的是：虽然笔记做的好有利于自己的复习，但是这一切的前提是你第一轮复习是踏踏实实的，你对408各科的知识点理解都是到位的。如果没有这个打基础的话，你笔记做的再好也没有用！当然目前这些方法都只是我自己做起来效率挺高，所以觉得方法还行。大家如果觉得哪里不对，不好或者有可以改进的地方，欢迎👏🏻随时讨论。</p>
+<p>之后的内容包括408每科相关的【资源】【笔记】【学习方法】【用到的视频博客】有需要的自取哦。这些笔记都是以王道书为核心做的，所以知识体系和王道书差不多，可以配合王道书食用。</p>
+<p>这些笔记<strong>不单单</strong>是王道书的知识点，<strong>还包括了</strong>我借鉴各类视频，博客，书籍融合的知识点「借鉴的资源会写在对应章节中」，<strong>以及</strong>我做题目之后的心得和查缺补漏的知识点。</p>
+<h2 id="二、数据结构"><a href="#二、数据结构" class="headerlink" title="二、数据结构"></a>二、数据结构</h2><p>数据结构网上有很多质量很高的文章。有图解动画还有代码，这里推荐几个我看过的博客:<a target="_blank" rel="noopener" href="https://github.com/callmePicacho/Data-Structres">Data-Structres</a> | <a target="_blank" rel="noopener" href="https://github.com/yangchong211/YCBlogs/blob/master/blog/06.%E7%AE%97%E6%B3%95%E5%A4%A7%E6%B1%87%E6%80%BB.md">算法大汇总</a></p>
+<p>数据结构会画算法运行的流程图也就会做题了，笔记中记录了大多数算法的手绘流程图以及总结的算法常用结论和常考点。</p>
+<p>👇下图是数据结构笔记中关于<strong>二叉树四种遍历方式</strong>的知识点：包括遍历过程，示例图，代码。<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1h6rbolipvaj31r20u0qbo.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第一章：绪论</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第二章：线性表</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第三章：栈、队列和数组</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第四章：串</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第五章：树和二叉树</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第六章：图</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第七章：查找</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">第八章：排序</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">背诵知识点</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/1%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">大题</a></li>
+</ul>
+<h2 id="三、计算机组成原理"><a href="#三、计算机组成原理" class="headerlink" title="三、计算机组成原理"></a>三、计算机组成原理</h2><p>计算机组成原理我是靠着王道视频和王道书过来的，如果实在有不理解的地方，我就会google，看各种博客。有些博客确实讲的很不错，精辟且易懂。计组难，但是还是有章可循的，主要以做题为导向！</p>
+<p>👇下图是计组笔记中一个关于<strong>控制器和运算器相关知识点的对比</strong>表格<img src="https://tva1.sinaimg.cn/large/e6c9d24egy1h6fbzpbtvyj226p0u0dru.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第一章：计算机系统概述</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第二章：数据的表示和运算</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第三章：存储系统</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第四章：指令系统</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第五章：中央处理器</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第六章：总线</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">第七章：输入/输出系统</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">背诵知识点</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86">大题</a></p>
+</li>
+</ul>
+<h2 id="四、操作系统"><a href="#四、操作系统" class="headerlink" title="四、操作系统"></a>四、操作系统</h2><p>操作系统在学完计算机组成原理之后会有一个理解上的升华，这门课不是很难，掌握原理就基本会做题了。这里推荐几个我觉得写得很好的博客：<a target="_blank" rel="noopener" href="https://xiaolincoding.com/os/2_os_structure/linux_vs_windows.html#%E5%85%B3%E6%B3%A8%E4%BD%9C%E8%80%85">小林coding：图解系统</a></p>
+<p>👇下图是操作系统笔记中与<strong>进程的状态与转换</strong>有关的知识点</p>
+<p><img src="https://tva1.sinaimg.cn/large/006y8mN6gy1h6rbvlwi2fj318n0u0wkn.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第一章：计算机系统概述</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第二章：进程与线程</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第三章：内存管理</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第四章：文件管理</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">第五章：I/O管理</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">背诵知识点</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">大题</a></p>
+</li>
+</ul>
+<h2 id="五、计算机网络"><a href="#五、计算机网络" class="headerlink" title="五、计算机网络"></a>五、计算机网络</h2><p>计算机网络我学习的过程是自顶向下的，先学个概述，然后从应用层一路向下。应用层更贴近于日常生活，所以上手快。</p>
+<p>视频我没有跟着王道学，而是跟着<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1c4411d7jb?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">湖科大计算机网络视频</a>学习的，这个视频的动画不是一般的好！理解十分的轻松。</p>
+<p>👇下图是计网笔记中与<strong>TCP拥塞控制算法</strong>有关的知识点<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1h6rc2qv1jjj31bn0u0jww.jpg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第一章：计算机网络体系结构</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第二章：物理层</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第三章：数据链路层</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第四章：网络层</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第五章：传输层</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">第六章：应用层</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">背诵知识点</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/4%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">大题</a></li>
+</ul>
+<h2 id="六、王道书和刷题本"><a href="#六、王道书和刷题本" class="headerlink" title="六、王道书和刷题本"></a>六、王道书和刷题本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/5%E7%8E%8B%E9%81%93%E4%B9%A6%E5%92%8C%E5%88%B7%E9%A2%98%E6%9C%AC/2023%E5%B9%B4%E7%8E%8B%E9%81%93%E8%80%83%E7%A0%94%E5%A4%8D%E4%B9%A0%E6%8C%87%E5%AF%BC">2023年王道考研复习指导</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/5%E7%8E%8B%E9%81%93%E4%B9%A6%E5%92%8C%E5%88%B7%E9%A2%98%E6%9C%AC/2023%E5%B9%B4%E9%80%89%E6%8B%A9%E9%A2%98%E5%88%B7%E9%A2%98%E6%9C%AC">2023年选择题刷题本</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/5%E7%8E%8B%E9%81%93%E4%B9%A6%E5%92%8C%E5%88%B7%E9%A2%98%E6%9C%AC/2023%E5%B9%B4%E5%A4%A7%E9%A2%98%E5%88%B7%E9%A2%98%E6%9C%AC">2023年大题刷题本</a></li>
+</ul>
+<h2 id="七、其他资源"><a href="#七、其他资源" class="headerlink" title="七、其他资源"></a>七、其他资源</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/6%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">2023大纲</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/6%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">历年真题考频统计</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/6%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">王道强化课资料链接</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/6%E5%85%B6%E4%BB%96%E8%B5%84%E6%BA%90">数据结构代码题总结-王道一休哥</a></p>
+</li>
+</ul>
+<h2 id="八、Onenote文件"><a href="#八、Onenote文件" class="headerlink" title="八、Onenote文件"></a>八、Onenote文件</h2><ul>
+<li>可能看pdf不是很方便，我分享了<a target="_blank" rel="noopener" href="https://1drv.ms/u/s!AvpCy58GefJpa0D63jFWUL7CUUI">OneNote链接</a>。大家可以在线浏览并保存到本地</li>
+<li>mac端操作onenote没有win方便，导出pdf文件需要到移动端设备点击分享，然后导出pdf</li>
+<li>访问OneNote链接要🪜，最好用Google打开。微软的速度一言难尽😂</li>
+<li>链接打不开或者无法保存到本地的话，可以下载<a target="_blank" rel="noopener" href="https://github.com/ddy-ddy/cs-408/tree/master/onenote%E6%96%87%E4%BB%B6">OneNote文件</a>然后在本地打开</li>
+<li>如果大家github下载不了的话，可以到这个链接下载：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1XevgMm-8LashFEA1pzWsVw?pwd=6pi0">百度网盘</a> ，提取码: 6pi0</li>
+</ul>
+
+
+  
+</article>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="/" target="_self" rel="nofollow noopener"><span>The Memory Of Snow</span></a> <i class="iconfont icon-love"></i> <a href="/about/" target="_self" rel="nofollow noopener"><span>Lexr</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'GA_MEASUREMENT_ID', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
