@@ -1,0 +1,926 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/Sail.jpg">
+  <link rel="icon" href="/img/Sail.jpg">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Lexr">
+  <meta name="keywords" content="">
+  
+  <title>谷粒商城遇到的问题以及解决方法 - The Memory Of Snow</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":10},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"GA_MEASUREMENT_ID","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="/js/firework.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>The Memory Of Snow</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/message/">
+                <i class="iconfont icon-comment"></i>
+                留言
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                资料
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/book/">
+                    <i class="iconfont icon-book"></i>
+                    PDF
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/lookingfor.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="谷粒商城遇到的问题以及解决方法">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Lexr
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-01-12 22:25" pubdate>
+        2025年1月12日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">谷粒商城遇到的问题以及解决方法</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2025年2月16日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <p>1、如有条件电脑内存至少16G起步，条件进一步加个屏幕，条件更进一步租一台至少4G内存的X86架构云服务器，所有部署的东西全扔云服务器上 </p>
+<p>2、P16，P17没法搭起来的建议照着rerenfast的github上的教程搭 </p>
+<p>3、项目搭起来后，每学完一章一定要用git提交一次，不然后续排错会令人崩溃 </p>
+<p>4、多记笔记，尤其是分布式，架构，锁相关的知识，有利于面试 5、IDEA的jrebel插件和ResetfulTool插件至少能提高一半的学习效率，必用 </p>
+<p>6、这章实在找不到解决办法看下弹幕，其余情况一律关闭 </p>
+<p>7、Maven依赖版本号一定要一模一样（除非你知道高版本怎么配置） </p>
+<p>8、当前章节没达到老师的效果不要继续往下做，这个项目是线性的，你卡在这个环节后面基本也很难做下去，直到P325 </p>
+<p>9、单纯想学后端东西的，前端代码照抄，P28-P44跳过 </p>
+<p>10、ES的内存分配不要128MB，要256MB起步，商品上架的测试数据建议和老师的一模一样（除了图片），不然不好对照 </p>
+<p>11、nginx可以不用部署在服务器上，有windows版可以本地运行，跳过穿透 </p>
+<p>12、单点登录有条件直接用github的，不要用微博的，提高效率，可以用api.github.com/user这个接口 </p>
+<p>13、支付宝沙箱每周日12:00至每周一12:00维护不可用 </p>
+<p>14、个人认为新增商品，商品上架，保存订单数据，支付这四个功能为该项目最折磨人功能，一P能卡一两天 </p>
+<p>15、P100之前的内容属于当前JAVA后端能找到工作的最基本水平 </p>
+<p>16、调试环节是必要的，一定要跟着学，不会调试通过试用期堪忧 </p>
+<p>17、实际大多数公司的项目技术难点和涵盖范围不如这个项目（所以好多人边上班边学啊）</p>
+<h2 id="1-分布式基础篇"><a href="#1-分布式基础篇" class="headerlink" title="1.分布式基础篇"></a>1.分布式基础篇</h2><h3 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h3><ol>
+<li><h4 id="renren-fast启动报IO异常错误"><a href="#renren-fast启动报IO异常错误" class="headerlink" title="renren-fast启动报IO异常错误"></a><strong>renren-fast启动报IO异常错误</strong></h4><ul>
+<li>```java<br>java.io.IOException: The server sockets created using the LocalRMIServerSocketFactory only accept connections from clients running on the host where the RMI remote objects have been exported.<div class="code-wrapper"><pre><code>at sun.management.jmxremote.LocalRMIServerSocketFactory$1.accept(LocalRMIServerSocketFactory.java:114)
+at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.executeAcceptLoop(TCPTransport.java:405)
+at sun.rmi.transport.tcp.TCPTransport$AcceptLoop.run(TCPTransport.java:377)
+at java.lang.Thread.run(Thread.java:748)
+</code></pre></div>
+<div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">
+**解决方法**
+
+&#96;&#96;&#96;bash
+使用LocalRMIServerSocketFactory创建的服务器套接字仅接受来自已导出RMI远程对象的主机上运行的客户端的连接
+
+1.修改项目中的VM Options
+添加-Dcom.sun.management.jmxremote.local.only&#x3D;false<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li><h5 id="windows端口占用杀死线程和子线程"><a href="#windows端口占用杀死线程和子线程" class="headerlink" title="windows端口占用杀死线程和子线程"></a><strong>windows端口占用杀死线程和子线程</strong></h5><ul>
+<li>```bash<br> netstat -ano (查看端口占用情况) netstat -ano | findstr “9000” (查看端口9000占用情况) taskkill /T /F /PID 9088 (9088是PID) <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">   
+3. ##### **renren-fast开启服务发现时，启动报错（Failed to start bean ‘nacosWatch‘；ErrCode:-400, ErrMsg:Could not initialize class com.alibaba.nacos.;     com.google.common.collect.Sets$SetView.iterator()Lcom&#x2F;google&#x2F;common&#x2F;collect&#x2F;UnmodifiableIterator;）**
+
+   - &#96;&#96;&#96;xml
+     &lt;!--原因:未引入依赖guava--&gt;
+      &lt;dependency&gt;
+         &lt;groupId&gt;com.google.guava&lt;&#x2F;groupId&gt;
+         &lt;artifactId&gt;guava&lt;&#x2F;artifactId&gt;
+         &lt;version&gt;22.0&lt;&#x2F;version&gt;
+     &lt;&#x2F;dependency&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li><h5 id="引入阿里云OSS存储报错（gulimall-common引入）"><a href="#引入阿里云OSS存储报错（gulimall-common引入）" class="headerlink" title="引入阿里云OSS存储报错（gulimall-common引入）"></a>引入<strong>阿里云OSS存储报错</strong>（<strong>gulimall-common</strong>引入）</h5><ul>
+<li><p>```xml</p>
+  <dependency>
+       <groupId>com.alibaba.cloud</groupId>
+       <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+ </dependency>
+ <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">
+   ###### **报错**
+
+- &#96;&#96;&#96;bash
+   com.alibaba.cloud:aliyun-oss-spring-boot-starter:jar:unknown was not found in https:&#x2F;&#x2F;maven.aliyun.com&#x2F;repository&#x2F;central <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+<h6 id="解决-gulimall-common引入"><a href="#解决-gulimall-common引入" class="headerlink" title="解决(gulimall -common引入)"></a><strong>解决</strong>(<strong>gulimall -common</strong>引入)</h6></li>
+<li><p>```xml</p>
+ <dependency>
+       <groupId>com.alibaba.cloud</groupId>
+       <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+ </dependency>
+ <dependency>
+      <groupId>com.aliyun</groupId>
+      <artifactId>aliyun-java-sdk-core</artifactId>
+      <version>4.6.0</version>
+ </dependency>
+ 
+ 
+ <dependencyManagement>
+         <dependencies>
+             <dependency>
+                 <groupId>com.alibaba.cloud</groupId>
+                 <artifactId>aliyun-spring-boot-dependencies</artifactId>
+                 <version>1.0.0</version>
+                 <type>pom</type>
+                 <scope>import</scope>
+             </dependency>
+         </dependencies>
+ </dependencyManagement>
+ <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">
+###### **使用：**
+
+&#96;&#96;&#96;yml
+alibaba:
+  cloud:
+    oss:
+      endpoint: xxxx
+    access-key: xxxx
+    secret-key: xxxxx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+ <div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">YourService</span> <span class="token punctuation">&#123;</span>
+	<span class="token annotation punctuation">@Autowired</span>
+	<span class="token keyword">private</span> <span class="token class-name">OSSClient</span> ossClient<span class="token punctuation">;</span>
+      
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token comment">// download file to local</span>
+		ossClient<span class="token punctuation">.</span><span class="token function">getObject</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">GetObjectRequest</span><span class="token punctuation">(</span>bucketName<span class="token punctuation">,</span> objectName<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"pathOfYourLocalFile"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li><p><strong>Spring循环依赖问题</strong></p>
+<ul>
+<li><p><strong>解决方法</strong></p>
+ <div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token number">1.</span>添加<span class="token annotation punctuation">@Lazy</span>注解
+  	对于类<span class="token class-name">A</span>和类<span class="token class-name">B</span>都是通过构造器注入的情况，可以在<span class="token class-name">A</span>或者<span class="token class-name">B</span>的构造函数的形参上加个<span class="token annotation punctuation">@Lazy</span>注解实现延迟加载。
+    <span class="token annotation punctuation">@Lazy</span>实现原理是，当实例化对象时，如果发现参数或者属性有<span class="token annotation punctuation">@Lazy</span>注解修饰，那么就不直接创建所依赖的对象了，而是使用动态代理创建一个代理类<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div>
+
+ <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">2</span>.Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to <span class="token builtin class-name">break</span> the cycle automatically by setting spring.main.allow-circular-references to true.
+
+根据提示信息在配置文件中添加 
+spring.main.allow-circular-references<span class="token operator">=</span>true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+</ul>
+</li>
+<li><p><strong>OpenFeign远程调用其他服务请求报错，gulimall-product启动报错</strong></p>
+<ul>
+<li><p>```xml</p>
+ <!--报错信息：-->
+<p> org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name ‘spuInfoController’: Unsatisfied dependency expressed through field ‘spuInfoService’; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name ‘spuInfoService’: Unsatisfied dependency expressed through field ‘couponFeignService’; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name ‘com.lexr.gulimall.product.feign.CouponFeignService’: Unexpected exception during bean creation; nested exception is java.lang.IllegalStateException: No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-loadbalancer?</p>
+ <!--解决：添加依赖-->
+  <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+ </dependency>
+ <div class="code-wrapper"><pre class="line-numbers language-none"><code class="language-none">
+7. 关于**BeanUtils.copyProperties()**的**浅拷贝**问题**(无法拷贝集合中的不同包下的相同类名)**
+
+   - 源码
+
+      &#96;&#96;&#96;java
+      &#x2F;**
+      	 * Copy the property values of the given source bean into the target bean.
+      	 * Note: The source and target classes do not have to match or even be derived
+      	 * from each other, as long as the properties match. Any bean properties that the
+      	 * source bean exposes but the target bean does not will silently be ignored.
+      	 * This is just a convenience method. For more complex transfer needs,
+      	 * consider using a full BeanWrapper
+      	 * As of Spring Framework 5.3, this method honors generic type information
+      	 * when matching properties in the source and target objects.
+      	 * The following table provides a non-exhaustive set of examples of source
+      	 * and target property types that can be copied as well as source and target
+      	 * property types that cannot be copied.
+      	 * 
+      	 *  source property type 		target property type 		copy supported 
+      	 *  Integer 				    Integer 					yes 
+      	 *  Integer 				    Number 						yes
+      	 *  List&lt;Integer&gt; 				List&lt;Integer&gt; 				yes 
+      	 *  List&lt;?&gt; 				    List&lt;?&gt; 					yes 
+      	 *  List&lt;Integer&gt; 				List&lt;?&gt; 					yes 
+      	 *  List&lt;Integer&gt; 				List&lt;? extends Number&gt; 		 yes 
+      	 *  String 					    Integer 				    no 
+      	 *  Number 					    Integer 					no 
+      	 *  List&lt;Integer&gt;  				List&lt;Long&gt;&#125; 				 no 
+      	 *  List&lt;Integer&gt;				List&lt;Number&gt;&#125;				 no
+      	 * 
+      	 * @param source the source bean
+      	 * @param target the target bean
+      	 * @throws BeansException if the copying failed
+      	 * @see BeanWrapper
+      	 *&#x2F;
+      	public static void copyProperties(Object source, Object target) throws BeansException &#123;
+      		copyProperties(source, target, null, (String[]) null);
+      	&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p><strong>解决(构造深拷贝工具类（类BeanUtils.copyProperties()）)</strong></p>
+ <div class="code-wrapper"><pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">package com.lexr.gulimall.product.utils;
+
+import org.springframework.beans.BeanUtils;
+import java.lang.reflect.*;
+import java.util.*;
+
+&#x2F;**
+ * @ClassName: DeepBeanUtils
+ * @Author: lin rui
+ * @Date: 2025&#x2F;2&#x2F;16 15:42
+ * @Description:
+ *&#x2F;
+public class DeepBeanUtils &#123;
+
+    &#x2F;**
+     * 深拷贝对象属性（包括集合和嵌套对象）
+     * @param source 源对象
+     * @param target 目标对象
+     *&#x2F;
+    public static void copyProperties(Object source, Object target) &#123;
+        if (source &#x3D;&#x3D; null || target &#x3D;&#x3D; null) return;
+        copyPropertiesRecursive(source, target);
+    &#125;
+
+    &#x2F;&#x2F; 递归拷贝核心逻辑
+    private static void copyPropertiesRecursive(Object source, Object target) &#123;
+        try &#123;
+            &#x2F;&#x2F; 1. 先执行 Spring 的浅拷贝（处理基本类型和非集合属性）
+            BeanUtils.copyProperties(source, target);
+
+            &#x2F;&#x2F; 2. 处理所有集合属性
+            for (Field targetField : getAllFields(target.getClass())) &#123;
+                Field sourceField &#x3D; getField(source.getClass(), targetField.getName());
+                if (sourceField &#x3D;&#x3D; null) continue;
+
+                sourceField.setAccessible(true);
+                targetField.setAccessible(true);
+
+                Object sourceValue &#x3D; sourceField.get(source);
+                if (sourceValue &#x3D;&#x3D; null) continue;
+
+                &#x2F;&#x2F; 仅处理 Collection 类型
+                if (sourceValue instanceof Collection) &#123;
+                    handleCollection(sourceValue, targetField, target);
+                &#125;
+            &#125;
+        &#125; catch (Exception e) &#123;
+            throw new RuntimeException(&quot;深拷贝失败&quot;, e);
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F; 处理集合类型
+    private static void handleCollection(Object sourceCollection, Field targetField, Object target)
+            throws Exception &#123;
+
+        Collection&lt;?&gt; sourceList &#x3D; (Collection&lt;?&gt;) sourceCollection;
+        if (sourceList.isEmpty()) return;
+
+        &#x2F;&#x2F; 获取目标集合的泛型类型
+        Class&lt;?&gt; targetElementType &#x3D; getGenericType(targetField);
+
+        &#x2F;&#x2F; 创建目标集合实例（支持 List&#x2F;Set）
+        Collection&lt;Object&gt; targetCollection &#x3D; createTargetCollection(targetField.getType());
+
+        &#x2F;&#x2F; 遍历源集合元素，递归拷贝到目标类型
+        for (Object sourceItem : sourceList) &#123;
+            Object targetItem &#x3D; createAndCopy(sourceItem, targetElementType);
+            if (targetItem !&#x3D; null) &#123;
+                targetCollection.add(targetItem);
+            &#125;
+        &#125;
+
+        &#x2F;&#x2F; 将新集合设置到目标对象
+        targetField.set(target, targetCollection);
+    &#125;
+
+    &#x2F;&#x2F; 创建并拷贝嵌套对象
+    private static Object createAndCopy(Object sourceItem, Class&lt;?&gt; targetType) &#123;
+        try &#123;
+            Object targetItem &#x3D; targetType.getDeclaredConstructor().newInstance();
+            copyPropertiesRecursive(sourceItem, targetItem);
+            return targetItem;
+        &#125; catch (Exception e) &#123;
+            return null;
+        &#125;
+    &#125;
+
+    &#x2F;&#x2F; 获取字段的泛型类型（仅处理单参数化类型如 List&lt;T&gt;）
+    private static Class&lt;?&gt; getGenericType(Field field) &#123;
+        ParameterizedType genericType &#x3D; (ParameterizedType) field.getGenericType();
+        return (Class&lt;?&gt;) genericType.getActualTypeArguments()[0];
+    &#125;
+
+    &#x2F;&#x2F; 创建目标集合实例
+    private static Collection&lt;Object&gt; createTargetCollection(Class&lt;?&gt; collectionType) &#123;
+        if (List.class.isAssignableFrom(collectionType)) &#123;
+            return new ArrayList&lt;&gt;();
+        &#125; else if (Set.class.isAssignableFrom(collectionType)) &#123;
+            return new HashSet&lt;&gt;();
+        &#125;
+        throw new IllegalArgumentException(&quot;不支持的集合类型: &quot; + collectionType);
+    &#125;
+
+    &#x2F;&#x2F; 获取类及其父类的所有字段
+    private static List&lt;Field&gt; getAllFields(Class&lt;?&gt; clazz) &#123;
+        List&lt;Field&gt; fields &#x3D; new ArrayList&lt;&gt;();
+        while (clazz !&#x3D; null) &#123;
+            fields.addAll(Arrays.asList(clazz.getDeclaredFields()));
+            clazz &#x3D; clazz.getSuperclass();
+        &#125;
+        return fields;
+    &#125;
+
+    &#x2F;&#x2F; 安全获取字段（忽略不存在的字段）
+    private static Field getField(Class&lt;?&gt; clazz, String name) &#123;
+        try &#123;
+            return clazz.getDeclaredField(name);
+        &#125; catch (NoSuchFieldException e) &#123;
+            return null;
+        &#125;
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="有用技巧"><a href="#有用技巧" class="headerlink" title="有用技巧"></a>有用技巧</h3><ol>
+<li><h4 id="OpenFeign使用（远程调用其他服务）"><a href="#OpenFeign使用（远程调用其他服务）" class="headerlink" title="OpenFeign使用（远程调用其他服务）"></a><strong>OpenFeign使用（远程调用其他服务）</strong></h4><ol>
+<li><p>引入依赖包</p>
+<div class="code-wrapper"><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+           <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-openfeign<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p>主启动类开启**@EnableFeignClients** 功能</p>
+</li>
+<li><p>编写接口， 加上注解**@FeignClient(要调用的服务名称)<strong>，接口中写要调用的</strong>Controller**中的方法，进行远程调用</p>
+<p><strong>原理(调用的请求路径参数不同时，会匹配相对应的实体属性名。JSON相同，不需用实体类一样)：</strong></p>
+<p><strong>1.Controller中请求路径入参中添加了@RequestBody,会将对象转换为JSON，</strong></p>
+<p>​        <strong>2.找到要调用的服务名，给请求路径发送请求，将JSON放在请求体位置，发送请求</strong></p>
+<p>​        <strong>3.将请求体中的JSON转为调用服务中的实体</strong></p>
+</li>
+</ol>
+</li>
+<li><p><strong>Nacos作为配置中心</strong></p>
+<ol>
+<li><p>引入依赖</p>
+<div class="code-wrapper"><pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token comment">&lt;!--nacos-config依赖--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.alibaba.cloud<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-cloud-starter-alibaba-nacos-config<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p>创建一个<strong>bootstrap.properties</strong></p>
+<div class="code-wrapper"><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">spring.application.name</span><span class="token punctuation">=</span><span class="token attr-value">gulimall-coupon</span>
+<span class="token attr-name">spring.cloud.nacos.server-addr</span><span class="token punctuation">=</span><span class="token attr-value">127.0.0.1:8848</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
+<li><p>需要给配置中心添加一个叫 数据集 (Data ID)   <strong>gulimall-coupon.properties</strong>.默认规则，<strong>应用名.properties</strong></p>
+</li>
+<li><p>给<strong>应用名.properties</strong>添加任何配置</p>
+</li>
+<li><p>动态获取配置</p>
+<ul>
+<li><p><strong>@RefreshScope</strong>：动态获取并刷新配置</p>
+</li>
+<li><p><strong>@Value（”${配置项的名}”）</strong>：获取配置</p>
+<p>如果配置中心和当前应用的配置文件都配置了相同的项，优先使用配置中心的配置</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><strong>JSR303校验使用</strong></p>
+<ul>
+<li>在<strong>Controller</strong>中的请求路径入参中添加**@Valid<strong>注解，在</strong>实体类<strong>上标注注解</strong>@NotNull<strong>等，入参中添加</strong>BindingResult**可以获取响应结果</li>
+</ul>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，为写者学习使用，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/01/11/MySQL%E5%B8%B8%E7%94%A8%E8%AF%AD%E5%8F%A5%E8%AE%B0%E5%BD%95/">
+                        <span class="hidden-mobile">MySQL常用语句记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"fgxnU9BgrVG92Ggo9MWwLccC-gzGzoHsz","appKey":"cXSQdoqqqbkoASCmlbqUga4A","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="/" target="_self" rel="nofollow noopener"><span>The Memory Of Snow</span></a> <i class="iconfont icon-love"></i> <a href="/about/" target="_self" rel="nofollow noopener"><span>Lexr</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'GA_MEASUREMENT_ID', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

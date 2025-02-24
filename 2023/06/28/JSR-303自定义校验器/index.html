@@ -254,7 +254,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      168 字
+      172 字
     </span>
   
 
@@ -310,17 +310,17 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2023年6月28日 晚上
+                  本文最后更新于：2025年2月8日 下午
                 
               </p>
             
             <div class="markdown-body">
               <h1 id="JSR-303"><a href="#JSR-303" class="headerlink" title="JSR-303"></a>JSR-303</h1><ul>
 <li><p>分组校验</p>
-<div class="code-wrapper"><pre class="line-numbers language-java" data-language="java"><code class="language-java">创建一个分组校验接口
-<span class="token class-name">Controller</span> 入参 <span class="token annotation punctuation">@Validated</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token class-name">AddGroup</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token class-name">Entity</span> 注解上标注注解属性 <span class="token annotation punctuation">@NotNull</span><span class="token punctuation">(</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token class-name">Addgroup</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-默认没有指定分组校验的注解在分组校验情况下不生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token number">1</span>.创建一个分组校验接口
+<span class="token number">2</span>.Controller 入参 @Validated<span class="token punctuation">(</span><span class="token punctuation">&#123;</span>AddGroup.class<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token number">3</span>.Entity 注解上标注注解属性 @NotNull<span class="token punctuation">(</span>groups <span class="token operator">=</span> <span class="token punctuation">&#123;</span>Addgroup.class<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token number">4</span>默认没有指定分组校验的注解在分组校验情况下不生效<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div></li>
 <li><p>自定义校验</p>
 <ol>
 <li>编写一个自定义校验注解</li>
@@ -371,6 +371,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2025/01/02/%E4%B8%BA%E4%BB%80%E4%B9%88byte%E7%9A%84%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E4%B8%BA-128%E5%88%B0127/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">探究为什么byte的数据范围为-128到127</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

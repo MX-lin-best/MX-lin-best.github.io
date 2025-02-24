@@ -264,7 +264,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      29
+      30
        分钟
     </span>
   
@@ -310,7 +310,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年6月20日 上午
+                  本文最后更新于：2025年1月12日 晚上
                 
               </p>
             
@@ -562,6 +562,17 @@ CMD &#x2F;bin&#x2F;bash<span aria-hidden="true" class="line-numbers-rows"><span>
 </blockquote>
 <h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p><img src="/img/blogimgs/Docker/1.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="/img/blogimgs/Docker/2.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="PS-Docker-常用指令"><a href="#PS-Docker-常用指令" class="headerlink" title="PS: Docker 常用指令"></a><strong>PS</strong>: Docker 常用指令</h2><h3 id="查看容器日志"><a href="#查看容器日志" class="headerlink" title="查看容器日志"></a>查看容器日志</h3><ul>
+<li><strong><code>docker logs</code></strong></li>
+</ul>
+<blockquote>
+<p>例如：查看<code>docker</code>启动<code>mysql</code>容器失败查看日志</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">docker logs --tail <span class="token number">50</span> --follow --timestamps mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+</blockquote>
+<h3 id="docker重启，容器重启"><a href="#docker重启，容器重启" class="headerlink" title="docker重启，容器重启"></a>docker重启，容器重启</h3><blockquote>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> docker update mysql --restart<span class="token operator">=</span>always<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+</blockquote>
 
             </div>
             <hr>
