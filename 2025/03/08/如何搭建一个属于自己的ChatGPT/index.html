@@ -1,0 +1,719 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/Sail.jpg">
+  <link rel="icon" href="/img/Sail.jpg">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Lexr">
+  <meta name="keywords" content="">
+  
+  <title>如何搭建一个属于自己的ChatGPT? - The Memory Of Snow</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      
+        
+          
+          
+          
+        
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-dark.min.css" />
+      
+      
+        <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":10},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":"GA_MEASUREMENT_ID","gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas>
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+<script type="text/javascript" src="/js/firework.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>The Memory Of Snow</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/message/">
+                <i class="iconfont icon-comment"></i>
+                留言
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-books"></i>
+                资料
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/book/">
+                    <i class="iconfont icon-book"></i>
+                    PDF
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/lookingfor.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="如何搭建一个属于自己的ChatGPT?">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Lexr
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-03-08 10:22" pubdate>
+        2025年3月8日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      11
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">如何搭建一个属于自己的ChatGPT?</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2025年3月8日 下午
+                
+              </p>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>前言：</p>
+<p>​        <strong>Ai</strong>的发展十分迅速，本人也是一直想搭建一下属于自己的<strong>Ai机器人</strong>，迫于各方面原因，却未付出过实践，这同时也是一个很好的机会重新拾起自己的兴趣，本文章旨在搭建一个问答机器人，了解整个搭建过程，为自己学习使用，原本是准备用自己的微信作为问答机器人，但被微信官方当作脚本外挂，故采用微信个人公众号的方式进行搭建。</p>
+<p>​    使用开源项目<a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat">chatgpt-on-wechat</a>，更多具体实现细节可参看相关的项目文档</p>
+</blockquote>
+<hr>
+<h3 id="整体架构"><a href="#整体架构" class="headerlink" title="整体架构"></a>整体架构</h3><p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/construct.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
+<li><input checked="" disabled="" type="checkbox"> 一台<strong>云服务器</strong>（目的是拥有外网IP，若自己对内网穿透熟悉也可）</li>
+<li><input checked="" disabled="" type="checkbox"> 注册一个<strong>个人公众号</strong></li>
+<li><input checked="" disabled="" type="checkbox"> 充值<strong>DeepSeek</strong> API开放平台的<strong>API keys</strong>(使用其他模型的也可以)</li>
+</ul>
+</li>
+<li><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><ol>
+<li><p>购买云服务器（<strong>产品</strong>——&gt;<strong>计算</strong>——&gt;<strong>轻量应用服务器</strong>），这里选择<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>，对比了几家发现这家还便宜一点</p>
+<p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/tengxunyun.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>我这里选择的是安装<strong>操作系统镜像</strong>，使用<strong>容器镜像</strong>（参看项目文档部署）也是可以的。操作系统选择<strong>Window Server</strong>(最好选高版本的，之前测试2012的会安装失败)，<strong>Linux</strong>也是可以的。</p>
+<ul>
+<li><strong>系统镜像</strong>——&gt;<strong>Window Server</strong>(最好选高版本的，之前测试2012的会安装失败)，<strong>Linux</strong>也是可以的。</li>
+<li><strong>地域</strong>——&gt;选择国内外的都是可以的，DeepSeek国内访问还快一点</li>
+<li><strong>套餐类型</strong>——&gt;选择最低的就可以了(根据自己需求来)</li>
+<li><strong>登陆密码</strong>——&gt;<strong>Windows Server</strong>自定义密码方便一点，用于登录远程服务器</li>
+<li><strong>立刻购买</strong>——&gt;完成后在<strong>控制台</strong>，找到<strong>我的资源</strong>——&gt;<strong>轻量应用服务器</strong>——&gt;<strong>登录</strong></li>
+</ul>
+<p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/buyserver.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+<li><p>安装服务器所需环境</p>
+<ul>
+<li><p><strong>python3.8+<strong>，我这里安装的是<a target="_blank" rel="noopener" href="https://www.python.org/ftp/python/3.8.10/python-3.8.10-amd64.exe">3.8.10</a>版本，安装时要勾选</strong>Add Python 3.x to PATH</strong> ，运行指令<code>python -V</code>查看python是否安装成功</p>
+</li>
+<li><p>下载项目<a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat/releases">chatgpt-on-wechat release</a>中的<strong>Source code.zip</strong>，解压，这里我选的版本为<a target="_blank" rel="noopener" href="https://github.com/zhayujie/chatgpt-on-wechat/archive/refs/tags/1.7.4.zip">1.7.4</a></p>
+</li>
+<li><p>使用<strong>CMD</strong>指令在该目录运行</p>
+<p> <img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/cmd.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>安装<code>python</code>依赖</p>
+ <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip3 <span class="token function">install</span> -r requirements.txt                <span class="token comment"># 必选依赖</span>
+pip3 <span class="token function">install</span> -r requirements-optional.txt       <span class="token comment"># 可选依赖，公众号部署需要安装，语音、tool插件等功能需要</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div></li>
+<li><p>复制项目中的模板文件 <code>config-template.json</code>，来生成最终起效果的配置文件<code>config.json</code>，你可以通过执行以下命令完成：</p>
+ <div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> config-template.json config.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div>
+
+<p> 打开<code>config.json</code>文件，添加配置，具体<a target="_blank" rel="noopener" href="https://docs.link-ai.tech/cow/quick-start/config">配置说明</a></p>
+<p> 若是<strong>个人公众号</strong>的话，额外添加配置</p>
+ <div class="code-wrapper"><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"channel_type"</span><span class="token operator">:</span> <span class="token string">"wechatmp"</span><span class="token punctuation">,</span>    
+  <span class="token property">"single_chat_prefix"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">""</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 
+  <span class="token property">"wechatmp_app_id"</span><span class="token operator">:</span> <span class="token string">"wx73f9******d1e48"</span><span class="token punctuation">,</span>     
+  <span class="token property">"wechatmp_app_secret"</span><span class="token operator">:</span> <span class="token string">"weca******est"</span><span class="token punctuation">,</span>  
+  <span class="token property">"wechatmp_aes_key"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"wechatmp_token"</span><span class="token operator">:</span> <span class="token string">"tok**est"</span><span class="token punctuation">,</span>
+  <span class="token property">"wechatmp_port"</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div>
+
+<p> 打开<a target="_blank" rel="noopener" href="https://platform.deepseek.com/">deepseek开放平台</a>，<strong>充值</strong>，然后创建<strong>Api key</strong></p>
+<p> <img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/ds.png" srcset="/img/loading.gif" lazyload></p>
+<p> 这里贴下我的配置</p>
+ <div class="code-wrapper"><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"channel_type"</span><span class="token operator">:</span> <span class="token string">"wechatmp"</span><span class="token punctuation">,</span>
+  <span class="token property">"model"</span><span class="token operator">:</span> <span class="token string">"deepseek-chat"</span><span class="token punctuation">,</span>
+  <span class="token property">"open_ai_api_key"</span><span class="token operator">:</span> <span class="token string">"sk-1fdb7xxxxxxxxxxxxxx86fb"</span><span class="token punctuation">,</span>
+  <span class="token property">"open_ai_api_base"</span><span class="token operator">:</span> <span class="token string">"https://api.deepseek.com/v1"</span><span class="token punctuation">,</span>
+  <span class="token property">"proxy"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"hot_reload"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"single_chat_prefix"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">""</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"single_chat_reply_prefix"</span><span class="token operator">:</span> <span class="token string">"【机器人回复】"</span><span class="token punctuation">,</span>
+  <span class="token property">"group_chat_prefix"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"@BlaZe1r-Coder"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"group_name_white_list"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">""</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"image_create_prefix"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"画"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"speech_recognition"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"group_speech_recognition"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"voice_reply_voice"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"conversation_max_tokens"</span><span class="token operator">:</span> <span class="token number">8000</span><span class="token punctuation">,</span>
+  <span class="token property">"expires_in_seconds"</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+  <span class="token property">"character_desc"</span><span class="token operator">:</span> <span class="token string">"你是基于大语言模型的AI智能助手，旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。"</span><span class="token punctuation">,</span>
+  <span class="token property">"temperature"</span><span class="token operator">:</span> <span class="token number">0.7</span><span class="token punctuation">,</span>
+  <span class="token property">"subscribe_msg"</span><span class="token operator">:</span> <span class="token string">"感谢您的关注！\n这里是AI智能助手，可以自由对话(目前只支持文字输入)。\n若未及时回复，请多尝试几次。"</span><span class="token punctuation">,</span>
+  <span class="token property">"use_linkai"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"linkai_api_key"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"linkai_app_code"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  
+   
+  <span class="token property">"wechatmp_app_id"</span><span class="token operator">:</span> <span class="token string">"wxxxxxxxcb"</span><span class="token punctuation">,</span>     
+  <span class="token property">"wechatmp_app_secret"</span><span class="token operator">:</span> <span class="token string">"50xxxxxaaf9"</span><span class="token punctuation">,</span>  
+  <span class="token property">"wechatmp_aes_key"</span><span class="token operator">:</span> <span class="token string">"vxxxxxxxxxxxxxxxxxxxxxx9ii"</span><span class="token punctuation">,</span>
+  <span class="token property">"wechatmp_token"</span><span class="token operator">:</span> <span class="token string">"txxxxxt"</span><span class="token punctuation">,</span>
+  <span class="token property">"wechatmp_port"</span><span class="token operator">:</span> <span class="token number">80</span>
+
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></li>
+<li><p>启动项目</p>
+<div class="code-wrapper"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">python app.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>注册公众号，具体看文章，<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/community/develop/doc/0008eef4a50ae8bd3f7ac2fca5bc09?blockType=5">公众号注册流程指引</a></p>
+<ul>
+<li><p>找到<strong>设置与开发</strong>——&gt;<strong>开发接口管理</strong>——&gt;<strong>基本设置</strong>——&gt;<strong>填写服务器配置</strong></p>
+<p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/wechatmp_base.png" srcset="/img/loading.gif" lazyload></p>
+<p>!!!勘误，图中第二行<strong>id</strong>应为<strong>secret</strong></p>
+<p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/westamp.png" srcset="/img/loading.gif" lazyload></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="验证是否成功"><a href="#验证是否成功" class="headerlink" title="验证是否成功"></a>验证是否成功</h3><p><img src="/img/blogimgs/Ai/HowToBuildMyChatGPT/test.png" srcset="/img/loading.gif" lazyload></p>
+<p>大功告成！！！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>不能总空想于脑海，更要把想法付诸于实践，实践才能发现问题，解决问题</li>
+<li>不仅增加了自己的阅读文档的能力，也重拾了自己对技术的兴趣</li>
+<li>遇到问题，查看报错信息，再看官方文档</li>
+</ol>
+<p>​     </p>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/AI/">AI</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/ChatGPT/">ChatGPT</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，为写者学习使用，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/01/02/%E4%B8%BA%E4%BB%80%E4%B9%88byte%E7%9A%84%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E4%B8%BA-128%E5%88%B0127/">
+                        <span class="hidden-mobile">探究为什么byte的数据范围为-128到127</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"fgxnU9BgrVG92Ggo9MWwLccC-gzGzoHsz","appKey":"cXSQdoqqqbkoASCmlbqUga4A","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="/" target="_self" rel="nofollow noopener"><span>The Memory Of Snow</span></a> <i class="iconfont icon-love"></i> <a href="/about/" target="_self" rel="nofollow noopener"><span>Lexr</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+    
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    <!-- Google Analytics -->
+    <script defer>
+      window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) };
+      ga.l = +new Date;
+      ga('create', 'GA_MEASUREMENT_ID', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
